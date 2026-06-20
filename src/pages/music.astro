@@ -1,0 +1,8 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { MusicPage } from '@/components/page/MusicPage';
+---
+
+<BaseLayout title="音乐" description="周浩洋演唱的歌曲">
+  <MusicPage client:load />
+</BaseLayout>

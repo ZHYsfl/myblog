@@ -1,0 +1,22 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { HomePage } from '@/components/page/HomePage';
+import { getCollection } from 'astro:content';
+import type { CategoryId } from '@/lib/constants';
+
+const posts = await getCollection('posts');
+const mappedPosts = posts.map((p) => ({
+  data: {
+    title: p.data.title,
+    date: p.data.date.toISOString(),
+    category: p.data.category as CategoryId,
+    description: p.data.description,
+    slug: p.data.slug,
+    lang: p.data.lang as 'zh' | 'en',
+  },
+}));
+---
+
+<BaseLayout class="min-h-screen bg-bg">
+  <HomePage posts={mappedPosts} client:load />
+</BaseLayout>

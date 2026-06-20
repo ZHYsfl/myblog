@@ -1,0 +1,28 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.astro/
+coverage/
+
+# Source content (preserve original formatting)
+AIInsights/
+*.md
+!src/**/*.md
+!src/**/*.mdx
+plan.md
+思路.md
+个人信息.md
+诉求.md
+AIINSIGHTS_AUDIT.md
+README_ASTRO.md
+
+# Assets
+public/songs/
+public/assets/
+mysong/
+.mp4-backup/
+
+# Lockfile
+package-lock.json

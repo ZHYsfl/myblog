@@ -1,0 +1,11 @@
+---
+// Prevent FOUC by setting theme before any render.
+---
+
+<script is:inline>
+  (function () {
+    const stored = localStorage.getItem('myblog:theme');
+    const theme = stored === 'dark' || stored === 'light' ? stored : 'dark';
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>

@@ -1,0 +1,73 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { PostLanguageRedirect } from '@/components/post/PostLanguageRedirect';
+import { formatDate, getCategoryName } from '@/lib/utils';
+import type { CategoryId } from '@/lib/constants';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map((post) => ({
+    params: { lang: post.data.lang, slug: post.data.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const { lang } = Astro.params;
+const { Content } = await render(post);
+
+const allPosts = await getCollection('posts');
+const translation = post.data.translationOf
+  ? allPosts.find((p) => p.data.slug === post.data.translationOf && p.data.lang !== lang)
+  : undefined;
+const switchHref = translation ? `/posts/${translation.data.lang}/${translation.data.slug}` : '';
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  {
+    translation && (
+      <link rel="alternate" hreflang={translation.data.lang} href={switchHref} slot="head" />
+    )
+  }
+  <PostLanguageRedirect
+    pageLang={lang as 'zh' | 'en'}
+    slug={post.data.slug}
+    translationHref={switchHref}
+    client:load
+  />
+  <article class="mx-auto max-w-3xl px-4 py-32 sm:px-6 lg:px-8">
+    <header class="mb-10">
+      <div class="mb-4">
+        <a href="/posts" class="text-sm text-muted hover:text-fg">
+          ← {lang === 'en' ? 'Back to posts' : '返回文章列表'}
+        </a>
+      </div>
+      <h1 class="mb-4 text-3xl font-bold text-fg sm:text-4xl">{post.data.title}</h1>
+      <p class="text-sm text-muted">
+        {formatDate(post.data.date, lang === 'en' ? 'en-US' : 'zh-CN')} · {
+          getCategoryName(post.data.category as CategoryId, lang as 'zh' | 'en')
+        }
+        {post.data.readingTime && ` · ${post.data.readingTime} min read`}
+      </p>
+      {
+        post.data.tags.length > 0 && (
+          <div class="mt-3 flex flex-wrap gap-2">
+            {post.data.tags.map((tag) => (
+              <span class="rounded-full border border-border bg-surface px-2.5 py-1 text-xs text-muted">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )
+      }
+    </header>
+    <div class="prose">
+      <Content />
+    </div>
+  </article>
+</BaseLayout>

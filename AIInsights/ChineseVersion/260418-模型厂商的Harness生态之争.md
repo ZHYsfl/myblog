@@ -1,0 +1,1 @@
+感觉大家都意识到harness是model厂商的生态必争地了，kimi k2.6进步巨大，不过kimi的模型有的时候tool call在claude code里有工具调用死循环的情况，这在kimi code cli里就没有出现，有种观点是，现在claude编码能力这么强，很大程度上是模型对着claude code的harness专门做过针对性训练了，所以配合着harness编程表现非常好，kimi这个事情也是同理，而其他家模型厂商现在也在推自己的cli，自己的模型，cli的harness配合模型产生生态，是竞争的关键。

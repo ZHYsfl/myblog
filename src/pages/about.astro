@@ -1,0 +1,19 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { AboutPage } from '@/components/page/AboutPage';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+const zhPosts = posts.filter((p) => p.data.lang === 'zh');
+const counts = zhPosts.reduce(
+  (acc, post) => {
+    acc[post.data.category] = (acc[post.data.category] || 0) + 1;
+    return acc;
+  },
+  {} as Record<string, number>
+);
+---
+
+<BaseLayout title="关于" description={`关于 ${'周浩洋'}`}>
+  <AboutPage counts={counts} total={zhPosts.length} client:load />
+</BaseLayout>

@@ -1,0 +1,23 @@
+---
+title: '一个403-Bug揭示的Agent基础设施转型'
+date: 2026-05-26
+category: 'ai-infra'
+tags: []
+lang: 'zh'
+slug: 'a-403-bug-that-revealed-the-agent-infrastruct'
+translationOf: 'a-403-bug-that-revealed-the-agent-infrastruct'
+readingTime: 2
+description: ''
+---
+
+最近帮朋友的中转站发现了个挺离谱的Bug。这也让我意识到了AI生态正在进行一次静默转型。
+
+事情起因是我用朋友中转站的api高并发调用LLM但是爆出403。排查了一圈发现都没事，最后抓包一看发现问题了：上游风控策略为了防爬虫，把 OpenAI官方的python sdk默认带的User-Agent: OpenAI/Python丢进blacklist了。我伪造了一个Header成普通流量就跑通了。
+
+我兴奋地把这个bug给朋友说，朋友说他那边用Claude Code和Codex的用户一切正常，从来没爆过这个错。
+
+我这就觉得不对劲了，按照这个逻辑去想，本质上是AI中转站的底层商业逻辑变了：整个生态正在从以前的“LLM搬运工”时代疯狂向“Agent 推理基础设施”时代转移。
+
+以前中转站优先适配写脚本、跑实验的 Python开发者（基本调用）；现在都在争着抢着给各类 Coding Agent、自动化工具链做优化（行为兼容）。各类coding agent的header肯定不是User-Agent: OpenAI/Python这么简单了。基本上用的技术栈都是ts、node.js这些。为了适配coding agent，llm api单独调用反而成了中转站重点禁止的使用方式了（甚至各大模型厂商的coding plan，某种意义上，中转站只是各大厂商策略转型的辐射，根源可能还是在各大厂商的逻辑变了）。结果就是，大家下意识觉得coding agent 客户端的流量是正规军，反而把天天手动import原生 SDK的Python开发者当成了可疑流量一刀切，误杀得一干二净。
+
+所以某种程度上来说，中转站老板们要是不把一刀切UA的风控升级到按Key限流+行为分析，这部分开发者市场迟早被竞品吃光。

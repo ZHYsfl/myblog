@@ -1,0 +1,5 @@
+I now believe that multi-agent networks, concurrent scheduling between agents, and bidirectional communication are the true mainstream of the future. These are the essential skills everyone must master. As model capabilities continue to rise and computing power keeps accumulating, raw knowledge and pure technical skills will inevitably depreciate.
+
+The things that will hold true value are the **emotions and connections** between people, as well as the domains where **human accountability** is required. The act of a human performing a task and taking responsibility for it will become the sole remaining source of value.
+
+We need to strengthen our ability to communicate and connect with others. We must have the courage to shoulder responsibility, learn how to orchestrate parallel agent clusters, and focus on endeavors that involve deep human interaction.

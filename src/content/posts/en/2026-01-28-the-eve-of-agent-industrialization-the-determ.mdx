@@ -1,0 +1,21 @@
+---
+title: 'The Eve of Agent Industrialization: The Deterministic Rise of Context Engineering, Evaluation Frameworks, and Sandboxes'
+date: 2026-01-28
+category: 'ai-infra'
+tags: ['Agent', 'Context Engineering', 'Evaluation']
+lang: 'en'
+slug: 'the-eve-of-agent-industrialization-the-determ'
+translationOf: 'the-eve-of-agent-industrialization-the-determ'
+readingTime: 7
+description: ''
+---
+
+I have recently sensed several trends that I believe are highly likely to be deterministic. I’d like to share them here:
+
+**First, the importance of Context Engineering in the Agent field will continue to escalate.** In the future, a significant portion of an Agent's quality will be determined by the excellence of its context engineering design. Even with the current AI hype, there is still a lead time of about 3 to 4 months before new technologies in the Agent field truly explode. I believe this is largely because Agent technology is trending toward standardization and protocolization, and the accumulation of an ecosystem for these standards takes time. For instance, Anthropic’s MCP was introduced in November 2024 but didn't gain traction until March 2025. Similarly, "Agent Skills," which is booming now in 2026, was actually a technology proposed by Anthropic back in October 2025. Fundamentally, both MCP and Agent Skills aim to provide AI with higher quality and more efficient context. Currently, in most scenarios, the only "observation" an Agent has is its context. Good context management is a science, and this science is now reaching maturity.
+
+**Second, Agent Evaluation will be a major research hotspot and opportunity in 2026.** As Agent systems become increasingly complex—involving multi-agent collaboration, asynchronous operations, and fine-tuned base models—these challenges demand robust evaluation environments and mechanisms. I have some unique insights here and am currently dedicated to this work. For simple agents, we can essentially mirror the "Gym" approach. However, the complexity of modern Agent systems has surpassed the scope of a single agent. For simple agents, an LLM-based Agent and a Pure RL Agent are essentially the same: both represent a complete Markov Decision Process (MDP). The power of an LLM-based Agent lies in the LLM acting as its policy model. The brilliance of an LLM is its ability to extract structured, explicit, and clear **states** from implicit, fuzzy **observations**. If an LLM can achieve 100% accuracy in this extraction process, an LLM-based Agent effectively becomes a Pure RL Agent. From this perspective, enhancing LLM-based Agent capabilities falls into two categories: 1) Improving the base model's accuracy in converting implicit observations into explicit states, and 2) Using RL algorithms to refine the policy precision of the base model within the MDP. How to evaluate increasingly complex Agent systems remains a "Blue Ocean" market.
+
+**Third, more people will begin to realize the critical importance of Agent Sandboxes.** Internationally, E2B has been working on this for several years. Domestically, companies like Tencent, Alibaba, ByteDance, and PPIO began to recognize the importance of this field last year and have quietly completed their layouts with their own Agent Sandboxes. In 2026, applications in this field will certainly start to gain momentum, primarily because an Agent Sandbox is the essential environment for Agent Evaluation.
+
+Similarly, I hope everyone stops limiting themselves. Just like Reinforcement Learning, you might explore hundreds of steps without visible progress, but after synthesizing those steps, you will often reach a point where the model suddenly "gets it" and converges rapidly.

@@ -1,0 +1,23 @@
+---
+title: 'Engineering Principles For Large Projects And Vibe Coder Survival Rules'
+date: 2026-06-01
+category: 'backend'
+tags: ['Engineering', 'Vibe Coding', 'Open-Closed Principle']
+lang: 'en'
+slug: 'engineering-principles-for-large-projects-and'
+translationOf: 'engineering-principles-for-large-projects-and'
+readingTime: 6
+description: ''
+---
+
+When writing large projects, properly adhering to design principles becomes essential.
+
+The importance of the Open/Closed Principle isn't that obvious below 50k lines, but as project volume accumulates, following it as much as possible becomes almost the lifeline of the repo. The Open/Closed Principle states: closed for modification, open for extension. On one hand, software engineering itself dictates that the larger the project, the less you should casually add parameters and interleave new paths into code that has already been verified and tested — the cognitive burden is enormous and the cost of change is extremely high. This is even more true in the vibe coding era. Many people say AI writes great code today, but as projects grow large, AI's context is limited. Interleaving various new features' paths and parameters across a massive repo creates an extraordinarily high cognitive burden for iteration and maintenance. If you can maintain the Open/Closed Principle as much as possible, it's beneficial for AI's attention allocation (most energy focused on producing coherent new code) and it also aligns with the essential nature of software engineering.
+
+For large projects, decoupling and dependency injection are equally necessary. I think a good discipline for vibe coders is this self-imposed constraint on your repo: each file should be at most 250 lines. Considering that cross-file structures might reduce readability in the opposite direction, allow yourself at most 3 files to exceed 250 lines but still never exceed 600 lines (though ideally everything stays within 250). Extremely high readability, excellent decoupling, and unit test coverage greater than 95%. If you force yourself to design under such constraints, the resulting system will likely withstand iteration and maintenance. Using file size to force decoupling of requirements and design, and using high test coverage to quickly lock down most already-written logic, is an excellent approach.
+
+All coders must use Git and version control in their daily work — this is non-negotiable. _If you write code without using Git, don't say you are a coder._ I believe correct use of Git is a necessary condition for improving engineering capability. I recommend finding a few buddies, picking a free afternoon, grabbing some coffee, and together hands-on exploring the various ways to use Git. _It only takes half a day to master Git, using this way._ In addition, I've observed that infrastructure or senior developers' GitHub profiles are uniformly green all year round — this is also very important.
+
+Today many people are vibe coders, producing a lot of code, but without review there is no progress, and without tests there is no quality. Wrong plan, wrong design, no doc-code sync, no review, no test — if even **one** of these four is present, the repo won't survive past the 50k+ line mark.
+
+Above are some thoughts on how to build, iterate, and maintain large projects.

@@ -1,0 +1,43 @@
+---
+title: 'Is Natural Language the Foundation? Agent Evaluation and Tech Aesthetics'
+date: 2026-06-09
+category: 'ai-theory'
+tags: []
+lang: 'en'
+slug: 'is-natural-language-a-foundation-agent-evalua'
+translationOf: 'is-natural-language-a-foundation-agent-evalua'
+readingTime: 13
+description: ''
+---
+
+Three fragments of thinking: on Vibe Coding, the hardest part of Agent systems, and aesthetic methodology in tech.
+
+---
+
+I recently came across this argument: before high-level languages existed, everyone wrote in assembly. When high-level languages arrived, they crushed assembly in development efficiency. The old-schoolers who wrote assembly said you were doomed if you didn't know assembly — yet in most scenarios today, assembly really isn't necessary. Now that Vibe Coding is hot, many people claim natural language is the new, higher-level programming language. They say you no longer need to master high-level languages; just keep describing requirements in natural language and you're done. They claim that insisting today on learning high-level languages is the same as insisting back then on learning assembly.
+
+It's not the same thing at all.
+
+The compilation from high-level language to assembly, and from assembly to machine instructions, is **100% deterministic**. But the shift from natural language to high-level language, with a generative model acting as the compiler, is inherently **probabilistic** and **non-deterministic**. Moreover, software engineering is a rigorous state machine of data flows. Mathematically, it is strict — and mathematics has already told us that its language must be symbolic to support the entire edifice of mathematics. Natural language is fundamentally ambiguous and can never underpin a symbolic system. Code is the same. **Natural language can never be the foundation of a deterministic system.** So mastering high-level languages remains extremely important.
+
+That said, assembly is also important — it's just that most scenarios genuinely don't require it. For most practitioners in most contexts, there's no need to master it; but for scenarios like quantitative finance, assembly is critical. So it's not only about determinism — it's also about the scenario and the requirement itself. Different languages are all tools. No tool is inherently superior or inferior; what varies is their degree of importance relative to the given scenario and need.
+
+The bottom line: thinking you can do engineering by only knowing natural language won't work. And please don't use the assembly-vs-high-level example to argue back.
+
+---
+
+In Agent systems, **evaluation is the hardest part**. The core difference between engineering and research also comes down to evaluation. In engineering: did my thing work, and how well — write tests. In research: first understand the scenario's requirements and domain, define the problem, plan a broad and comprehensive evaluation dataset, define the interface between the system and evaluation, then build out the system to satisfy the evaluation requirements as much as possible while simultaneously adapting and refining the evaluation to fit the system. This process is a bit like RL: the system alone as the actor isn't enough — you need evaluation as the critic, and actor and critic co-evolve by supporting each other.
+
+Many people think Agent systems are simple. That's a serious mistake. I think Agent systems are hard in the following ways. First, they require not just technical knowledge but also domain knowledge and product thinking. Second, evaluation is exceptionally difficult because it's a mix of technical and domain concerns — you need both. Many Agent systems today skip evaluation entirely, thinking "it's just engineering, as long as it works." That kind of Agent system lacks the capacity for long-term iterative improvement. Third, building an infra that supports continuous learning, continuous evolution, adequate monitoring, and low resource and communication overhead is not easy. You need training signals (parameterized learning, RL, or online preference distillation) and monitoring thereof, plus a harness infra that iterates continuously while remaining compatible with evaluation interface design. Some scenarios further demand network and OS-level overhead optimization. This places severe demands on both algorithmic and infra capabilities.
+
+---
+
+I've heard countless people emphasize aesthetics and taste. I want to emphasize it again. I believe the core human capability is **aesthetics and taste** — knowing what is good, knowing what is not, that sense of judgment is aesthetics and taste. Many people talk about aesthetics in the context of judging their own engineering and research. I fully agree. But I'd rather talk about **product visual aesthetics**.
+
+I love the visual aesthetics of Kimi and Anthropic's products. In tech, I believe tech product aesthetics must go in the direction of clean, atmospheric, and simple — and if you're clever about it, integrate art as well. Kimi's small basketball with two simple white eyes, paired with a music-culture vibe; Anthropic's simple all-orange pixel octopus (maybe it is an octopus 🐙?) — both of these products hit me right where it counts. And as it turns out, companies with good aesthetics tend to deliver good product experiences too. Both of their products and models have been genuinely pleasant to use.
+
+Here I want to call out MiniMax by name — I believe users have every right to critique a product. I noticed that MiniMax's promotional materials, whether on their official website or on Twitter, use **Excalidraw** diagrams for architecture illustrations. I think the context is wrong. Using Excalidraw to draw architecture diagrams is fine — that hand-drawn style signals that the architecture is still taking shape, has the potential for rapid iteration, and suits informal settings like closed-door meetings, small technical presentations, and internal group syncs. But for commercial promotion — your own social media and official website — publishing Excalidraw hand-drawn diagrams rather than more polished, publication-quality architecture figures is a misjudgment. That is an aesthetics problem. MiniMax's model today also doesn't give me the same feel as Kimi and Anthropic. I hope MiniMax keeps pushing forward and brings us a better experience.
+
+---
+
+Those are a few recent thoughts.

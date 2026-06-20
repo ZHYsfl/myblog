@@ -1,0 +1,75 @@
+---
+title: 'The CD Death Loop And Self Correction Trap In Claude Code'
+date: 2026-05-11
+category: 'ai-infra'
+tags: ['Claude Code', 'Bug', 'Agent Infra']
+lang: 'en'
+slug: 'the-cd-death-loop-and-self-correction-trap-in'
+translationOf: 'the-cd-death-loop-and-self-correction-trap-in'
+readingTime: 18
+description: ''
+---
+
+There is a bug in Claude Code that has existed for at least two months. In the issues section on the Claude Code GitHub, I'm not the only one who has run into it, but none of them received a satisfactory answer. Through my own experiments I've confirmed that the bug's trigger is stochastic. After extensive testing and investigation, I've roughly determined that the bug is a joint product of the harness and the model. Let me walk through the whole thing.
+
+When I was using Kimi K2.6 in Claude Code for a Go backend compilation task, I observed the following:
+
+1. The current working directory was not at the Go module root (`/root/icourses/backend`); running `go build ./...` directly produced the error: `pattern ./...: directory prefix . does not contain main module or its selected dependencies.`
+2. I repeatedly reminded the AI: "cd first", "just cd already", "cd first, don't you understand?" — and Kimi's chain of thought (visible clearly in SpecStory) explicitly stated: "I need to actually include `cd /root/icourses/backend` in the command parameter," yet the tool-call parameter was still `go build ./...`, with no `cd`.
+3. I was using `dangerously-skip-permission` mode, so the AI repeated the exact same mistake dozens of times on its own.
+
+This really confused me: Kimi's CoT knew it should cd, but the tool call never included cd.
+
+I couldn't let this go, so I ran a series of experiments that eventually led me to the probable cause of the bug.
+
+**Hypothesis 1:** Claude Code's "avoid cd" instruction suppressed Kimi. I found that in Claude Code's leaked prompt, the bash tool description explicitly marks `cd /foo/bar && pytest tests` as a `&lt;bad-example&gt;` and instructs to "avoid usage of cd." I then designed an experiment to test this: in Claude Code, I pressed Esc twice to roll the context back to the initial compilation request, and tested K2.6 on a clean context. On the first try it ran `Bash(go build)` → failed; on the second try it correctly ran `Bash(cd /root/icourses/backend && go build ./...)` → succeeded. This shows that the `&lt;bad-example&gt;` did **not** absolutely block Kimi from executing `cd && cmd`; when the need is explicit, Kimi is capable of overriding the "avoid cd" instruction. Hypothesis 1 rejected.
+
+**Hypothesis 2:** Kimi Code CLI's training led K2.6 to "not know" independent `cd`. I checked Kimi CLI's `bash.md` which explicitly states: "Each shell tool call will be executed in a fresh shell environment. The shell variables, current working directory changes, and the shell history is not preserved between calls." This means Kimi's training data contains only the `cd && cmd` chained pattern, without reinforcing the concept that "directory state persists after a standalone cd." However, GPT/Claude also succeed with `cd && go build ./...` (the chained pattern). If this is Kimi's most familiar pattern, Kimi should be _best_ at it. And indeed, in a clean context, Kimi _can_ execute `cd && cmd`. So this hypothesis cannot explain the 20+ consecutive failures in the polluted context. Hypothesis 2 rejected.
+
+**Hypothesis 3:** Training-data bias (OOD) is the root cause. I thought Kimi might be over-trained on its own CLI, leading to systematic OOD behavior inside Claude Code. But the experiment refuted this: in a clean context, Kimi handled `cd` correctly. If this were a fundamental OOD issue, it should fail even in a clean context — yet the clean-context success rate is high. OOD is not the root cause. Hypothesis 3 rejected.
+
+All three hypotheses failed. Additionally, I ran one more experiment: I changed `settings.json` to switch to GPT 5.5, kept the same polluted context after dozens of failures, and asked GPT to handle the compilation. GPT immediately executed `cd /root/icourses/backend && go build ./...` — success on the first try.
+
+Even though the hypotheses failed, I noticed a crucial difference: in a _clean_ context, Kimi self-corrected after 1 failure and correctly executed `cd && cmd`. In the _polluted_ context (the original scenario), Kimi entered an infinite loop of tool calls and failures — even though its CoT clearly realized it should add `cd`. So the problem is not that "Kimi doesn't understand cd," but that **"Kimi cannot recover from errors once the context is polluted."**
+
+I realized that Kimi K2.6's self-correction ability may be insufficient — a general capability issue, not limited to the `cd` scenario or to the Claude Code harness. I looked into external evidence, and found supporting data (though for K2.5, K2.6 is most likely fine-tuned from K2.5 for coding scenarios, so capability differences should be limited):
+
+- **Gitar.ai real-world case** (Kimi K2.5 replacing Claude in live testing): "Kimi's self-correction was noticeably worse. It would retry the same failing call identically rather than trying an alternative path."
+- **CodeRouter evaluation** of Chinese-provider models (including Kimi): tool-schema retry rates significantly higher than Anthropic/OpenAI.
+- **TokenMix Error Recovery** evaluation: Claude Sonnet 4.6 = 85%, Kimi K2.5 = 78%.
+
+In short, Claude Code's leaked "avoid cd" prompt did not _absolutely_ prevent Kimi from adding `cd` (proven by clean-context experiments). But it amplified the gravity well through an indirect mechanism: the first `go build` fails, Kimi analyzes that it needs `cd` then `go build`, but _because_ of the harness's "avoid cd" instruction, the model has a small probability of choosing to avoid `cd` and trying something else first. So on the second attempt it's still `go build` — another failure. Since Kimi's self-correction is its weak point, it falls into a vicious cycle where the CoT thinks clearly but the tool call never matches the CoT. This is the **gravity well**.
+
+GPT 5.5 can execute correctly on the first try even in a polluted context, suggesting that GPT 5.5's self-correction ability is most likely stronger than K2.6's.
+
+Thus, the root cause of this bug has three components:
+
+1. Kimi K2.6's fragile self-correction.
+2. Claude Code's "avoid cd" prompt.
+3. The gravity well mechanism itself.
+
+Kimi K2.6's self-correction becomes extremely fragile when the context is heavily polluted by error logs, causing it to fall into a gravity well of repeating the same failure mode and being unable to recover. Claude Code's "avoid cd" system prompt acts as an amplifier: by delaying the moment Kimi attempts `cd`, it adds extra failure iterations, accelerates context pollution, and ultimately pushes the model into an unrecoverable state. In a clean context, Kimi is fully capable of handling `cd` correctly (recovers after 1 failure); in a polluted context, that same capability completely vanishes (20+ failures with no recovery).
+
+This case demonstrates that when evaluating AI coding agents, we should not only test "correctness in clean scenarios" but also test **"recovery ability after repeated failures"** — the latter is the key metric that separates a reliable agent from a fragile one.
+
+To correct myself: the Linux environment was not actually in `dangerously-skip-permission` mode; but since `cd` and `go build` had been previously approved to run without asking, the model still executed them automatically.
+
+This phenomenon only shows that K2.6 has poor self-correction in error loops. It does **not** mean K2.6's overall coding ability is poor. In fact, I believe K2.6 is already capable of handling 99% of my daily coding tasks, and the programming experience is even better than GPT's.
+
+Here's a screenshot of GitHub issues where other people encountered the same bug. Interestingly, Claude Opus 4.6 also has a small probability of falling into this bug.
+
+![image-20260512194128112.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194128112.png)
+
+![image-20260512194135509.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194135509.png)
+
+![image-20260512194145417.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194145417.png)
+
+![image-20260512194151875.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194151875.png)
+
+![image-20260512194158114.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194158114.png)
+
+![image-20260512194203621.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194203621.png)
+
+![image-20260512194208843.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194208843.png)
+
+![image-20260512194215855.png](/myblog/assets/posts/the-cd-death-loop-and-self-correction-trap-in/image-20260512194215855.png)

@@ -1,0 +1,16 @@
+---
+title: 'Agent 的工业化前夜：情境工程、评测体系与沙箱环境的确定性爆发'
+date: 2026-01-28
+category: 'ai-infra'
+tags: ['Agent', 'Context Engineering', 'Evaluation']
+lang: 'zh'
+slug: 'the-eve-of-agent-industrialization-the-determ'
+translationOf: 'the-eve-of-agent-industrialization-the-determ'
+readingTime: 3
+description: ''
+---
+
+最近敏锐感受到了一些大概率是确定性的趋势，分享一下。
+第一，Agent领域context engeneering的重要性会越来越高，未来一个Agent是否优秀，会有非常高一部分权重是取决于context engeneering的设计是否优秀。AI这么火的今天，Agent领域的新技术爆发仍然有差不多3到4个月的预备期。我觉得很大一部分原因是因为Agent发展到现在，技术趋向于标准化，协议化，而标准和协议的生态积累需要时间。MCP是anthropic在2024年11月份的东西，但是是在2025年3月才火起来的。进入2026年爆火的Agent skills，其实是anthropic在2025年10月提出的新技术。从本质上来看，MCP和Agent skills都是为了让AI获得更优质更高效的context，目前大部分场景Agent的唯一observation就是context。好的context管理是一门科学，而现在这门科学已经开始逐渐成熟。
+第二，Agent Evaluation会是2026年的研究热点和新的机会。Agent systems越发复杂，multi agent，异步agent以及基座模型微调后的agent，这些复杂的难题需要好的评测环境和机制。在这里我有一些独特的见解，也在致力于做这方面的工作。对于simple agent其实我们完全可以照抄gym，但是Agent systems现在的复杂性已经超越了single agent的范围，对于simple agent来说，LLM-Based Agent和Pure RL Agent其实本质一样，都是一个完整的马尔科夫决策过程。LLM-Based Agent之所以厉害，是因为他的策略模型是LLM，LLM厉害的点在于，他能从隐式的模糊的observation中提取结构化的显示的清晰的state，如果LLM能够做到把这个过程的正确率提高到100%，那么LLM-Based Agent完全就是一个Pure RL Agent。从这个视角看，LLM-Based Agent能力的提升分为两个方面，一个方面是提升基座模型将隐式的observation转化为显示的state的正确率；另一方面是Agent这个马尔科夫决策过程使用RL算法对基座模型的策略精度进行提升。对于越发复杂的Agent systems，我们如何去做评测，这是一个蓝海。
+第三，会有越来越多人开始意识到Agent Sandbox的重要性。国外有E2B已经做了好几年了，国内腾讯，阿里，字节，PPIO派欧云差不多也在去年慢慢意识到这个领域的重要性，现在已经有自己的agent sandbox了，大家都悄咪咪地完成了这一领域的布局。2026年这个领域的应用一定会开始发力。因为Agent Evaluation的环境就是Agent Sandbox。

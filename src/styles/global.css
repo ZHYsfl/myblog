@@ -1,0 +1,239 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where([data-theme='dark'] *));
+
+@theme {
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-accent: var(--accent);
+  --color-muted: var(--muted);
+  --color-surface: var(--surface);
+  --color-border: var(--border);
+  --font-sans: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  --font-serif: 'Noto Serif SC', 'Songti SC', serif;
+  --max-width-readable: 44rem;
+}
+
+:root {
+  --bg: #fafaf9;
+  --fg: #171717;
+  --accent: #dc4c3a;
+  --muted: #737373;
+  --surface: #ffffff;
+  --border: #e7e5e4;
+}
+
+[data-theme='dark'] {
+  --bg: #0c0c0c;
+  --fg: #f5f5f4;
+  --accent: #ff7a6a;
+  --muted: #a3a3a3;
+  --surface: #171717;
+  --border: #262626;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: 'Inter', 'Noto Sans SC', system-ui, sans-serif;
+  line-height: 1.75;
+  letter-spacing: 0.01em;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: white;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Noto Serif SC', 'Songti SC', serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+/* Prose */
+.prose {
+  max-width: var(--max-width-readable);
+  color: var(--fg);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
+  scroll-margin-top: 6rem;
+}
+
+.prose h1 {
+  font-size: 2rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  padding-bottom: 0.4em;
+  border-bottom: 1px solid var(--border);
+}
+
+.prose p {
+  margin-bottom: 1.5em;
+  line-height: 1.85;
+}
+
+.prose a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: opacity 0.2s ease;
+}
+
+.prose a:hover {
+  opacity: 0.75;
+}
+
+.prose blockquote {
+  margin: 2em 0;
+  padding: 1em 1.5em;
+  border-left: 3px solid var(--accent);
+  background-color: var(--surface);
+  border-radius: 0 0.5rem 0.5rem 0;
+  font-style: italic;
+  color: var(--muted);
+}
+
+.prose code {
+  background-color: var(--surface);
+  padding: 0.15em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  border: 1px solid var(--border);
+}
+
+.prose pre {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  overflow-x: auto;
+  margin: 1.75em 0;
+}
+
+.prose pre code {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.8em;
+}
+
+.prose img {
+  border-radius: 0.75rem;
+  border: 1px solid var(--border);
+  margin: 2em 0;
+}
+
+.prose ul,
+.prose ol {
+  padding-left: 1.75rem;
+  margin-bottom: 1.5em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 3em 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Range input */
+input[type='range'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--fg);
+  margin-top: -4.5px;
+  transition: transform 0.15s ease;
+}
+
+input[type='range']::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+input[type='range']::-moz-range-track {
+  height: 3px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+input[type='range']::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--fg);
+  border: none;
+}
+
+/* Language blocks: render both languages server-side, show only active one */
+[data-lang-block] {
+  display: none;
+}
+
+html[data-lang='zh'] [data-lang-block='zh'],
+html[data-lang='en'] [data-lang-block='en'] {
+  display: block;
+}

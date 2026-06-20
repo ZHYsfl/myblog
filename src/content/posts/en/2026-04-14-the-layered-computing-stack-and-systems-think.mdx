@@ -1,0 +1,28 @@
+---
+title: 'The Layered Computing Stack And Systems Thinking In The AI Era'
+date: 2026-04-14
+category: 'backend'
+tags: []
+lang: 'en'
+slug: 'the-layered-computing-stack-and-systems-think'
+translationOf: 'the-layered-computing-stack-and-systems-think'
+readingTime: 9
+description: ''
+---
+
+Lately I've been thinking deeply about the different technical layers of computing, and I believe these reflections are essential in the AI era. In the AI era, LLMs will "attack" from the top down — the higher the layer, the sooner it falls. Roughly speaking, the full computing stack can be modeled as a seven-layer OSI-style hierarchy. From top to bottom:
+
+- **L7 — Business Logic & Application** (languages: Python, TypeScript, etc.; representative tech: agent apps, web UIs; responsible for final value delivery)
+- **L6 — Data & Semantics** (languages: SQL logical-view layer, Python; representative tech: vector DBs, RDF; responsible for data modeling, knowledge-graph representation)
+- **L5 — Application Frameworks & Libraries** (languages: Python, TypeScript, C++; representative tech: PyTorch, CUDA, React, LangChain, Go-Gin; responsible for business abstraction, engineering toolchains, heterogeneous compute libraries)
+- **L4 — Runtime & Middleware** (languages: Go, Java, C++; representative tech: JVM, goroutines, Redis, WASM, Kafka; responsible for language runtimes, GC, concurrency primitives)
+- **L3 — Networking & Distributed Systems** (languages: Go, C++; representative tech: TCP/IP, RDMA, Kubernetes, RoCE; responsible for inter-node connectivity, consensus protocols, large-scale resource pooling)
+- **L2 — OS & Kernel** (languages: C, Rust; representative tech: Linux kernel, page tables; responsible for hardware abstraction, virtual memory isolation, concurrent scheduling)
+- **L1 — ISA & Architecture** (languages: assembly, C; representative tech: x86-64, ARMv9, RISC-V, ISAs; responsible for hardware/software interface, logical abstraction, machine-instruction definitions)
+- **L0 — Physical Hardware & Chips** (languages: Verilog, VHDL, SystemC; representative tech: FPGAs, GPUs, ASICs, transistors; responsible for handling physical signals, transistor switching, electronic circuits)
+
+The graduate students researching LLMs today are mostly aspiring to do work at L5, but with limited resources, they end up spending more than half their time wrestling with stuff between L2 and L4. For example, after implementing an algorithm on a constrained budget and hitting OOM, they're forced to study L4 concerns like model sharding and gradient accumulation, and may even have to dive down to L2 to write custom kernels.
+
+Today's grad students working in _embodied AI_ face an even taller ask than LLM researchers — they have to operate across L0 to L5. The ideal might be to RL-train a VLM at L5 so the robot understands human instructions and gently grasps an egg, but the reality is wading through a chaotic L0–L4 stack: at the L0 physical level, the algorithm might command too much torque and burn out a motor with smoke; at L2/L3, the robot might convulse, or hit ROS node-communication latency, forcing investigation into latency issues; at L4–L5, the gap between simulation environments and physical reality is itself headache enough.
+
+So the reality is: many people aspire to become superstars at L5/L7, but in practice spend most of their time on L0–L4. Pain points at the higher layers feed back to the lower layers and accelerate the progress of low-level infra. Tricks confined to the higher layers will, in the end, never escape the constraints of the lower ones. The lower the layer, the more _physical_ it is, and the harder it is for LLMs to conquer. And even on the day they do conquer it, what matters most for humans is **context**: even if LLMs storm L0–L4, without the L0–L4 _context_ they cannot truly govern L0–L4. People who work at L0–L4 know not only the low-level context but also the high-level context (because the high level is built _out of_ the low level — learning bottom-up is decisive; learning top-down hits walls everywhere). When LLMs conquer L0–L4, those people will use LLMs to accelerate L0–L4 improvements, and at any moment they can reach back up to L5–L7 for rapid development. _That_ is the appeal of systems work. All things return to one root: don't let pain points at L2 derail your development at L5.
