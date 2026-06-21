@@ -51,7 +51,7 @@ for (let i = rest.length - 1; i > 0; i--) {
 }
 
 const final = [first, second, ...rest];
-fs.writeFileSync('src/data/songs.json', JSON.stringify(final, null, 2), 'utf8');
+fs.writeFileSync('src/data/songs.json', JSON.stringify(final, null, 2) + '\n', 'utf8');
 
 // eslint-disable-next-line no-console
 console.log(`Removed ${removed.length}: ${removed.map((s) => s.title).join(', ')}`);

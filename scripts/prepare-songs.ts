@@ -62,7 +62,7 @@ function main(): void {
   }
 
   songs.sort((a, b) => a.title.localeCompare(b.title, 'zh-CN'));
-  fs.writeFileSync(path.join(DATA, 'songs.json'), JSON.stringify(songs, null, 2), 'utf-8');
+  fs.writeFileSync(path.join(DATA, 'songs.json'), JSON.stringify(songs, null, 2) + '\n', 'utf-8');
   // eslint-disable-next-line no-console
   console.log(`Prepared ${songs.length} songs.`);
 }
