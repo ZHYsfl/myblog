@@ -1,15 +1,3 @@
----
-title: 'A Brief History Of Neural Network Architectures And The Future Of Agent Thinking Structures'
-date: 2026-06-21
-category: 'ai-theory'
-tags: ['Neural Network', 'Agent Architecture', 'JEPA']
-lang: 'en'
-slug: 'a-brief-history-of-neural-network-architectur'
-translationOf: 'a-brief-history-of-neural-network-architectur'
-readingTime: 4
-description: ''
----
-
 【【English Subs】Foreign Creator Explores Whether JEPA Can Surpass LLMs — Bilibili】 https://b23.tv/pl5sRAt
 
 I stumbled upon this video by chance and think it's one of the highest quality ones I've ever watched. In just half an hour, it carries the entire history of neural networks [thumbs up]. If you plan to reproduce all of these works one by one, your understanding of neural networks will definitely deepen significantly!
@@ -18,4 +6,4 @@ On a related note about architecture design: neural network architecture design 
 
 I feel that most people are still fixated on the macro-level cycle of "Reasoning → Action → Observation" within React, and are massively building applications on top of it. But I think that once development hits a bottleneck, people will once again turn their energy toward **the architecture of Agent thinking**. At that point, the ceiling for Agents will be far higher than most React-based Agents today. React has already exposed its limitations on long-horizon tasks. I believe we may need to break a mental habit: **models don't necessarily have to follow the current set of Agent protocols and thinking patterns**. Perhaps by designing thinking structures more effective than React, the upper bound of Agents will be much higher.
 
-![image-20260621213632010.png](/assets/posts/a-brief-history-of-neural-network-architectur/image-20260621213632010.png)
+![image-20260621213632010](./260621-A-Brief-History-of-Neural-Network-Architectures-and-the-Future-of-Agent-Thinking-Structures.assets/image-20260621213632010.png)

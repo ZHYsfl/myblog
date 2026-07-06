@@ -51,6 +51,15 @@ const CATEGORY_MAP: Record<string, string> = {
   '260526': 'ai-infra',
   '260601': 'backend',
   '260609': 'ai-theory',
+  '260621-神经网络架构简史与Agent思维架构的未来': 'ai-theory',
+  '260621-给Ubuntu分区还给了D盘：一年后的开发环境选择': 'backend',
+  '260626-篮球场上的芳芳阿姨': 'social',
+  '260630-OpenAI-SDK已自动注入工具Schema': 'ai-infra',
+  '260621-A-Brief-History-of-Neural-Network-Architectures-and-the-Future-of-Agent-Thinking-Structures':
+    'ai-theory',
+  '260621-Returning-Ubuntu-Partitions-to-D-Drive-A-Year-of-Dev-Setup-Evolution': 'backend',
+  '260626-Aunt-Fangfang-on-the-Basketball-Court': 'social',
+  '260630-OpenAI-SDK-Automatically-Injects-Tool-Schema': 'ai-infra',
   和学弟的AI学习建议对话: 'learning',
 };
 
@@ -61,6 +70,32 @@ const TAGS_MAP: Record<string, string[]> = {
   '260209': ['Uncertainty', 'Determinism', 'Cognitive Shift'],
   '260511': ['Claude Code', 'Bug', 'Agent Infra'],
   '260601': ['Engineering', 'Vibe Coding', 'Open-Closed Principle'],
+  '260621-神经网络架构简史与Agent思维架构的未来': ['Neural Network', 'Agent Architecture', 'JEPA'],
+  '260621-给Ubuntu分区还给了D盘：一年后的开发环境选择': ['WSL', 'Ubuntu', 'Dev Environment'],
+  '260626-篮球场上的芳芳阿姨': ['Memory', 'Basketball', 'People'],
+  '260630-OpenAI-SDK已自动注入工具Schema': ['OpenAI SDK', 'Tool Schema', 'Context Engineering'],
+  '260621-A-Brief-History-of-Neural-Network-Architectures-and-the-Future-of-Agent-Thinking-Structures':
+    ['Neural Network', 'Agent Architecture', 'JEPA'],
+  '260621-Returning-Ubuntu-Partitions-to-D-Drive-A-Year-of-Dev-Setup-Evolution': [
+    'WSL',
+    'Ubuntu',
+    'Dev Environment',
+  ],
+  '260626-Aunt-Fangfang-on-the-Basketball-Court': ['Memory', 'Basketball', 'People'],
+  '260630-OpenAI-SDK-Automatically-Injects-Tool-Schema': [
+    'OpenAI SDK',
+    'Tool Schema',
+    'Context Engineering',
+  ],
+};
+
+const TRANSLATION_PAIRS: Record<string, string> = {
+  '260621-神经网络架构简史与Agent思维架构的未来':
+    '260621-A-Brief-History-of-Neural-Network-Architectures-and-the-Future-of-Agent-Thinking-Structures',
+  '260621-给Ubuntu分区还给了D盘：一年后的开发环境选择':
+    '260621-Returning-Ubuntu-Partitions-to-D-Drive-A-Year-of-Dev-Setup-Evolution',
+  '260626-篮球场上的芳芳阿姨': '260626-Aunt-Fangfang-on-the-Basketball-Court',
+  '260630-OpenAI-SDK已自动注入工具Schema': '260630-OpenAI-SDK-Automatically-Injects-Tool-Schema',
 };
 
 const DATE_OVERRIDES: Record<string, string> = {
@@ -70,6 +105,9 @@ const DATE_OVERRIDES: Record<string, string> = {
 const SPECIAL_SLUGS: Record<string, string> = {
   '260220': 'reflections-tairan-weng-jiayi',
   '260221': 'reflections-tairan-weng-jiayi',
+  '260621-神经网络架构简史与Agent思维架构的未来': 'a-brief-history-of-neural-network-architectur',
+  '260621-给Ubuntu分区还给了D盘：一年后的开发环境选择':
+    'returning-ubuntu-partitions-to-d-drive-a-year',
   和学弟的AI学习建议对话: 'ai-learning-advice-dialogue',
 };
 
@@ -184,8 +222,8 @@ function processSource(dir: string, lang: 'zh' | 'en'): SourceFile[] {
     const key = path.basename(file, '.md');
     const dateKey = key.match(/^(\d{6})-/)?.[1] ?? key;
     const date = parseDate(file) ?? '2025-12-31';
-    const category = CATEGORY_MAP[dateKey] ?? 'ai-infra';
-    const tags = TAGS_MAP[dateKey] ?? [];
+    const category = CATEGORY_MAP[key] ?? CATEGORY_MAP[dateKey] ?? 'ai-infra';
+    const tags = TAGS_MAP[key] ?? TAGS_MAP[dateKey] ?? [];
     const assetDir = discoverAssetDir(full);
     results.push({ file: full, date, title, category, tags, lang, body: raw, assetDir });
   }
@@ -243,15 +281,19 @@ function main(): void {
   const enPosts = processSource(SRC_EN, 'en');
 
   const enByDate = new Map(enPosts.map((p) => [p.date, p]));
+  const enByFile = new Map(enPosts.map((p) => [path.basename(p.file, '.md'), p]));
   const manual: string[] = [];
   const success: string[] = [];
 
   for (const zh of zhPosts) {
-    const dateKey =
-      path.basename(zh.file, '.md').match(/^(\d{6})-/)?.[1] ?? path.basename(zh.file, '.md');
-    let slug = SPECIAL_SLUGS[dateKey];
+    const key = path.basename(zh.file, '.md');
+    const dateKey = key.match(/^(\d{6})-/)?.[1] ?? key;
+    let slug = SPECIAL_SLUGS[key] ?? SPECIAL_SLUGS[dateKey];
+
+    const enKey = TRANSLATION_PAIRS[key];
+    const en = enKey ? (enByFile.get(enKey) ?? enByDate.get(zh.date)) : enByDate.get(zh.date);
+
     if (!slug) {
-      const en = enByDate.get(zh.date);
       const base = en ? extractTitle(en.body, en.file, 'en') : zh.title;
       slug = slugifyEn(base.replace(/[:?]/g, ''));
     }
@@ -262,7 +304,6 @@ function main(): void {
       continue;
     }
 
-    const en = enByDate.get(zh.date);
     writePost(zh, slug, en ? slug : undefined);
     copyAssets(zh, slug);
     success.push(`zh: ${slug}`);
@@ -272,13 +313,17 @@ function main(): void {
       copyAssets(en, slug);
       success.push(`en: ${slug}`);
       enByDate.delete(zh.date);
+      enByFile.delete(path.basename(en.file, '.md'));
     }
   }
 
   for (const en of enByDate.values()) {
-    const dateKey =
-      path.basename(en.file, '.md').match(/^(\d{6})-/)?.[1] ?? path.basename(en.file, '.md');
-    let slug = SPECIAL_SLUGS[dateKey] ?? slugifyEn(extractTitle(en.body, en.file, 'en'));
+    const key = path.basename(en.file, '.md');
+    const dateKey = key.match(/^(\d{6})-/)?.[1] ?? key;
+    let slug =
+      SPECIAL_SLUGS[key] ??
+      SPECIAL_SLUGS[dateKey] ??
+      slugifyEn(extractTitle(en.body, en.file, 'en'));
     if (!slug) slug = dateKey;
     writePost(en, slug);
     copyAssets(en, slug);
