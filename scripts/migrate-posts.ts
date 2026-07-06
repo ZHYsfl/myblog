@@ -64,12 +64,36 @@ const CATEGORY_MAP: Record<string, string> = {
 };
 
 const TAGS_MAP: Record<string, string[]> = {
+  '251123': ['Zeitgeist', 'Society', 'Cognitive Shift'],
+  '251205': ['World Model', 'Agent', 'Intelligence'],
+  '251227': ['Year in Review', 'Personal Growth', 'Mindset'],
   '251229': ['Cognitive Core', 'World Model', 'LLM'],
+  '251231': ['Learning', 'Source Code', 'Open Source'],
+  '260116': ['Niche', 'Differentiation', 'AI Amplifier'],
+  '260122': ['Community', 'Networking', 'Sharing'],
   '260128': ['Agent', 'Context Engineering', 'Evaluation'],
   '260130': ['Attention', 'Opus 4.5', 'Programming'],
+  '260201': ['Python', 'Go', 'Backend'],
+  '260204': ['Mental Models', 'Values', 'Personal Growth'],
   '260209': ['Uncertainty', 'Determinism', 'Cognitive Shift'],
+  '260213': ['Human Nature', 'Character', 'Self-Improvement'],
+  '260220': ['Reflection', 'Determinism', 'Mental Models'],
+  '260221': ['Reflection', 'Determinism', 'Mental Models'],
+  '260307': ['Human Connection', 'Automation', 'Society'],
+  '260312': ['Multi-Agent', 'Human Connection', 'Tech Devaluation'],
+  '260325': ['Deliberate Socializing', 'Networking', 'Information Ecosystem'],
+  '260327': ['Deep Conversation', 'Networking', 'Information Ecosystem'],
+  '260329': ['Cloud', 'Server', 'Bug'],
+  '260414': ['Full Stack', 'Systems Thinking', 'LLM'],
+  '260418': ['Harness', 'Claude Code', 'Model Vendors'],
+  '260420': ['Trade-offs', 'Success', 'Life'],
+  '260429': ['Self-Improvement', 'Gender Relations', 'Masculinity'],
+  '260430': ['Venture Capital', 'AI Screening', 'Startup'],
   '260511': ['Claude Code', 'Bug', 'Agent Infra'],
+  '260522': ['Teamwork', 'Vibe Coding', 'Cognitive Shift'],
+  '260526': ['Agent Infra', 'Bug', 'API'],
   '260601': ['Engineering', 'Vibe Coding', 'Open-Closed Principle'],
+  '260609': ['Vibe Coding', 'Evaluation', 'Agent'],
   '260621-神经网络架构简史与Agent思维架构的未来': ['Neural Network', 'Agent Architecture', 'JEPA'],
   '260621-给Ubuntu分区还给了D盘：一年后的开发环境选择': ['WSL', 'Ubuntu', 'Dev Environment'],
   '260626-篮球场上的芳芳阿姨': ['Memory', 'Basketball', 'People'],
@@ -87,6 +111,7 @@ const TAGS_MAP: Record<string, string[]> = {
     'Tool Schema',
     'Context Engineering',
   ],
+  和学弟的AI学习建议对话: ['Learning', 'Source Code', 'Open Source'],
 };
 
 const TRANSLATION_PAIRS: Record<string, string> = {
@@ -124,14 +149,14 @@ function parseDate(file: string): string | null {
 function extractTitle(content: string, file: string, lang: 'zh' | 'en'): string {
   const heading = content.match(/^#{1,3}\s+(.+)$/m);
   if (heading) return heading[1].trim();
+  const stem = path.basename(file, '.md').replace(/^\d{6}-/, '');
   if (lang === 'en') {
-    const stem = path.basename(file, '.md').replace(/^\d{6}-/, '');
     return stem
       .replace(/-/g, ' ')
       .replace(/\b\w/g, (c) => c.toUpperCase())
       .replace(/\$dxdt\$/g, 'dx/dt');
   }
-  return 'Untitled';
+  return stem || 'Untitled';
 }
 
 function slugifyEn(title: string): string {

@@ -1,5 +1,3 @@
-# OpenAI SDK 已自动注入工具 Schema
-
 使用 LLM 的 OpenAI SDK 的时候，是否需要在系统提示词里大张旗鼓详细介绍工具的名称，参数等一系列配置，甚至把整个 tool 的 JSON Schema 全部打字显式放进 system prompt？答案是不用。
 
 这并不是说 system prompt 里没有 tool 的 JSON Schema，而是，OpenAI SDK 在我们使用 create 方法传入 tools 的时候就已经自动帮我们把 tools 的 JSON Schema append 到 system prompt 了，所以系统提示词最多只是自然语言介绍一下（甚至，完全不介绍也可以，JSON Schema 的 description 够用了）即可。
