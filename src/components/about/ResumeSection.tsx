@@ -92,8 +92,10 @@ const copy = {
     download: 'Download PDF',
     education: {
       title: 'Education',
-      school: 'Shanghai Jiao Tong University · School of AI · Direct PhD (AudioCC Lab / Prof. Zhang Wangyou)',
-      school2: 'Jilin University · Software College · Software Engineering, B.E. (Sep 2023 — Jun 2027 expected)',
+      school:
+        'Shanghai Jiao Tong University · School of AI · Direct PhD (AudioCC Lab / Prof. Zhang Wangyou)',
+      school2:
+        'Jilin University · Software College · Software Engineering, B.E. (Sep 2023 — Jun 2027 expected)',
       gpa: 'GPA 3.79 / 4.0, top 4.94% of major (18 / 364), CET-6 549.',
       math: 'Core courses: Machine Learning 96.4; Linear Algebra 98.1; College Physics 97.2; Algorithm Design & Analysis 94.5.',
       cs: 'Probability 94.8; Data Structures (machine exam) 100; Calculus avg. 91.8.',
