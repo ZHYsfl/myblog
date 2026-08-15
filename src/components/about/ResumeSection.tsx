@@ -6,73 +6,76 @@ const copy = {
     download: '下载 PDF',
     education: {
       title: '教育背景',
-      school: '吉林大学软件学院 · 2023 级本科生（大三）',
-      gpa: '绩点 3.79/4，专业排名前 5%，英语六级 549 分。',
-      math: '数理基础：线性代数 98.1、微积分三学期均分 91.8、概率论 94.8、大学物理 97.2。',
-      cs: '算法与理论：算法设计与分析 94.5、数据结构期末 91 / 机考 100、机器学习 96.4。',
-      summary: '具备扎实的数理基础、强化学习理论，以及大模型 SFT/RL 多卡微调实践经验。',
+      school: '上海交通大学 · 人工智能学院 · 直博生（AudioCC Lab / 张王优老师）',
+      school2: '吉林大学 · 软件学院 · 软件工程 · 本科（2023.09 — 2027.06 预计）',
+      gpa: 'GPA 3.79 / 4.0，专业前 4.94%（18 / 364），英语六级 549 分。',
+      math: '核心课程：机器学习 96.4；线性代数 98.1；大学物理 97.2；算法设计与分析 94.5。',
+      cs: '概率论 94.8；数据结构期末机考 100；微积分三学期均分 91.8。',
+      summary:
+        '直博方向：语音智能体与语音 Benchmark 构建。具备扎实的数理基础、强化学习理论，以及大模型 SFT / RL 多卡微调实践经验。',
     },
     research: {
       title: '科研与项目经历',
       items: [
         {
-          date: '2025.03 — 2025.06',
-          body: `作为队长带领团队参加<strong>中国大学生服务外包创新创业大赛</strong>，做 Voice Agent 方向，赴青岛现场答辩，获得<strong>国家级三等奖</strong>。`,
+          title: 'AudioCC Lab — 语音智能体研究',
+          date: '2026.08 — 至今',
+          sub: '拟录取直博生 · 张王优老师 · 上海交通大学人工智能学院 · 进行中',
+          body: `聚焦交互场景语音 Benchmark 构建，评估语音 LLM / Omni 大模型的推理与理解能力，为语音智能体系统奠定评测基础。<br />结合 AudioCC Lab 在音频内容计算的积累，探索语音智能体在复杂声音场景下的感知、推理与行动机制。`,
         },
         {
-          date: '2025.07',
-          body: `自学 React、MCP、A2A、RAG 等技术，智能体学习笔记接近 <strong>500 页</strong>，为后续多智能体系统开发打下基础。`,
+          title: 'SCRIBE — Agentic RL 长循环训练范式研究',
+          date: '2026.04 — 2026.08',
+          sub: '研究助理 · 冯二虎老师',
+          body: `面向 Agentic RL 与 Loop Engineering，提出 <strong>ReAct + Reflect + Summarize</strong> 三阶段显式训练范式，让 Agent 在多轮循环中沉淀可复用的反思与总结能力。<br />设计 <strong>Turn / Step / Token 三级信用分配</strong>机制，将 GRPO 轨迹级优势逐层分解到每个生成 token，解决长循环训练中的 credit assignment 问题。<br />构建面向 Agentic RL 的 <strong>13 维多维度奖励体系</strong>（格式正确性、摘要忠实度、方向中立性、token 复用率等），抑制 reward hacking 并稳定训练信号。<br />完成数据格式、历史压缩策略与 SFT / RL 训练 pipeline 设计，支撑在真实 Agent 任务上的端到端训练实验。`,
         },
         {
-          date: '2025.08',
-          body: `担任组长参加<strong>中关村 AI Agents vibe coding 黑客松线下训练营</strong>，5 天内探索 Voice Agent 与 computer use agent 的实时交互机制，项目因团队管理与答辩展示获训练营导师刘俊明老师和 Pine AI CTO 李博杰老师的<strong>特别表彰</strong>。`,
-        },
-        {
-          date: '2025.09 — 2026.01',
-          body: `<strong>强化学习与 Agentic RL</strong>：系统学习 DQN、PPO、GRPO 等算法，深入研读 CleanRL 项目的 DQN / PPO 源码，并基于 Python "显式优于隐式" 的哲学向 CleanRL 提交 PR（#535），优化张量重塑的一致性处理。这段经历建立了"通过阅读优秀源码快速掌握前沿算法"的科研学习方法论。`,
-        },
-        {
-          date: '2025.09 — 2026.01',
-          body: `<strong>生成式重排序算法簇</strong>：本想做一个数学建模自进化 Agent，在设计自进化机制时创新了一套基于 pairwise 的生成式重排序算法簇。与团队在本校王琪老师指导下，自行构建数据集，在 AutoDL 上投入近万元，用 4 张 A800 进行 SFT 与 RL 微调。虽然最终在 BRIGHT Benchmark 上效果未达预期，但通过数学推导发现算法存在固有局限，这让我深刻认识到：做科研需要严谨的数学理论验证，也要充分调研。`,
-        },
-        {
+          title: 'AgentGenesis — 智能体学习与评测平台',
           date: '2026.02 — 至今',
-          body: `组建跨校团队（山东大学、北京师范大学、吉林大学、太原理工大学）开发<strong>AgentGenesis</strong>——一个智能体学习与评测平台。平台支持单 Agent / 多 Agent 实时交互评测，设计了三层渐进式评测协议，基于 gRPC 与 Docker 实现 OS 级多 Agent 隔离评测。项目已开源：<a href="https://github.com/ZHYsfl/AgentGenesis" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">GitHub</a>。在这个过程中，我逐渐形成对 Agent 机制的理解：LLM 驱动的 Agent 本质是强化学习，即 LLM 与 Environment 的交互；多 Agent 协同本质是每个 Agent 环境的交互（上下文工程）。`,
+          sub: '负责人 · 跨校团队（山大 / 北师大 / 吉大 / 太原理工）· 开源 · 已上线 PyPI',
+          body: `针对当前智能体评测环境碎片化、标准不统一的问题，设计并实现 <strong>三层渐进式评测协议</strong>（L1 单 Agent 循环、L2 同沙箱多 Agent 编排、L3 跨沙箱连接原语），统一单 / 多 Agent 评测标准。<br />后端采用 <strong>Go + gRPC + Docker</strong> 架构，实现 OS 级多 Agent 隔离评测，支持 <strong>22+ 评测任务</strong>的并发多测点执行。<br />设计 Adapter 模式解耦题目 API 与核心运行时，新增评测任务仅需更新适配器，无需改动调度引擎。<br />代码开源并采用 GitHub Flow 进行跨校协作开发。`,
         },
         {
+          title: 'EducationAgent — 语音多智能体实时协作系统',
           date: '2026.03 — 2026.05',
-          body: `<strong>EducationAgent</strong>：学院实践课项目，带领同学做了一个 VoiceAgent + PPTAgent 异步协作运行的系统，用户只需说话即可完成 PPT 制作与实时修改。选型 Go 语言，实现 InteractiveReact、observation / thinking / action 顺序动态调整，做到人与 VoiceAgent 的低延迟交互与边听边想、边想边说。项目地址：<a href="https://github.com/ZHYsfl/EducationAgent" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">GitHub</a>。`,
+          sub: '负责人 · 学院实践课项目 · 开源',
+          body: `独立设计 <strong>VoiceAgent + PPTAgent 异步协作架构</strong>，选用 Go 语言实现高并发低延迟的实时交互系统。<br />突破传统固定顺序执行范式，实现 Observation / Thinking / Action <strong>动态编排</strong>，支持"边听边想"的流式交互。<br />设计专用通信协议实现双 Agent <strong>完全异步协作</strong>，提升语音智能体与 PPT 智能体之间的实时协同效率。`,
         },
         {
+          title: 'ToolCallingGo — Go 语言 Agent 工具框架',
           date: '2026.03 — 2026.04',
-          body: `<strong>ToolCallingGo</strong>：为团队写了一个 Go 语言的轻量级 Agent 框架，支持多 Agent 并行与工具调用并行的双层并行机制，包含错误重试与并行工具调用的级联终止机制。项目地址：<a href="https://github.com/ZHYsfl/tool-calling-go" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">GitHub</a>。`,
+          sub: '独立开发 · 开源',
+          body: `针对 Go 生态 Agent 工具链薄弱的问题，独立开发轻量级 Agent SDK（基于 openai-go/v3）。<br />实现 <strong>双层并行机制</strong>：单 Agent 内多工具并行调用 + 多 Agent 会话级并行（Batch / BatchRace）。<br />内置级联终止、错误重试、事件流观测等可靠性机制，提供完整的调试与可观测性支持。`,
+        },
+        {
+          title: '生成式重排序算法研究',
+          date: '2025.09 — 2026.01',
+          body: `从数学建模 Agent 研究转向，创新提出基于 <strong>Pairwise 的生成式重排序算法簇</strong>。<br />独立构建评测数据集，在 AutoDL <strong>4×A800</strong> 上完成 SFT 与 RL 全流程微调。<br />在 BRIGHT Benchmark 上完成系统评测；通过实验与数学推导发现算法固有局限，形成完整的科研闭环。`,
         },
       ],
     },
     honors: {
-      title: '荣誉与经历',
+      title: '竞赛与荣誉',
       items: [
-        '中国大学生服务外包创新创业大赛国家级三等奖（队长）',
-        '中关村 AI Agents vibe coding 黑客松训练营特别表彰（组长）',
-        'CleanRL 开源项目贡献 PR #535：优化张量重塑一致性处理',
+        '中国大学生服务外包创新创业大赛 · 全国三等奖（2025.06）——队长，Voice Agent 方向，赴青岛现场答辩',
+        '中关村 AI Agents Vibe Coding 黑客松 · 特别表彰（2025.07）——组长，获刘俊明老师与 Pine AI CTO 李博杰老师特别表彰',
+        'CleanRL 开源贡献 PR #535（2026.01）——改进 cleanrl_utils/buffers.py 张量重塑一致性处理',
       ],
     },
     skills: {
-      title: '技能与工程能力',
+      title: '专业技能',
       items: [
-        'Python / Go 全栈开发，熟悉 Agent 系统、高并发架构与通信协议设计。',
-        '强化学习（DQN / PPO / GRPO）、LLM SFT/RL 微调、多卡训练与数据集构建。',
-        '重视代码 review、测试与工程规范；GitHub 过去一年 1000+ 次 commit。',
-        '能独立完成从架构设计到部署上线的完整流程，具备跨校团队管理经验。',
+        '系统开发：精通 Go / Python；熟悉 gRPC、Docker、并发编程；具备从架构设计到部署上线的全栈工程能力。',
+        'AI 与 Agent：深入理解 Multi-Agent 通信协议、Tool Calling、RAG、MCP；具备大模型 SFT / RL 微调实战经验（Unsloth、AutoDL 多卡训练）。',
+        '工程素养：注重代码 review 与测试，长期践行 Vibe Coding + 文档驱动 + 人工 review 的开发模式；具备开源协作与跨校团队管理经验。',
       ],
     },
     traits: {
-      title: '核心特质',
+      title: '个人特质',
       items: [
-        '崇尚努力至上，本科两年半在吉林大学鼎新图书馆学习 800 余次。',
-        '习惯从失败实验中反思总结，持续改进研究方法与 research taste。',
-        '性格开朗、沟通能力强，认为科研既是脑力劳动，也需要高质量的社交反馈。',
-        '抗压能力好，愿意面对有挑战性的问题，把挫折当作成长机会。',
+        '自驱型学习者：吉林大学鼎新图书馆打卡 800+ 次；完成强化学习 44 页手写笔记、机器学习 70 页手写及电子笔记；GitHub 过去一年 1.5k+ 次 commit。',
+        '团队领导力：大学期间所有项目均担任队长 / 负责人，曾为跨校团队成员开展 Git 协作培训，规范 GitHub Flow 开发流程。',
+        '抗压与解决问题能力：在科研探索中经历多次方向调整与失败实验，能够从中提炼方法论并持续改进。',
       ],
     },
     contact: {
@@ -89,74 +92,76 @@ const copy = {
     download: 'Download PDF',
     education: {
       title: 'Education',
-      school: 'Jilin University, Software College · Class of 2023 (Junior)',
-      gpa: 'GPA 3.79/4, top 5% of major, CET-6 549.',
-      math: 'Math & Physics: Linear Algebra 98.1, Calculus avg. 91.8, Probability 94.8, College Physics 97.2.',
-      cs: 'Algorithms & Theory: Algorithm Design & Analysis 94.5, Data Structures final 91 / lab 100, Machine Learning 96.4.',
+      school: 'Shanghai Jiao Tong University · School of AI · Direct PhD (AudioCC Lab / Prof. Zhang Wangyou)',
+      school2: 'Jilin University · Software College · Software Engineering, B.E. (Sep 2023 — Jun 2027 expected)',
+      gpa: 'GPA 3.79 / 4.0, top 4.94% of major (18 / 364), CET-6 549.',
+      math: 'Core courses: Machine Learning 96.4; Linear Algebra 98.1; College Physics 97.2; Algorithm Design & Analysis 94.5.',
+      cs: 'Probability 94.8; Data Structures (machine exam) 100; Calculus avg. 91.8.',
       summary:
-        'Solid foundation in mathematics, reinforcement learning theory, and hands-on LLM SFT/RL multi-GPU fine-tuning.',
+        'Direct PhD focus: voice agents and voice benchmark construction. Solid math foundation, reinforcement learning theory, and hands-on LLM SFT / RL multi-GPU fine-tuning experience.',
     },
     research: {
       title: 'Research & Projects',
       items: [
         {
-          date: 'Mar — Jun 2025',
-          body: `Led a team in the <strong>China College Students Service Outsourcing Innovation & Entrepreneurship Competition</strong> on Voice Agent, won <strong>National Third Prize</strong> after on-site defense in Qingdao.`,
+          title: 'AudioCC Lab — Voice Agent Research',
+          date: 'Aug 2026 — Present',
+          sub: 'Admitted direct PhD student · Prof. Zhang Wangyou · SJTU School of AI · In progress',
+          body: `Focusing on voice benchmark construction for interactive scenarios, evaluating the reasoning and understanding of voice LLMs / Omni models to lay the evaluation foundation for voice agent systems.<br />Building on AudioCC Lab's expertise in audio content computing to explore voice agents' perception, reasoning, and action in complex acoustic scenes.`,
         },
         {
-          date: 'Jul 2025',
-          body: `Self-studied React, MCP, A2A, and RAG; compiled nearly <strong>500 pages</strong> of agent notes, laying the groundwork for later multi-agent systems.`,
+          title: 'SCRIBE — Agentic RL Long-Horizon Training Paradigm',
+          date: 'Apr — Aug 2026',
+          sub: 'Research Assistant · Prof. Feng Erhu',
+          body: `Proposed a <strong>ReAct + Reflect + Summarize</strong> three-stage explicit training paradigm for Agentic RL and Loop Engineering, letting agents accumulate reusable reflection and summarization abilities across long loops.<br />Designed <strong>Turn / Step / Token three-level credit assignment</strong>, decomposing GRPO trajectory-level advantages down to each generated token to address long-horizon credit assignment.<br />Built a <strong>13-dimension reward system</strong> (format correctness, summary fidelity, direction neutrality, token reuse rate, etc.) to suppress reward hacking and stabilize training signals.<br />Completed data format, history compression, and SFT / RL training pipeline design, supporting end-to-end experiments on real agent tasks.`,
         },
         {
-          date: 'Aug 2025',
-          body: `Led a team at the <strong>Zhongguancun AI Agents vibe coding hackathon training camp</strong>. In five days we explored real-time interaction between Voice Agent and computer-use agent. The project received <strong>special recognition</strong> from mentor Liu Junming and Pine AI CTO Li Bojie for team management and presentation.`,
-        },
-        {
-          date: 'Sep 2025 — Jan 2026',
-          body: `<strong>Reinforcement Learning & Agentic RL</strong>: studied DQN, PPO, and GRPO in depth, read CleanRL's DQN/PPO source code, and contributed PR #535 to CleanRL optimizing tensor reshaping consistency. This established my research methodology: mastering frontier algorithms by reading high-quality source code.`,
-        },
-        {
-          date: 'Sep 2025 — Jan 2026',
-          body: `<strong>Generative reranking algorithm cluster</strong>: while trying to build a self-evolving math-modeling agent, I designed a pairwise-based generative reranking algorithm cluster. Under Prof. Wang Qi's guidance, my team built a dataset from scratch and spent nearly 10,000 RMB on AutoDL to SFT/RL fine-tune on 4×A800 GPUs. The final BRIGHT Benchmark results were underwhelming, but mathematical analysis revealed inherent limitations. This taught me that rigorous theoretical validation and thorough literature review are essential in research.`,
-        },
-        {
+          title: 'AgentGenesis — Agent Learning & Evaluation Platform',
           date: 'Feb 2026 — Present',
-          body: `Built a cross-university team (Shandong University, Beijing Normal University, Jilin University, Taiyuan University of Technology) to develop <strong>AgentGenesis</strong>, an agent learning & evaluation platform supporting single-agent and multi-agent real-time evaluation, a three-level progressive evaluation protocol, and OS-level isolated evaluation via gRPC and Docker. Open source: <a href="https://github.com/ZHYsfl/AgentGenesis" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">GitHub</a>. Through this work I came to see LLM-driven agents as reinforcement learning: an LLM interacting with an environment, where multi-agent collaboration is essentially context engineering across environments.`,
+          sub: 'Lead · cross-university team (SDU / BNU / JLU / TYUT) · Open source · Published on PyPI',
+          body: `Designed a <strong>three-level progressive evaluation protocol</strong> (L1 single-agent loop, L2 multi-agent orchestration in a shared sandbox, L3 cross-sandbox connection primitives) to unify single- / multi-agent evaluation standards.<br />Backend on <strong>Go + gRPC + Docker</strong> with OS-level multi-agent isolation, supporting <strong>22+ evaluation tasks</strong> with concurrent multi-checkpoint execution.<br />Adapter pattern decouples task APIs from the core runtime; adding a task only requires a new adapter, no changes to the scheduling engine.<br />Open-sourced with GitHub Flow for cross-university collaboration.`,
         },
         {
+          title: 'EducationAgent — Voice Multi-Agent Real-Time Collaboration System',
           date: 'Mar — May 2026',
-          body: `<strong>EducationAgent</strong>: a course project where I led classmates to build a VoiceAgent + PPTAgent async collaboration system. Users can create and edit PPTs by voice. We chose Go for its concurrency model, implemented InteractiveReact, dynamic observation / thinking / action ordering, and low-latency interaction with listen-think-speak. Project: <a href="https://github.com/ZHYsfl/EducationAgent" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">GitHub</a>.`,
+          sub: 'Lead · school practice course · Open source',
+          body: `Independently designed a <strong>VoiceAgent + PPTAgent async collaboration architecture</strong> in Go for high-concurrency, low-latency real-time interaction.<br />Broke the fixed sequential execution paradigm with <strong>dynamic Observation / Thinking / Action orchestration</strong>, enabling "listen-while-thinking" streaming interaction.<br />Custom communication protocol for <strong>fully asynchronous dual-agent collaboration</strong>, improving real-time coordination between the voice and PPT agents.`,
         },
         {
+          title: 'ToolCallingGo — Go Agent Tool Framework',
           date: 'Mar — Apr 2026',
-          body: `<strong>ToolCallingGo</strong>: a lightweight Go agent framework I wrote for the team, supporting two-level parallelism (multi-agent + multi-tool), error retry, and cascade termination for parallel tool calls. Project: <a href="https://github.com/ZHYsfl/tool-calling-go" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">GitHub</a>.`,
+          sub: 'Solo developer · Open source',
+          body: `Built a lightweight Agent SDK for Go's weak agent toolchain (based on openai-go/v3).<br /><strong>Two-level parallelism</strong>: multi-tool parallel calls within one agent + session-level multi-agent parallelism (Batch / BatchRace).<br />Built-in cascade termination, error retry, and event-stream observability for complete debugging and monitoring support.`,
+        },
+        {
+          title: 'Generative Reranking Algorithm Research',
+          date: 'Sep 2025 — Jan 2026',
+          body: `Pivoted from a math-modeling agent to an innovative <strong>pairwise-based generative reranking algorithm cluster</strong>.<br />Built the evaluation dataset independently; full SFT & RL fine-tuning on <strong>4×A800</strong> (AutoDL).<br />Systematic evaluation on BRIGHT Benchmark; identified inherent limitations through experiments and mathematical derivation — a complete research loop.`,
         },
       ],
     },
     honors: {
       title: 'Honors & Experience',
       items: [
-        'National Third Prize, China College Students Service Outsourcing Innovation & Entrepreneurship Competition (team leader)',
-        'Special recognition, Zhongguancun AI Agents vibe coding hackathon training camp (team leader)',
-        'CleanRL open-source contribution PR #535: tensor reshaping consistency optimization',
+        'National Third Prize, China College Students Service Outsourcing Innovation & Entrepreneurship Competition (Jun 2025) — team leader, Voice Agent, on-site defense in Qingdao',
+        'Special recognition, Zhongguancun AI Agents Vibe Coding Hackathon (Jul 2025) — team leader, recognized by mentor Liu Junming and Pine AI CTO Li Bojie',
+        'CleanRL open-source contribution PR #535 (Jan 2026) — improved tensor reshaping consistency in cleanrl_utils/buffers.py',
       ],
     },
     skills: {
       title: 'Skills & Engineering',
       items: [
-        'Python / Go full-stack development; agent systems, concurrency, and protocol design.',
-        'Reinforcement learning (DQN / PPO / GRPO), LLM SFT/RL fine-tuning, multi-GPU training, and dataset construction.',
-        'Strong focus on code review, testing, and engineering discipline; 1,000+ GitHub commits in the past year.',
-        'Able to take projects from architecture to deployment; experienced in cross-university team management.',
+        'Systems: proficient in Go / Python; familiar with gRPC, Docker, concurrency; full-stack capability from architecture design to deployment.',
+        'AI & Agents: deep understanding of multi-agent communication protocols, tool calling, RAG, MCP; hands-on LLM SFT / RL fine-tuning (Unsloth, multi-GPU AutoDL).',
+        'Engineering: code review and testing; long-term Vibe Coding + documentation-driven + human-review workflow; open-source collaboration and cross-university team management.',
       ],
     },
     traits: {
       title: 'Core Traits',
       items: [
-        'Believes in hard work: studied at Jilin University Dingxin Library more than 800 times in two and a half years.',
-        'Reflects on failed experiments to refine methodology and research taste.',
-        'Outgoing and communicative; sees research as both intellectual work and a social activity requiring feedback.',
-        'Resilient under pressure; treats setbacks as opportunities to grow.',
+        'Self-driven learner: 800+ check-ins at Jilin University Dingxin Library; 44 pages of handwritten RL notes, 70 pages of handwritten & digital ML notes; 1.5k+ GitHub commits in the past year.',
+        'Team leadership: led every university project as captain / lead; trained cross-university teammates in Git collaboration and GitHub Flow.',
+        'Resilience & problem solving: navigated multiple direction changes and failed experiments in research, distilling methodology and improving continuously.',
       ],
     },
     contact: {
@@ -220,6 +225,7 @@ export function ResumeSection() {
           <h3 className="mb-4 font-serif text-xl font-semibold text-fg">{t.education.title}</h3>
           <div className="space-y-2 leading-relaxed text-muted">
             <p className="text-fg">{t.education.school}</p>
+            <p className="text-fg">{t.education.school2}</p>
             <p>{t.education.gpa}</p>
             <p>{t.education.math}</p>
             <p>{t.education.cs}</p>
@@ -234,7 +240,9 @@ export function ResumeSection() {
             {t.research.items.map((item, i) => (
               <div key={i} className="relative">
                 <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-bg"></span>
-                <p className="mb-2 text-sm font-medium text-accent">{item.date}</p>
+                {item.title && <p className="mb-1 font-medium text-fg">{item.title}</p>}
+                <p className="mb-1 text-sm font-medium text-accent">{item.date}</p>
+                {item.sub && <p className="mb-2 text-sm italic text-muted">{item.sub}</p>}
                 <p
                   className="leading-relaxed text-muted"
                   dangerouslySetInnerHTML={{ __html: item.body }}

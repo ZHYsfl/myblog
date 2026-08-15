@@ -13,10 +13,10 @@ const copy = {
   zh: {
     aboutLabel: 'About',
     title: '关于我',
-    tagline: '一个相信工程纪律、第一性原理与真实世界实践的软件工程学生。',
-    intro1: `我叫<strong>周浩洋</strong>，吉林大学软件学院 2023 级学生。比起追逐热点，我更愿意把一个问题真正拆开，看它的源代码、边界条件和失败案例。`,
+    tagline: '一个相信工程纪律、第一性原理与真实世界实践的 AI 研究者与软件工程师。',
+    intro1: `我叫<strong>周浩洋</strong>，上海交通大学人工智能学院直博生（AudioCC Lab / 张王优老师），吉林大学软件学院本科。比起追逐热点，我更愿意把一个问题真正拆开，看它的源代码、边界条件和失败案例。`,
     intro2:
-      '我的兴趣在 AI Agents、AI Infra、Reinforcement Learning、World Model。但本质上，我在乎的是：如何把抽象的想法变成能跑、能测、能被理解的系统。这个博客是我的数字花园，记录技术、科研、生活、社交和创业里的真实思考。',
+      '我的兴趣在 Voice Agent、Agentic AI、Deep Learning、Speech Intelligence。但本质上，我在乎的是：如何把抽象的想法变成能跑、能测、能被理解的系统。这个博客是我的数字花园，记录技术、科研、生活、社交和创业里的真实思考。',
     believe: '我相信的',
     believeQuote: '外包记忆和部分思考，保留理解和部分思考。',
     believeText:
@@ -36,10 +36,10 @@ const copy = {
     aboutLabel: 'About',
     title: 'About Me',
     tagline:
-      'A software engineering student who believes in engineering discipline, first principles, and real-world practice.',
-    intro1: `My name is <strong>Haoyang Zhou</strong>, a student at the Software College of Jilin University (Class of 2023). Rather than chasing trends, I prefer to take a problem apart and look at its source code, edge cases, and failure modes.`,
+      'An AI researcher and software engineer who believes in engineering discipline, first principles, and real-world practice.',
+    intro1: `My name is <strong>Haoyang Zhou</strong>, a direct PhD student at the School of AI, Shanghai Jiao Tong University (AudioCC Lab / Prof. Zhang Wangyou), with my B.E. from the Software College of Jilin University. Rather than chasing trends, I prefer to take a problem apart and look at its source code, edge cases, and failure modes.`,
     intro2:
-      'My interests are in AI Agents, AI Infra, Reinforcement Learning, and World Model. But at the core, I care about turning abstract ideas into systems that run, can be tested, and can be understood. This blog is my digital garden, recording real thoughts on technology, research, life, social dynamics, and entrepreneurship.',
+      'My interests are in Voice Agent, Agentic AI, Deep Learning, and Speech Intelligence. But at the core, I care about turning abstract ideas into systems that run, can be tested, and can be understood. This blog is my digital garden, recording real thoughts on technology, research, life, social dynamics, and entrepreneurship.',
     believe: 'What I Believe',
     believeQuote:
       'Outsource memory and part of thinking; preserve understanding and part of thinking.',

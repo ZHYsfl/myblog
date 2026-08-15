@@ -25,7 +25,7 @@ export function Footer() {
             <p className="mt-1 max-w-xs text-sm leading-relaxed text-muted">
               {lang === 'zh'
                 ? SITE.description
-                : 'Outsource memory and part of thinking; preserve understanding and part of thinking. A digital garden for AI Agents, AI Infra, RL, and World Model.'}
+                : 'Outsource memory and part of thinking; preserve understanding and part of thinking. A digital garden for Voice Agent, Agentic AI, Deep Learning, and Speech Intelligence.'}
             </p>
           </div>
           <div className="flex items-center gap-6 text-sm text-muted">
