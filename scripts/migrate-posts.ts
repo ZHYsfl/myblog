@@ -33,7 +33,6 @@ const CATEGORY_MAP: Record<string, string> = {
   '260204': 'personal-growth',
   '260209': 'backend',
   '260213': 'personal-growth',
-  '260217': 'startup',
   '260220': 'learning',
   '260221': 'learning',
   '260307': 'social',
@@ -60,6 +59,10 @@ const CATEGORY_MAP: Record<string, string> = {
   '260621-Returning-Ubuntu-Partitions-to-D-Drive-A-Year-of-Dev-Setup-Evolution': 'backend',
   '260626-Aunt-Fangfang-on-the-Basketball-Court': 'social',
   '260630-OpenAI-SDK-Automatically-Injects-Tool-Schema': 'ai-infra',
+  '260729-VLA的核心思想架构与数据流图': 'ai-theory',
+  '260729-The-Core-Architecture-and-Data-Flow-of-VLA': 'ai-theory',
+  '260813-2026年暑假论坛实践总结': 'personal-growth',
+  '260813-2026-Summer-Forum-Training-Camp-Retrospective': 'personal-growth',
   和学弟的AI学习建议对话: 'learning',
 };
 
@@ -111,6 +114,34 @@ const TAGS_MAP: Record<string, string[]> = {
     'Tool Schema',
     'Context Engineering',
   ],
+  '260729-VLA的核心思想架构与数据流图': [
+    'VLA',
+    'Embodied AI',
+    'Agent Architecture',
+    '3D Gaussian',
+    'Flow Matching',
+  ],
+  '260729-The-Core-Architecture-and-Data-Flow-of-VLA': [
+    'VLA',
+    'Embodied AI',
+    'Agent Architecture',
+    '3D Gaussian',
+    'Flow Matching',
+  ],
+  '260813-2026年暑假论坛实践总结': [
+    'Summer Forum',
+    'Embodied AI',
+    'Agentic AI',
+    'Team Management',
+    'Social Connection',
+  ],
+  '260813-2026-Summer-Forum-Training-Camp-Retrospective': [
+    'Summer Forum',
+    'Embodied AI',
+    'Agentic AI',
+    'Team Management',
+    'Social Connection',
+  ],
   和学弟的AI学习建议对话: ['Learning', 'Source Code', 'Open Source'],
 };
 
@@ -121,6 +152,8 @@ const TRANSLATION_PAIRS: Record<string, string> = {
     '260621-Returning-Ubuntu-Partitions-to-D-Drive-A-Year-of-Dev-Setup-Evolution',
   '260626-篮球场上的芳芳阿姨': '260626-Aunt-Fangfang-on-the-Basketball-Court',
   '260630-OpenAI-SDK已自动注入工具Schema': '260630-OpenAI-SDK-Automatically-Injects-Tool-Schema',
+  '260729-VLA的核心思想架构与数据流图': '260729-The-Core-Architecture-and-Data-Flow-of-VLA',
+  '260813-2026年暑假论坛实践总结': '260813-2026-Summer-Forum-Training-Camp-Retrospective',
 };
 
 const DATE_OVERRIDES: Record<string, string> = {
@@ -213,28 +246,47 @@ function escapeMdx(body: string): string {
     .join('');
 }
 
-function rewriteImages(body: string, slug: string, assetDir: string | null): string {
+function getKnownAssets(assetDir: string | null): Set<string> {
   const known = new Set<string>();
   if (assetDir) {
-    for (const img of fs.readdirSync(assetDir)) {
-      if (['.png', '.jpg', '.jpeg', '.gif', '.webp'].includes(path.extname(img).toLowerCase())) {
-        known.add(img);
-      }
+    for (const file of fs.readdirSync(assetDir)) {
+      const full = path.join(assetDir, file);
+      if (fs.statSync(full).isFile()) known.add(file);
     }
   }
-  let result = body;
-  const imgPattern = /!\[[^\]]*\]\(([^)]+)\)/g;
-  let match: RegExpExecArray | null;
-  while ((match = imgPattern.exec(body)) !== null) {
-    const [full, src] = match;
+  return known;
+}
+
+function rewriteMarkdownImages(body: string, slug: string, known: Set<string>): string {
+  return body.replace(/!\[[^\]]*\]\(([^)]+)\)/g, (full, src) => {
     const name = path.basename(src);
-    if (known.has(name)) {
-      result = result.replace(full, `![${name}](/assets/posts/${slug}/${name})`);
-    } else {
-      result = result.replace(full, `<!-- missing image: ${name} -->`);
+    if (known.has(name)) return `![${name}](/assets/posts/${slug}/${name})`;
+    return `<!-- missing image: ${name} -->`;
+  });
+}
+
+function rewriteHtmlMediaSrc(body: string, slug: string, known: Set<string>): string {
+  const normalized = body.replace(/<img\b([^>]*)\/?>/gi, '<img$1 />');
+  return normalized.replace(
+    /(<(?:img|video)\b[^>]*?\s+src=["'])([^"']+)(["'][^>]*>)/gi,
+    (full, prefix, src, suffix) => {
+      const name = path.basename(src);
+      if (known.has(name)) return `${prefix}/assets/posts/${slug}/${name}${suffix}`;
+      return `${prefix}<!-- missing asset: ${name} -->${suffix}`;
     }
-  }
-  return result;
+  );
+}
+
+function preserveHtmlMedia(body: string): { body: string; blocks: Map<string, string> } {
+  const blocks = new Map<string, string>();
+  let counter = 0;
+  const pattern = /<(p|video)([^>]*)>[\s\S]*?<\/\1>|<img([^>]*)\/?>/gi;
+  const newBody = body.replace(pattern, (match) => {
+    const key = `__HTML_MEDIA_${counter++}__`;
+    blocks.set(key, match);
+    return key;
+  });
+  return { body: newBody, blocks };
 }
 
 function processSource(dir: string, lang: 'zh' | 'en'): SourceFile[] {
@@ -259,7 +311,17 @@ function writePost(post: SourceFile, slug: string, translationOf?: string): void
   const outDir = post.lang === 'zh' ? OUT_ZH : OUT_EN;
   fs.mkdirSync(outDir, { recursive: true });
   const outFile = path.join(outDir, `${post.date}-${slug}.mdx`);
-  const body = escapeMdx(rewriteImages(post.body, slug, post.assetDir));
+  const known = getKnownAssets(post.assetDir);
+  const hasHtmlMedia = /<(?:video|img)\b/i.test(post.body);
+  const preserved = hasHtmlMedia
+    ? preserveHtmlMedia(post.body)
+    : { body: post.body, blocks: new Map<string, string>() };
+  const escaped = escapeMdx(rewriteMarkdownImages(preserved.body, slug, known));
+  const body = escaped.replace(/__HTML_MEDIA_(\d+)__/g, (match) => {
+    const block = preserved.blocks.get(match);
+    if (!block) return match;
+    return rewriteHtmlMediaSrc(block, slug, known);
+  });
   const readingTime = Math.max(1, Math.ceil(body.length / 500));
   const fm = [
     '---',
