@@ -1,0 +1,25 @@
+---
+title: 'From 2 Agents to 4 Agents: Real-Time Voice-Driven Multi-Agent Interaction'
+date: 2026-09-21
+category: 'ai-infra'
+tags: ['Voice Agent', 'Multi-Agent', 'Real-Time', 'Interaction', 'Demo']
+lang: 'zh'
+slug: 'voice-agent-four-agents-demo'
+translationOf: 'voice-agent-four-agents-demo'
+readingTime: 3
+description: ''
+---
+
+Over the past few days we took our system through another round of iteration: it expanded from 2 agents (voice agent, PPT agent) to 4 agents (voice agent, PPT agent, web-search agent, browser-use agent). Counting the human, that makes five roles interacting and collaborating asynchronously in real time — and new agents can register and join with great ease, while the system still keeps its interaction latency low and stays real-time. The human converses with the voice agent in real time; the human's output modality is speech, and the human's input modalities are vision and speech. The voice agent is voice-connected with all the other agents, and it has the awareness to proactively speak to the human at the right moments.
+
+The whole system runs entirely on a consumer-grade GPU laptop, using no more than 16GB of VRAM. ASR is Qwen3-ASR-0.6B, TTS is the lightweight IndexTTS-2.5, and the text LLM is not fine-tuned at all — it calls the DeepSeek-V4.1-Flash API. DeepSeek keeps improving its infrastructure and accelerating its model's inference speed, which is a decisive help for large-scale, low-cost deployment of the voice agent's cascaded solution. In the video, the environment I'm in is not quiet at all, yet the latest version of the system filters out most of the noise.
+
+I believe that in today's AI field there are mainly two things: "understanding" and "interaction." "Understanding" pursues the upper bound of intelligence, and it is where academia and industry focus their attention today. So where does the value of "interaction" lie? I think that if "understanding" centers on large models, then "interaction" should center on humans. The value of interaction lies in two points. First, interaction does not pursue the upper bound of intelligence; rather, it is about how, once "understanding" has reached that bound, to most efficiently let humans understand what the model produces. In essence, the value of "interaction" is education — how to better and more efficiently promote human understanding of knowledge. Second, in real-world scenarios, humans don't always have a computer at hand. Once embodied intelligence becomes widespread, the best modality for human–robot interaction will still be voice — because when you deal with other people in daily life, you communicate through conversation. When you have several robots around you, you can't always walk up to someone's screen to look at something, and you won't always be staring at your phone for the visual auxiliary information each robot provides — just as, when you talk with people face to face, you don't stare at your WeChat chat window. Our system, for now, is more like an exploration of the second value; future iterations will give it the first value as well.
+
+Here is the demo of the latest system. In just a few minutes, using only voice as my output modality, I controlled the PPT agent, the web-search agent, and the browser-use agent. If we register more agents, our interaction with the voice agent will only become richer. If you're out for a drive, cruising on the road, you could well keep chatting with the voice agent — relaxing on the drive while many trivial tasks quietly get done along the way.
+
+<video
+  controls
+  width="600"
+  src="/assets/posts/voice-agent-four-agents-demo/voxflow-four-agents-demo.mp4"
+></video>
