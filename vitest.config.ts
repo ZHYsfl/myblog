@@ -47,6 +47,8 @@ export default defineConfig({
         'src/components/home/**/*.tsx',
         'src/components/about/**/*.tsx',
         'src/components/music/**/*.tsx',
+        // Canvas-rendered post plates are covered by visual QA, not jsdom unit tests.
+        'src/components/post/PostSketch.tsx',
         'src/lib/musicStore.ts',
         'src/lib/useTheme.ts',
         'src/types/**/*.ts',
