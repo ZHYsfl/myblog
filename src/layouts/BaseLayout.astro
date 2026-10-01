@@ -124,6 +124,7 @@ const pageTitle = title ? `${title} | ${SITE.authorEn}` : `${SITE.authorEn}`;
           // 离开前把当前位置确定性地存下来（导航期间的滚动事件会被忽略）
           try {
             sessionStorage.setItem('scroll:' + currentPath, String(window.scrollY));
+            sessionStorage.setItem('nav:from', currentPath);
           } catch {
             /* storage unavailable */
           }
@@ -204,6 +205,20 @@ const pageTitle = title ? `${title} | ${SITE.authorEn}` : `${SITE.authorEn}`;
           if (!a) return;
           if (a.getAttribute('data-astro-reload') || a.target === '_blank' || !isInternal(a.href))
             return;
+          // "返回文章列表"：若本次会话是从列表点进来的，则等价于浏览器返回（恢复滚动位置）
+          if (a.hasAttribute('data-back')) {
+            let from = '';
+            try {
+              from = sessionStorage.getItem('nav:from') || '';
+            } catch {
+              /* storage unavailable */
+            }
+            if (from.startsWith('/posts')) {
+              e.preventDefault();
+              history.back();
+              return;
+            }
+          }
           e.preventDefault();
           navigate(a.href).catch(() => location.assign(a.href));
         });
