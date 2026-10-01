@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useLang } from '@/lib/useLang';
 import { CategoryDistribution } from '@/components/about/CategoryDistribution';
 import { ResumeSection } from '@/components/about/ResumeSection';
+import { VoiceWaveSketch } from '@/components/about/VoiceWaveSketch';
 import { SITE } from '@/lib/constants';
 
 interface AboutPageProps {
@@ -13,18 +14,18 @@ const copy = {
   zh: {
     aboutLabel: 'About',
     title: '关于我',
-    tagline: '一个相信工程纪律、第一性原理与真实世界实践的 AI 研究者与软件工程师。',
-    intro1: `我叫<strong>周浩洋</strong>，上海交通大学人工智能学院直博生（AudioCC Lab / 张王优老师），吉林大学软件学院本科。比起追逐热点，我更愿意把一个问题真正拆开，看它的源代码、边界条件和失败案例。`,
+    tagline: '研究语音智能体，也造语音智能体。',
+    intro1: `我是<strong>周浩洋</strong>，上海交通大学人工智能学院直博生（AudioCC Lab，导师张王优），吉林大学软件学院本科。研究语音智能体——既做评测它的 Benchmark，也做实现它的系统。`,
     intro2:
-      '我的兴趣在 Voice Agent、Agentic AI、Deep Learning、Speech Intelligence。但本质上，我在乎的是：如何把抽象的想法变成能跑、能测、能被理解的系统。这个博客是我的数字花园，记录技术、科研、生活、社交和创业里的真实思考。',
-    believe: '我相信的',
-    believeQuote: '外包记忆和部分思考，保留理解和部分思考。',
-    believeText:
-      '摒弃假动作，练就真功夫。读源码、写测试、做 review，把每一行代码当作公开的思考痕迹。',
-    ways: '我的方式',
-    way1: '用小文件体积倒逼解耦，用高测试率锁定逻辑。',
-    way2: '不重复造轮子，但愿意为了搞懂一个轮子把它拆开。',
-    way3: '从单兵执行到团队思维，认知跃迁比加班更重要。',
+      '之前研究 Agentic RL 的长循环训练（SCRIBE），做过智能体评测平台 AgentGenesis 和语音多智能体系统 VoxFlow。这个博客记录技术与科研，也记录生活——不追热点，写什么取决于最近在为什么问题头疼。',
+    doing: '在研究',
+    doing1: '语音智能体的评测与系统：给语音 Agent 定评测标准，也造真正可用的系统。',
+    doing2: 'Agentic RL：长循环训练中的信用分配与奖励设计。',
+    doing3: '开源：AgentGenesis 维护者，CleanRL 贡献者。',
+    off: '不在研究的时候',
+    off1: '唱歌——录了一百多首翻唱，都收在这个站的音乐页。',
+    off2: '写字——博客算一部分，剩下的在私人笔记里。',
+    off3: '发呆——好的问题一般不在我盯着屏幕的时候出现。',
     distribution: '文章分布',
     postsCount: '篇中文文章',
     contact: '保持联系',
@@ -35,20 +36,19 @@ const copy = {
   en: {
     aboutLabel: 'About',
     title: 'About Me',
-    tagline:
-      'An AI researcher and software engineer who believes in engineering discipline, first principles, and real-world practice.',
-    intro1: `My name is <strong>Haoyang Zhou</strong>, a direct PhD student at the School of AI, Shanghai Jiao Tong University (AudioCC Lab / Prof. Zhang Wangyou), with my B.E. from the Software College of Jilin University. Rather than chasing trends, I prefer to take a problem apart and look at its source code, edge cases, and failure modes.`,
+    tagline: 'I research voice agents — and build them.',
+    intro1: `I'm <strong>Haoyang Zhou</strong>, a direct PhD student at the School of AI, Shanghai Jiao Tong University (AudioCC Lab, advised by Prof. Zhang Wangyou), with a B.E. from the Software College of Jilin University. I work on voice agents — both the benchmarks that evaluate them and the systems that realize them.`,
     intro2:
-      'My interests are in Voice Agent, Agentic AI, Deep Learning, and Speech Intelligence. But at the core, I care about turning abstract ideas into systems that run, can be tested, and can be understood. This blog is my digital garden, recording real thoughts on technology, research, life, social dynamics, and entrepreneurship.',
-    believe: 'What I Believe',
-    believeQuote:
-      'Outsource memory and part of thinking; preserve understanding and part of thinking.',
-    believeText:
-      'Discard fake moves, forge real skills. Read source code, write tests, do code reviews — treat every line of code as a public trace of thinking.',
-    ways: 'How I Work',
-    way1: 'Use small file sizes to force decoupling; use high test coverage to lock down logic.',
-    way2: "Don't reinvent wheels, but I'm willing to take one apart just to understand it.",
-    way3: 'Grow from solo execution to team thinking; cognitive leaps matter more than overtime.',
+      'Before this, I worked on long-horizon Agentic RL training (SCRIBE), built an agent evaluation platform (AgentGenesis), and a voice multi-agent system (VoxFlow). This blog covers research and life — no hot takes, just whatever problem is currently keeping me up.',
+    doing: 'Working On',
+    doing1:
+      'Evaluation and systems for voice agents: setting the benchmarks, and building systems that pass them.',
+    doing2: 'Agentic RL: credit assignment and reward design for long-horizon training.',
+    doing3: 'Open source: maintainer of AgentGenesis, contributor to CleanRL.',
+    off: 'Off Duty',
+    off1: 'Singing — over a hundred covers, all on the music page of this site.',
+    off2: 'Writing — part of it lands here, the rest stays in private notes.',
+    off3: 'Doing nothing — good ideas rarely show up while staring at a screen.',
     distribution: 'Post Distribution',
     postsCount: 'posts',
     contact: 'Get in Touch',
@@ -76,6 +76,8 @@ export function AboutPage({ counts, total }: AboutPageProps) {
         <p className="mx-auto max-w-xl text-lg leading-relaxed text-muted">{t.tagline}</p>
       </header>
 
+      <VoiceWaveSketch />
+
       <section className="mb-20">
         <p
           className="text-lg leading-relaxed text-fg"
@@ -86,26 +88,36 @@ export function AboutPage({ counts, total }: AboutPageProps) {
 
       <section className="mb-20 grid gap-12 md:grid-cols-2 md:gap-16">
         <div>
-          <h2 className="mb-6 font-serif text-2xl font-semibold text-fg">{t.believe}</h2>
-          <blockquote className="border-l-2 border-accent pl-5 font-serif text-xl italic leading-relaxed text-fg">
-            “{t.believeQuote}”
-          </blockquote>
-          <p className="mt-5 leading-relaxed text-muted">{t.believeText}</p>
-        </div>
-        <div>
-          <h2 className="mb-6 font-serif text-2xl font-semibold text-fg">{t.ways}</h2>
+          <h2 className="mb-6 font-serif text-2xl font-semibold text-fg">{t.doing}</h2>
           <ul className="space-y-4 text-muted">
             <li className="flex items-start gap-3">
               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent"></span>
-              <span>{t.way1}</span>
+              <span>{t.doing1}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent"></span>
-              <span>{t.way2}</span>
+              <span>{t.doing2}</span>
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent"></span>
-              <span>{t.way3}</span>
+              <span>{t.doing3}</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="mb-6 font-serif text-2xl font-semibold text-fg">{t.off}</h2>
+          <ul className="space-y-4 text-muted">
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent"></span>
+              <span>{t.off1}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent"></span>
+              <span>{t.off2}</span>
+            </li>
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-1.5 w-1.5 rounded-full bg-accent"></span>
+              <span>{t.off3}</span>
             </li>
           </ul>
         </div>
