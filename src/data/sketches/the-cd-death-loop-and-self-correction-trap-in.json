@@ -65,7 +65,7 @@
           "type": "text",
           "x": 500,
           "y": 44,
-          "content": { "zh": "错误恢复率评测", "en": "Error Recovery Rates" },
+          "content": { "zh": "污染上下文中的对照实验", "en": "Same polluted context, two models" },
           "size": "m",
           "tone": "ink",
           "align": "center"
@@ -76,18 +76,21 @@
           "y": 300,
           "w": 360,
           "h": 210,
-          "values": [0.85, 0.78],
+          "values": [1, 20],
           "labels": [
-            { "zh": "Claude Sonnet 4.6", "en": "Claude Sonnet 4.6" },
-            { "zh": "Kimi K2.5", "en": "Kimi K2.5" }
+            { "zh": "GPT 5.5", "en": "GPT 5.5" },
+            { "zh": "Kimi K2.6", "en": "Kimi K2.6" }
           ],
-          "accentIndex": 0
+          "accentIndex": 1
         },
         {
           "type": "text",
           "x": 500,
           "y": 348,
-          "content": { "zh": "关键指标：多次失败后的恢复能力", "en": "recovery after failure" },
+          "content": {
+            "zh": "恢复编译所需的尝试次数（干净上下文中两者均 1 次恢复）",
+            "en": "attempts to recover the build (both recover in 1 try with a clean context)"
+          },
           "size": "s",
           "tone": "muted",
           "align": "center"

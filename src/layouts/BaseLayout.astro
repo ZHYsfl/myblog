@@ -53,6 +53,35 @@ const pageTitle = title ? `${title} | ${SITE.authorEn}` : `${SITE.authorEn}`;
         const cache = new Map();
         let pendingPath = '';
 
+        // 记住每个路径的滚动位置，前进后退（popstate）时恢复
+        if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+        let currentPath = location.pathname;
+        let navigating = false;
+        let scrollTicking = false;
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (navigating || scrollTicking) return;
+            scrollTicking = true;
+            requestAnimationFrame(() => {
+              scrollTicking = false;
+              try {
+                sessionStorage.setItem('scroll:' + location.pathname, String(window.scrollY));
+              } catch {
+                /* storage unavailable */
+              }
+            });
+          },
+          { passive: true }
+        );
+        function savedScrollFor(path) {
+          try {
+            return Number(sessionStorage.getItem('scroll:' + path) ?? 0);
+          } catch {
+            return 0;
+          }
+        }
+
         function isInternal(href) {
           try {
             const url = new URL(href, location.href);
@@ -91,6 +120,13 @@ const pageTitle = title ? `${title} | ${SITE.authorEn}` : `${SITE.authorEn}`;
             return;
           }
           pendingPath = path;
+          navigating = true;
+          // 离开前把当前位置确定性地存下来（导航期间的滚动事件会被忽略）
+          try {
+            sessionStorage.setItem('scroll:' + currentPath, String(window.scrollY));
+          } catch {
+            /* storage unavailable */
+          }
 
           try {
             let html = cache.get(path);
@@ -143,11 +179,22 @@ const pageTitle = title ? `${title} | ${SITE.authorEn}` : `${SITE.authorEn}`;
               oldAlternate.remove();
             }
 
-            window.scrollTo({ top: 0, behavior: 'instant' });
+            const restoreY = push ? 0 : savedScrollFor(path);
+            currentPath = path;
+            window.scrollTo({ top: restoreY, behavior: 'instant' });
+            if (!push && restoreY > 0) {
+              // 初次 scrollTo 可能早于布局稳定，再在 hydration 后补两次
+              requestAnimationFrame(() => {
+                window.scrollTo({ top: restoreY, behavior: 'instant' });
+                setTimeout(() => window.scrollTo({ top: restoreY, behavior: 'instant' }), 80);
+              });
+            }
             if (push) history.pushState({}, '', path);
 
             document.dispatchEvent(new Event('astro:page-load'));
+            navigating = false;
           } catch {
+            navigating = false;
             location.assign(href);
           }
         }
