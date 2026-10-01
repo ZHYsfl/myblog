@@ -1,0 +1,111 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "axis",
+          "y": 310,
+          "from": 100,
+          "to": 900,
+          "ticks": 3,
+          "labels": [
+            { "zh": "9.1 报名", "en": "Sep 1 · applied" },
+            { "zh": "9.2 联系", "en": "Sep 2 · reached out" },
+            { "zh": "9.4 面试", "en": "Sep 4 · interview" }
+          ]
+        },
+        {
+          "type": "angle",
+          "x": 790,
+          "y": 300,
+          "r": 80,
+          "fromDeg": -140,
+          "toDeg": -50,
+          "label": { "zh": "需求错配", "en": "mismatch" }
+        },
+        {
+          "type": "arrow",
+          "from": [790, 300],
+          "to": [560, 100],
+          "label": { "zh": "他要：决心换资源", "en": "He wants: all-in conviction" },
+          "accent": true
+        },
+        {
+          "type": "arrow",
+          "from": [790, 300],
+          "to": [950, 110],
+          "label": { "zh": "我要：先读 PhD", "en": "I want: PhD first" },
+          "accent": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "一场 20 分钟的面试复盘", "en": "Post-mortem of a 20-minute interview" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 356,
+          "content": { "zh": "先确认双方诉求，错配就退出", "en": "Align expectations first; walk away if mismatched" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "dot",
+          "x": 130,
+          "y": 190,
+          "accent": false,
+          "r": 4
+        },
+        {
+          "type": "arrow",
+          "from": [150, 140],
+          "to": [860, 140],
+          "label": { "zh": "调研 · 找痛点", "en": "research · find pain points" },
+          "accent": false
+        },
+        {
+          "type": "arrow",
+          "from": [150, 240],
+          "to": [860, 240],
+          "label": { "zh": "demo · 最小闭环", "en": "demo · minimal loop" },
+          "accent": true
+        },
+        {
+          "type": "measure",
+          "from": [895, 140],
+          "to": [895, 240],
+          "label": { "zh": "并行", "en": "parallel" }
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 60,
+          "content": { "zh": "调研与迭代，并行不先后", "en": "Research and iteration run in parallel" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 322,
+          "content": { "zh": "demo 第一天就要有，在做中学", "en": "Have a demo from day one; learn by doing" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

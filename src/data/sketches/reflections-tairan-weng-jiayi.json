@@ -1,0 +1,122 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "选择，大于运气与努力", "en": "choice beats luck, effort" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 90,
+          "y": 66,
+          "content": { "zh": "工程能力是下限的基本功", "en": "engineering = baseline" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 910,
+          "y": 66,
+          "content": { "zh": "疫情最严时赴美", "en": "went amid strict COVID" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        },
+        {
+          "type": "axis",
+          "y": 330,
+          "from": 70,
+          "to": 930,
+          "ticks": 3
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 150, "y": 268, "label": { "zh": "NOI 竞赛", "en": "NOI contest" }, "r": 4 },
+            { "x": 380, "y": 228, "label": { "zh": "清华", "en": "Tsinghua" }, "r": 4 },
+            { "x": 610, "y": 183, "label": { "zh": "CMU 硕士", "en": "CMU master's" }, "r": 4 },
+            { "x": 850, "y": 135, "label": { "zh": "OpenAI <300 人", "en": "OpenAI <300 ppl" }, "accent": true, "r": 4.5 }
+          ],
+          "edges": [[0, 1], [1, 2], [2, 3]],
+          "edgeAccent": [203]
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "祛魅与敬畏", "en": "disenchantment & awe" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "circle",
+          "x": 395,
+          "y": 200,
+          "r": 80
+        },
+        {
+          "type": "circle",
+          "x": 605,
+          "y": 200,
+          "r": 80
+        },
+        {
+          "type": "text",
+          "x": 330,
+          "y": 190,
+          "content": { "zh": "祛魅 · 不过如此", "en": "disenchant: just this" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 670,
+          "y": 190,
+          "content": { "zh": "敬畏 · 已然伟大", "en": "awe: already great" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "dot",
+          "x": 500,
+          "y": 200,
+          "accent": true,
+          "r": 4.5
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 246,
+          "content": { "zh": "超级正则表达式", "en": "the super regex" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 322,
+          "content": { "zh": "护城河：生态·数据·流量", "en": "ecosystem·data·traffic" },
+          "size": "m",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

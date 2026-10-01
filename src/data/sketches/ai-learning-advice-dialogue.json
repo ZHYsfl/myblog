@@ -1,0 +1,47 @@
+{
+  "plates": [
+    {
+      "elements": [
+        { "type": "text", "x": 500, "y": 40, "content": { "zh": "AI 五大江山与路线图", "en": "Roadmap Across the Territories" }, "size": "l", "tone": "ink", "align": "center" },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 130, "y": 115, "label": { "zh": "机器学习", "en": "ML · 4 algos" }, "accent": false, "r": 5 },
+            { "x": 320, "y": 190, "label": { "zh": "深度学习", "en": "DL · math first" }, "accent": false, "r": 5 },
+            { "x": 510, "y": 115, "label": { "zh": "大模型", "en": "LLM · nanoGPT" }, "accent": false, "r": 5 },
+            { "x": 700, "y": 190, "label": { "zh": "强化学习", "en": "RL · GRPO" }, "accent": false, "r": 5 },
+            { "x": 865, "y": 115, "label": { "zh": "智能体", "en": "Agent · vLLM" }, "accent": false, "r": 5 },
+            { "x": 640, "y": 295, "label": { "zh": "世界模型", "en": "World Model" }, "accent": true, "r": 7 }
+          ],
+          "edges": [[0, 1], [1, 2], [2, 3], [3, 4]],
+          "edgeAccent": []
+        },
+        { "type": "arrow", "from": [852, 142], "to": [655, 283], "label": { "zh": "下一个未来", "en": "next frontier" }, "accent": false, "both": false },
+        { "type": "text", "x": 130, "y": 162, "content": { "zh": "只需四个算法", "en": "just 4 algos" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "text", "x": 320, "y": 237, "content": { "zh": "吃透 BP 与注意力", "en": "BP & attention" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "text", "x": 700, "y": 237, "content": { "zh": "GRPO 是显学", "en": "PPO → GRPO" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "text", "x": 500, "y": 355, "content": { "zh": "心法：拉下源码，一行行问 AI", "en": "read source, ask AI" }, "size": "s", "tone": "ink", "align": "center" }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 500, "y": 95, "label": { "zh": "问 AI", "en": "ask AI" }, "accent": true, "r": 6 },
+            { "x": 175, "y": 270, "label": { "zh": "读源码", "en": "read source" }, "accent": false, "r": 6 },
+            { "x": 825, "y": 270, "label": { "zh": "跑起来调试", "en": "run & debug" }, "accent": false, "r": 6 }
+          ],
+          "edges": [],
+          "edgeAccent": []
+        },
+        { "type": "arrow", "from": [200, 252], "to": [470, 110], "label": { "zh": "不懂就问", "en": "ask line by line" }, "accent": false, "both": false },
+        { "type": "arrow", "from": [530, 110], "to": [800, 252], "label": { "zh": "AI 补全代码", "en": "AI fills the code" }, "accent": false, "both": false },
+        { "type": "arrow", "from": [800, 292], "to": [205, 292], "label": { "zh": "读懂，再来", "en": "read, tweak, repeat" }, "accent": false, "both": false },
+        { "type": "text", "x": 500, "y": 190, "content": { "zh": "与 AI 结对编程", "en": "pair-programming with AI" }, "size": "m", "tone": "ink", "align": "center" },
+        { "type": "text", "x": 500, "y": 352, "content": { "zh": "刨除记忆，理解本质", "en": "memory out, sense in" }, "size": "s", "tone": "muted", "align": "center" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "性格底色决定命运", "en": "character decides destiny" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 110, "y": 190, "label": { "zh": "环境", "en": "environment" }, "r": 4 },
+            { "x": 285, "y": 190, "label": { "zh": "性格缺陷", "en": "character flaw" }, "r": 4 },
+            { "x": 460, "y": 190, "label": { "zh": "病态防御", "en": "coping defense" }, "r": 4 },
+            { "x": 635, "y": 190, "label": { "zh": "痛苦自省", "en": "painful reflection" }, "accent": true, "r": 4.5 },
+            { "x": 810, "y": 190, "label": { "zh": "心智重塑", "en": "mind remodel" }, "r": 4 }
+          ],
+          "edges": [[0, 1], [1, 2], [2, 3], [3, 4]],
+          "edgeAccent": [203]
+        },
+        {
+          "type": "text",
+          "x": 900,
+          "y": 66,
+          "content": { "zh": "改变只能靠自己", "en": "only self can change" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "x": 80,
+          "y": 352,
+          "content": { "zh": "环境塑造，无可选择", "en": "shaped by environment" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "measure",
+          "from": [190, 292],
+          "to": [730, 292],
+          "label": { "zh": "重生：1–2 年至数十年", "en": "rebirth: 1–2y to decades" }
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "顺人性待人，逆人性炼己", "en": "flow with, forge against" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 320, "y": 205, "label": { "zh": "心 · 心智模型", "en": "mind · mental model" }, "r": 4.5 },
+            { "x": 680, "y": 205, "label": { "zh": "迹 · 行动", "en": "deeds" }, "r": 4.5 }
+          ]
+        },
+        {
+          "type": "circle",
+          "x": 320,
+          "y": 205,
+          "r": 46,
+          "dashed": true
+        },
+        {
+          "type": "text",
+          "x": 320,
+          "y": 138,
+          "content": { "zh": "性格底色", "en": "character base" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [378, 183],
+          "to": [622, 183],
+          "label": { "zh": "心决定行动", "en": "mind drives action" }
+        },
+        {
+          "type": "arrow",
+          "from": [622, 237],
+          "to": [378, 237],
+          "label": { "zh": "以迹炼心 · 逆人性", "en": "deeds reforge mind" },
+          "accent": true
+        },
+        {
+          "type": "text",
+          "x": 830,
+          "y": 66,
+          "content": { "zh": "高能量 = 逆熵势能", "en": "energy = anti-entropy" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 320,
+          "content": { "zh": "逆人性做久，即不再逆", "en": "persist until natural" },
+          "size": "m",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

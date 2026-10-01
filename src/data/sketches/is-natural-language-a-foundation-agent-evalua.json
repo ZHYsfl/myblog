@@ -1,0 +1,130 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "并非一码事", "en": "Not the Same Thing" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [100, 150],
+          "to": [430, 150],
+          "accent": true,
+          "both": false
+        },
+        {
+          "type": "text",
+          "x": 265,
+          "y": 105,
+          "content": { "zh": "高级语言→汇编→机器指令", "en": "HL → asm → machine" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 265,
+          "y": 195,
+          "content": { "zh": "编译：100% 确定", "en": "compile: 100% certain" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "curve",
+          "points": [[570, 230], [650, 198], [720, 262], [800, 205], [900, 230]],
+          "accent": false,
+          "closed": false
+        },
+        {
+          "type": "text",
+          "x": 735,
+          "y": 165,
+          "content": { "zh": "自然语言 → 代码", "en": "natural language → code" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 735,
+          "y": 300,
+          "content": { "zh": "生成：概率、不确定", "en": "probabilistic" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "circle",
+          "x": 390,
+          "y": 180,
+          "r": 70,
+          "accent": false,
+          "dashed": false
+        },
+        {
+          "type": "circle",
+          "x": 610,
+          "y": 180,
+          "r": 70,
+          "accent": true,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 390,
+          "y": 302,
+          "content": { "zh": "系统 actor", "en": "system actor" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 610,
+          "y": 302,
+          "content": { "zh": "评测 critic", "en": "evaluation critic" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [468, 130],
+          "to": [532, 130],
+          "label": { "zh": "系统满足评测", "en": "system meets eval" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "arrow",
+          "from": [532, 232],
+          "to": [468, 232],
+          "label": { "zh": "评测反哺系统", "en": "eval feeds system" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 352,
+          "content": { "zh": "actor 与 critic 协同进化", "en": "actor & critic co-evolve" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

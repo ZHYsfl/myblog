@@ -1,0 +1,19 @@
+{
+  "plates": [
+    {
+      "elements": [
+        { "type": "text", "x": 500, "y": 42, "content": { "zh": "时代的价值重排", "en": "Repricing the Era" }, "size": "l", "tone": "ink", "align": "center" },
+        { "type": "curve", "points": [[120, 130], [260, 192], [400, 255]], "accent": false, "closed": false },
+        { "type": "curve", "points": [[120, 255], [260, 192], [400, 125]], "accent": true, "closed": false },
+        { "type": "text", "x": 120, "y": 108, "content": { "zh": "记忆力在贬值", "en": "memory devalues" }, "size": "s", "tone": "muted", "align": "left" },
+        { "type": "text", "x": 404, "y": 108, "content": { "zh": "理解力在溢价", "en": "understanding rises" }, "size": "s", "tone": "ink", "align": "left" },
+        { "type": "rings", "cx": 730, "cy": 205, "radii": [38, 66], "labels": [{ "r": 66, "text": { "zh": "平台", "en": "platform" }, "angle": 90 }] },
+        { "type": "arrow", "from": [798, 168], "to": [880, 106], "label": { "zh": "随时抽身", "en": "detach at will" }, "accent": false, "both": false },
+        { "type": "dot", "x": 886, "y": 102, "accent": true, "r": 4.5 },
+        { "type": "text", "x": 896, "y": 98, "content": { "zh": "即插即用", "en": "plug & play" }, "size": "s", "tone": "ink", "align": "left" },
+        { "type": "measure", "from": [120, 330], "to": [600, 330], "label": { "zh": "从增量增长到存量博弈", "en": "growth to zero-sum" } },
+        { "type": "text", "x": 500, "y": 368, "content": { "zh": "少抱怨，多勇气", "en": "complain less, dare more" }, "size": "s", "tone": "muted", "align": "center" }
+      ]
+    }
+  ]
+}

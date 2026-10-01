@@ -1,0 +1,82 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "rings",
+          "cx": 500,
+          "cy": 200,
+          "radii": [82, 128],
+          "labels": [
+            { "r": 128, "angle": -90, "text": { "zh": "心智模型", "en": "mindset" } },
+            { "r": 128, "angle": 0, "text": { "zh": "确定性", "en": "certainty" } },
+            { "r": 128, "angle": 90, "text": { "zh": "认知边界", "en": "cognitive bounds" } },
+            { "r": 128, "angle": 180, "text": { "zh": "人性善恶", "en": "human nature" } }
+          ]
+        },
+        {
+          "type": "orbitDots",
+          "x": 500,
+          "y": 200,
+          "r": 82,
+          "count": 4,
+          "accentEvery": 4,
+          "startDeg": -90
+        },
+        {
+          "type": "circle",
+          "x": 500,
+          "y": 200,
+          "r": 34,
+          "accent": true,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 44,
+          "content": { "zh": "四重沉思：心性 · 确定性 · 认知 · 人性", "en": "Four contemplations on personal evolution" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 204,
+          "content": { "zh": "我", "en": "self" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 170,
+          "y": 336,
+          "content": { "zh": "心指引迹，迹的模仿亦改变心", "en": "mind guides deeds; deeds reshape mind" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 830,
+          "y": 336,
+          "content": { "zh": "高能量来自确定性", "en": "energy flows from certainty" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "x": 170,
+          "y": 76,
+          "content": { "zh": "认知有界：求同存异，不断延展", "en": "bounded cognition: keep extending it" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 36,
+          "content": { "zh": "Agent 集群与人的回归", "en": "return of the human" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "rings",
+          "cx": 500,
+          "cy": 190,
+          "radii": [70, 120, 165],
+          "labels": [
+            {
+              "r": 120,
+              "angle": -90,
+              "text": { "zh": "多Agent并发调度", "en": "multi-agent orchestration" }
+            },
+            {
+              "r": 165,
+              "angle": 90,
+              "text": { "zh": "知识与技术在贬值", "en": "knowledge & tech devalue" }
+            }
+          ]
+        },
+        {
+          "type": "orbitDots",
+          "x": 500,
+          "y": 190,
+          "r": 120,
+          "count": 8,
+          "startDeg": 0
+        },
+        {
+          "type": "dot",
+          "x": 500,
+          "y": 190,
+          "accent": true,
+          "r": 5
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 225,
+          "content": { "zh": "情感与连接", "en": "emotion & connection" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 70,
+          "y": 150,
+          "content": { "zh": "人承担责任之处", "en": "where humans own it" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 930,
+          "y": 150,
+          "content": { "zh": "双向通信 · 并发编排", "en": "bidirectional · parallel" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        }
+      ]
+    }
+  ]
+}

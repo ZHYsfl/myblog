@@ -1,0 +1,137 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "axis",
+          "y": 300,
+          "from": 80,
+          "to": 920,
+          "ticks": 4,
+          "labels": [
+            { "zh": "2024.11", "en": "2024.11" },
+            { "zh": "2025.03", "en": "2025.03" },
+            { "zh": "2025.10", "en": "2025.10" },
+            { "zh": "2026", "en": "2026" }
+          ]
+        },
+        {
+          "type": "arrow",
+          "from": [185, 208],
+          "to": [395, 208],
+          "label": { "zh": "MCP：约 4 个月预热", "en": "MCP: ~4-month lag" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "arrow",
+          "from": [605, 208],
+          "to": [815, 208],
+          "label": { "zh": "Agent Skills：约 3 个月", "en": "Agent Skills: ~3-month lag" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 46,
+          "content": { "zh": "Agent 工业化前夜：确定性爆发", "en": "Eve of agent industrialization" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 128,
+          "content": { "zh": "情境工程 · 评测体系 · 沙箱环境", "en": "context engineering · eval · sandbox" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 348,
+          "content": { "zh": "协议与标准的生态积累，带来 3–4 个月预备期", "en": "protocol ecosystems need a 3–4 month runway" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "arrow",
+          "from": [90, 190],
+          "to": [232, 190],
+          "label": { "zh": "LLM 结构化", "en": "LLM structures" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "arrow",
+          "from": [332, 190],
+          "to": [474, 190],
+          "label": { "zh": "RL 提升策略精度", "en": "RL sharpens the policy" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "arrow",
+          "from": [574, 190],
+          "to": [692, 190],
+          "label": { "zh": "评测", "en": "evaluated" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "circle",
+          "x": 812,
+          "y": 190,
+          "r": 62,
+          "accent": true,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 161,
+          "y": 148,
+          "content": { "zh": "隐式观察", "en": "implicit observation" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 403,
+          "y": 148,
+          "content": { "zh": "显式状态", "en": "explicit state" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 812,
+          "y": 186,
+          "content": { "zh": "Agent 沙箱", "en": "Agent sandbox" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 308,
+          "content": { "zh": "LLM-Agent ≈ 马尔科夫决策过程；评测的环境即沙箱", "en": "an LLM agent is an MDP; eval lives in the sandbox" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

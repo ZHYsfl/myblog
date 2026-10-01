@@ -1,0 +1,16 @@
+{
+  "plates": [
+    {
+      "elements": [
+        { "type": "text", "x": 500, "y": 42, "content": { "zh": "蜕变之年", "en": "The Year of Metamorphosis" }, "size": "l", "tone": "ink", "align": "center" },
+        { "type": "spiral", "x": 290, "y": 205, "r0": 10, "r1": 125, "turns": 4, "accent": false },
+        { "type": "text", "x": 290, "y": 206, "content": { "zh": "男孩", "en": "boy" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "dot", "x": 422, "y": 205, "accent": true, "r": 4.5 },
+        { "type": "text", "x": 438, "y": 205, "content": { "zh": "男子汉", "en": "a man" }, "size": "m", "tone": "ink", "align": "left" },
+        { "type": "measure", "from": [540, 310], "to": [900, 310], "label": { "zh": "未来五年的目标", "en": "the 5-year goal" } },
+        { "type": "text", "x": 720, "y": 262, "content": { "zh": "已确认，已启程", "en": "set, and in motion" }, "size": "s", "tone": "ink", "align": "center" },
+        { "type": "text", "x": 720, "y": 350, "content": { "zh": "痛苦与挫折是养分", "en": "pain is the nutrient" }, "size": "s", "tone": "muted", "align": "center" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "plates": [
+    {
+      "elements": [
+        { "type": "text", "x": 500, "y": 42, "content": { "zh": "读源码的工程师", "en": "An Engineer Who Reads Source" }, "size": "l", "tone": "ink", "align": "center" },
+        {
+          "type": "bars",
+          "x": 140,
+          "y": 300,
+          "w": 720,
+          "h": 190,
+          "values": [0.25, 0.45, 0.6, 0.78, 0.92, 1.0],
+          "labels": ["ML", "DL", "RL", "LLM", "Agent", "WM"],
+          "accentIndex": 5
+        },
+        { "type": "arrow", "from": [170, 262], "to": [860, 122], "label": { "zh": "拾级而上", "en": "climb on" }, "accent": false, "both": false },
+        { "type": "text", "x": 150, "y": 140, "content": { "zh": "重数学，轻记忆", "en": "math over memory" }, "size": "s", "tone": "muted", "align": "left" },
+        { "type": "text", "x": 500, "y": 360, "content": { "zh": "别做听课的学生，做读源码的工程师", "en": "read code, skip lectures" }, "size": "s", "tone": "ink", "align": "center" }
+      ]
+    }
+  ]
+}

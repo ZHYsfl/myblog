@@ -1,0 +1,43 @@
+{
+  "plates": [
+    {
+      "elements": [
+        { "type": "text", "x": 500, "y": 42, "content": { "zh": "2025：AI 加速之年", "en": "The Year AI Sped Up" }, "size": "l", "tone": "ink", "align": "center" },
+        {
+          "type": "axis",
+          "y": 310,
+          "from": 100,
+          "to": 920,
+          "ticks": 7,
+          "labels": ["年初", "3月", "4月", "5月", "6月", "9月", "11月", "12月"]
+        },
+        { "type": "dot", "x": 115, "y": 272, "accent": true, "r": 4.5 },
+        { "type": "text", "x": 115, "y": 248, "content": { "zh": "DeepSeek GRPO·RLVR", "en": "DeepSeek GRPO·RLVR" }, "size": "s", "tone": "ink", "align": "center" },
+        { "type": "dot", "x": 585, "y": 272, "accent": false, "r": 4 },
+        { "type": "text", "x": 585, "y": 248, "content": { "zh": "Claude Code 登场", "en": "Claude Code arrives" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "dot", "x": 905, "y": 272, "accent": false, "r": 4 },
+        { "type": "text", "x": 895, "y": 248, "content": { "zh": "v3.2 DSA·Gemini 3", "en": "v3.2 DSA·Gemini 3" }, "size": "s", "tone": "muted", "align": "center" }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        { "type": "text", "x": 500, "y": 42, "content": { "zh": "架构猜想：认知核心", "en": "The Cognitive Core Idea" }, "size": "l", "tone": "ink", "align": "center" },
+        { "type": "text", "x": 500, "y": 86, "content": { "zh": "把规律与知识分开建模", "en": "unmix laws and knowledge" }, "size": "s", "tone": "muted", "align": "center" },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 165, "y": 200, "label": { "zh": "认知核心", "en": "Cognitive Core" }, "accent": true, "r": 8 },
+            { "x": 500, "y": 200, "label": { "zh": "知识压缩模型", "en": "Compression Model" }, "accent": false, "r": 6 },
+            { "x": 835, "y": 200, "label": { "zh": "整合模型", "en": "Integration Model" }, "accent": false, "r": 6 }
+          ],
+          "edges": [[0, 1], [1, 2]],
+          "edgeAccent": []
+        },
+        { "type": "text", "x": 165, "y": 252, "content": { "zh": "小参数·第一性原理", "en": "small, first-principles" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "text", "x": 500, "y": 252, "content": { "zh": "肚子里装满《红楼梦》", "en": "holds all the knowledge" }, "size": "s", "tone": "muted", "align": "center" },
+        { "type": "text", "x": 500, "y": 320, "content": { "zh": "例：林黛玉为何而死？", "en": "why did Lin Daiyu die?" }, "size": "s", "tone": "ink", "align": "center" }
+      ]
+    }
+  ]
+}

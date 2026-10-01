@@ -1,0 +1,67 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 500, "y": 125, "label": { "zh": "服务器", "en": "server" }, "r": 7 },
+            { "x": 220, "y": 255, "label": { "zh": "百度账号", "en": "Baidu account" }, "r": 6 },
+            { "x": 780, "y": 255, "label": { "zh": "百度云账号 · 服务器在此", "en": "Baidu Cloud acct" }, "accent": true, "r": 6 }
+          ],
+          "edges": [[0, 1], [0, 2]],
+          "edgeAccent": [1]
+        },
+        { "type": "path", "points": [[170, 330], [500, 330], [830, 330]], "closed": false, "accent": false },
+        { "type": "dot", "x": 170, "y": 330, "accent": false, "r": 3 },
+        { "type": "dot", "x": 500, "y": 330, "accent": false, "r": 3 },
+        { "type": "dot", "x": 830, "y": 330, "accent": true, "r": 3.5 },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "控制台里消失的服务器", "en": "The Vanished Server" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 162,
+          "content": { "zh": "SSH 正常 · 控制台空白", "en": "SSH ok · console empty" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 298,
+          "content": { "zh": "同一手机号 · 两个账号体系", "en": "one phone, two accounts" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 890,
+          "y": 115,
+          "content": { "zh": "人不识货，钱识货", "en": "you get what you pay for" },
+          "size": "s",
+          "tone": "ink",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 356,
+          "content": { "zh": "腾讯云 → 京东云 → 百度智能云", "en": "Tencent → JD → Baidu" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

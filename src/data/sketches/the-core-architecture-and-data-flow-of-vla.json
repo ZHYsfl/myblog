@@ -1,0 +1,127 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "VLA 数据流草图", "en": "VLA Data Flow, Sketched" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 105, "y": 190, "label": { "zh": "多模态传感器", "en": "multimodal sensors" }, "r": 4 },
+            { "x": 285, "y": 190, "label": { "zh": "编码器", "en": "encoder" }, "r": 4 },
+            { "x": 465, "y": 190, "label": { "zh": "f-world", "en": "f-world" }, "r": 6 },
+            { "x": 645, "y": 115, "label": { "zh": "Agent", "en": "Agent" }, "r": 4 },
+            { "x": 645, "y": 265, "label": { "zh": "策略解码器", "en": "policy decoder" }, "r": 4 },
+            { "x": 880, "y": 265, "label": { "zh": "动作参数", "en": "action params" }, "r": 4 }
+          ],
+          "edges": [[0, 1], [1, 2], [2, 3], [2, 4], [3, 4], [4, 5]],
+          "edgeAccent": [304]
+        },
+        {
+          "type": "text",
+          "x": 665,
+          "y": 182,
+          "content": { "zh": "条件向量", "en": "condition vector" },
+          "size": "s",
+          "tone": "ink",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 285,
+          "y": 222,
+          "content": { "zh": "前馈 3D 高斯", "en": "feed-forward 3DGS" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 645,
+          "y": 302,
+          "content": { "zh": "flow matching", "en": "flow matching" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 880,
+          "y": 302,
+          "content": { "zh": "精确到数字", "en": "exact numbers" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 44,
+          "content": { "zh": "Agent 的两种唤醒", "en": "Two Ways the Agent Wakes" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 205, "y": 115, "label": { "zh": "周期 f-world", "en": "periodic f-world" }, "r": 4 },
+            { "x": 205, "y": 270, "label": { "zh": "中断信号", "en": "interrupt" }, "r": 4 },
+            { "x": 500, "y": 192, "label": { "zh": "Agent", "en": "Agent" }, "r": 6 },
+            { "x": 805, "y": 192, "label": { "zh": "解码器 · 重启", "en": "decoder restart" }, "r": 4 }
+          ],
+          "edges": [[0, 2], [1, 2], [2, 3]],
+          "edgeAccent": [203]
+        },
+        {
+          "type": "text",
+          "x": 345,
+          "y": 140,
+          "content": { "zh": "短周期增量 · 也许更新", "en": "periodic delta · maybe" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 352,
+          "y": 252,
+          "content": { "zh": "事件中断 · 一定更新", "en": "interrupt · always new" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 655,
+          "y": 172,
+          "content": { "zh": "新条件向量", "en": "new condition vector" },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 330,
+          "content": { "zh": "看什么、看多少、何时看", "en": "what, how much, when" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

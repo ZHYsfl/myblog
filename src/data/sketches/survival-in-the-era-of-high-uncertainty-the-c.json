@@ -1,0 +1,132 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "管理不确定性中的确定性", "en": "managing certainty" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 90,
+          "y": 66,
+          "content": { "zh": "AI 占 GitHub 提交之比", "en": "AI share of commits" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 90,
+          "y": 100,
+          "content": { "zh": "任务 ≥ 80% 交给 AI", "en": ">= 80% of tasks to AI" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "bars",
+          "x": 90,
+          "y": 320,
+          "w": 320,
+          "h": 150,
+          "values": [0.2, 1.0],
+          "labels": [
+            { "zh": "现在 · 4%", "en": "today · 4%" },
+            { "zh": "2026底 · 20%", "en": "2026 · 20%" }
+          ],
+          "accentIndex": 1
+        },
+        {
+          "type": "rings",
+          "cx": 730,
+          "cy": 200,
+          "radii": [50, 90, 130],
+          "labels": [
+            {
+              "r": 130,
+              "angle": -90,
+              "text": { "zh": "不确定性增长", "en": "growing uncertainty" }
+            }
+          ]
+        },
+        {
+          "type": "dot",
+          "x": 730,
+          "y": 200,
+          "accent": true,
+          "r": 4.5
+        },
+        {
+          "type": "text",
+          "x": 730,
+          "y": 248,
+          "content": { "zh": "可复用验证体系", "en": "reusable verification" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [450, 245],
+          "to": [585, 218],
+          "label": { "zh": "测试取代逐行分析", "en": "tests over line-by-line" }
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "人的三种核心价值", "en": "three enduring strengths" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 500, "y": 195, "label": { "zh": "人的价值", "en": "human value" }, "accent": true, "r": 5.5 },
+            { "x": 270, "y": 105, "label": { "zh": "验证体系", "en": "verification" }, "r": 4 },
+            { "x": 730, "y": 105, "label": { "zh": "极致打磨", "en": "relentless polish" }, "r": 4 },
+            { "x": 500, "y": 300, "label": { "zh": "学习思考", "en": "keep learning" }, "r": 4 }
+          ],
+          "edges": [[0, 1], [0, 2], [0, 3]],
+          "edgeAccent": [1]
+        },
+        {
+          "type": "text",
+          "x": 80,
+          "y": 60,
+          "content": { "zh": "MVP 易得，质量难求", "en": "MVPs cheap, quality rare" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "measure",
+          "from": [330, 348],
+          "to": [670, 348],
+          "label": { "zh": "规划视野 ≈ 5 年", "en": "~5-year planning horizon" }
+        },
+        {
+          "type": "text",
+          "x": 920,
+          "y": 60,
+          "content": { "zh": "规则会变，应变不变", "en": "rules change, adapt" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        }
+      ]
+    }
+  ]
+}

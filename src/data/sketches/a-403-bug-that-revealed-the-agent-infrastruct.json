@@ -1,0 +1,78 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "一个 403 揭示的静默转型", "en": "A 403 Bug's Silent Shift" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 170,
+          "y": 105,
+          "content": { "zh": "UA: OpenAI/Python", "en": "default SDK UA" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "circle",
+          "x": 170,
+          "y": 190,
+          "r": 55,
+          "accent": true,
+          "dashed": true
+        },
+        {
+          "type": "text",
+          "x": 170,
+          "y": 285,
+          "content": { "zh": "被误杀的 Python 开发者", "en": "wrongly killed SDK devs" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [260, 190],
+          "to": [740, 190],
+          "label": { "zh": "生态静默转型", "en": "silent ecosystem shift" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "orbitDots",
+          "x": 835,
+          "y": 190,
+          "r": 55,
+          "count": 6,
+          "accentEvery": 0,
+          "startDeg": 0
+        },
+        {
+          "type": "text",
+          "x": 835,
+          "y": 285,
+          "content": { "zh": "Coding Agent 流量", "en": "coding agent traffic" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 345,
+          "content": { "zh": "一刀切风控误杀原生 SDK", "en": "blanket bans kill SDKs" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

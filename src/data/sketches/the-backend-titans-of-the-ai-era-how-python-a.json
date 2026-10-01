@@ -1,0 +1,155 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "arrow",
+          "from": [110, 128],
+          "to": [520, 128],
+          "label": { "zh": "假并行 → 外包给 C++/GPU", "en": "fake parallelism outsourced to C++/GPU" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "arrow",
+          "from": [110, 258],
+          "to": [520, 258],
+          "label": { "zh": "err!=nil → 交给 Tab / AI 生成", "en": "err!=nil now AI-generated" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "circle",
+          "x": 722,
+          "y": 193,
+          "r": 64,
+          "accent": false,
+          "dashed": false
+        },
+        {
+          "type": "circle",
+          "x": 838,
+          "y": 193,
+          "r": 64,
+          "accent": false,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 44,
+          "content": { "zh": "AI 时代后端双雄：Python 与 Go", "en": "Python & Go, the AI-era backends" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 110,
+          "y": 92,
+          "content": { "zh": "Python · 训练端", "en": "Python · training" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 110,
+          "y": 300,
+          "content": { "zh": "Go · 云端后端", "en": "Go · cloud backend" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 315,
+          "y": 170,
+          "content": { "zh": "足球场上的蚂蚁", "en": "an ant on the football field" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 690,
+          "y": 148,
+          "content": { "zh": "易写不易读", "en": "easy to write" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 872,
+          "y": 148,
+          "content": { "zh": "易读不易写", "en": "easy to read" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 238,
+          "content": { "zh": "皆易读易写", "en": "both readable" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "axis",
+          "y": 320,
+          "from": 200,
+          "to": 780,
+          "ticks": 2,
+          "labels": [{ "zh": "生态位", "en": "niche" }, { "zh": "重叠少", "en": "rarely overlap" }]
+        },
+        {
+          "type": "bars",
+          "x": 240,
+          "y": 320,
+          "w": 480,
+          "h": 200,
+          "values": [0.88, 0.82],
+          "labels": [
+            { "zh": "Python·算法训练端", "en": "Python: algo & training" },
+            { "zh": "Go·云端企业后端", "en": "Go: cloud & enterprise" }
+          ],
+          "accentIndex": 0
+        },
+        {
+          "type": "arrow",
+          "from": [810, 300],
+          "to": [925, 120],
+          "label": { "zh": "AI 时代需求", "en": "AI-era demand" },
+          "accent": true,
+          "both": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 60,
+          "content": { "zh": "皆扬长避短，故越来越火", "en": "both play to strengths, so both rise" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 352,
+          "content": { "zh": "Python 的正向循环：生态越巩固，地位越稳", "en": "Python's flywheel: ecosystem reinforces itself" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

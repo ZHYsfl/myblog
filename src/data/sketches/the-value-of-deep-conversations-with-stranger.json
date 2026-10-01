@@ -1,0 +1,47 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "rings",
+          "cx": 500,
+          "cy": 200,
+          "radii": [55, 120],
+          "labels": [
+            { "r": 120, "text": { "zh": "他人的 context 无限", "en": "infinite context" }, "angle": -90 },
+            { "r": 55, "text": { "zh": "共识", "en": "consensus" }, "angle": 90 }
+          ]
+        },
+        { "type": "circle", "x": 300, "y": 200, "r": 16, "dashed": true },
+        { "type": "circle", "x": 700, "y": 200, "r": 16, "dashed": true },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 300, "y": 200, "label": { "zh": "我", "en": "me" }, "r": 5 },
+            { "x": 700, "y": 200, "label": { "zh": "陌生人 · INTJ 学长", "en": "stranger · INTJ senior" }, "r": 5 }
+          ],
+          "edges": [[0, 1]],
+          "edgeAccent": [0]
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "与陌生人的深度交流", "en": "Deep Talks with Strangers" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 350,
+          "content": { "zh": "数小时 · 图书馆长椅 · 每周一次", "en": "hours · library bench · weekly" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

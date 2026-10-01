@@ -1,0 +1,155 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "rings",
+          "cx": 300,
+          "cy": 198,
+          "radii": [65, 125],
+          "labels": [
+            { "r": 125, "angle": -90, "text": { "zh": "人类", "en": "human" } },
+            { "r": 125, "angle": 0, "text": { "zh": "PPT", "en": "PPT" } },
+            { "r": 125, "angle": 90, "text": { "zh": "浏览器", "en": "browser" } },
+            { "r": 125, "angle": 180, "text": { "zh": "搜索", "en": "search" } }
+          ]
+        },
+        {
+          "type": "circle",
+          "x": 300,
+          "y": 198,
+          "r": 42,
+          "accent": true,
+          "dashed": false
+        },
+        {
+          "type": "orbitDots",
+          "x": 300,
+          "y": 198,
+          "r": 125,
+          "count": 4,
+          "accentEvery": 4,
+          "startDeg": 0
+        },
+        {
+          "type": "text",
+          "x": 300,
+          "y": 198,
+          "content": { "zh": "语音 Agent", "en": "Voice Agent" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 560,
+          "y": 130,
+          "content": { "zh": "ASR Qwen3-0.6B · TTS IndexTTS-2.5", "en": "ASR Qwen3-0.6B · TTS IndexTTS-2.5" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 560,
+          "y": 180,
+          "content": { "zh": "LLM DeepSeek-V4.1-Flash（未微调）", "en": "LLM DeepSeek-V4.1-Flash (un-tuned)" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 560,
+          "y": 230,
+          "content": { "zh": "整机显存 ≤ 16GB", "en": "VRAM ≤ 16GB total" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "从 2 个 Agent 到 4 个 Agent", "en": "From 2 agents to 4 agents" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "circle",
+          "x": 250,
+          "y": 190,
+          "r": 70,
+          "accent": false,
+          "dashed": false
+        },
+        {
+          "type": "circle",
+          "x": 700,
+          "y": 190,
+          "r": 70,
+          "accent": true,
+          "dashed": false
+        },
+        {
+          "type": "arrow",
+          "from": [330, 190],
+          "to": [620, 190],
+          "label": { "zh": "价值所在", "en": "where the value lies" },
+          "accent": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 45,
+          "content": { "zh": "理解 × 交互", "en": "understanding × interaction" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 250,
+          "y": 190,
+          "content": { "zh": "理解", "en": "understanding" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 190,
+          "content": { "zh": "交互", "en": "interaction" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 250,
+          "y": 292,
+          "content": { "zh": "以大模型为中心 · 追逐智能上限", "en": "model-centric · chasing the bound" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 292,
+          "content": { "zh": "以人为中心 · 让人理解模型", "en": "human-centric · helping humans understand" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

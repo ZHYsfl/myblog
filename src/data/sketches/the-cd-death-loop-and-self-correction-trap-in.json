@@ -1,0 +1,88 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "cd 死循环：引力井", "en": "The cd Gravity Well" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 330, "y": 100, "label": { "zh": "go build 失败", "en": "go build fails" }, "r": 4 },
+            { "x": 560, "y": 150, "label": { "zh": "CoT：要加 cd", "en": "CoT: add cd" }, "r": 4 },
+            { "x": 470, "y": 300, "label": { "zh": "调用仍无 cd", "en": "call lacks cd" }, "r": 4 },
+            { "x": 220, "y": 260, "label": { "zh": "再次失败", "en": "fails again" }, "r": 4 }
+          ],
+          "edges": [[0, 1], [1, 2], [2, 3], [3, 0]],
+          "edgeAccent": []
+        },
+        {
+          "type": "spiral",
+          "x": 760,
+          "y": 190,
+          "r0": 12,
+          "r1": 100,
+          "turns": 4,
+          "accent": true
+        },
+        {
+          "type": "text",
+          "x": 760,
+          "y": 315,
+          "content": { "zh": "引力井 gravity well", "en": "gravity well" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "measure",
+          "from": [220, 350],
+          "to": [560, 350],
+          "label": { "zh": "20+ 次循环", "en": "20+ loops" }
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 44,
+          "content": { "zh": "错误恢复率评测", "en": "Error Recovery Rates" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "bars",
+          "x": 280,
+          "y": 300,
+          "w": 360,
+          "h": 210,
+          "values": [0.85, 0.78],
+          "labels": [
+            { "zh": "Claude Sonnet 4.6", "en": "Claude Sonnet 4.6" },
+            { "zh": "Kimi K2.5", "en": "Kimi K2.5" }
+          ],
+          "accentIndex": 0
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 348,
+          "content": { "zh": "关键指标：多次失败后的恢复能力", "en": "recovery after failure" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}
