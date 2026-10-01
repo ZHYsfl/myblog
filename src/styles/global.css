@@ -15,12 +15,12 @@
 }
 
 :root {
-  --bg: #fafaf9;
-  --fg: #171717;
+  --bg: #fdfdfc;
+  --fg: #1c1c1a;
   --accent: #dc4c3a;
-  --muted: #737373;
-  --surface: #ffffff;
-  --border: #e7e5e4;
+  --muted: #6f6f6a;
+  --surface: #f7f7f5;
+  --border: #e9e9e6;
 }
 
 [data-theme='dark'] {
