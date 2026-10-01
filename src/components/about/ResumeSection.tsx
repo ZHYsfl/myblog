@@ -11,46 +11,41 @@ const copy = {
       gpa: 'GPA 3.79 / 4.0，专业前 4.94%（18 / 364），英语六级 549 分。',
       math: '核心课程：机器学习 96.4；线性代数 98.1；大学物理 97.2；算法设计与分析 94.5。',
       cs: '概率论 94.8；数据结构期末机考 100；微积分三学期均分 91.8。',
-      summary:
-        '直博方向：语音智能体与语音 Benchmark 构建。具备扎实的数理基础、强化学习理论，以及大模型 SFT / RL 多卡微调实践经验。',
+      summary: '直博方向：语音智能体。',
     },
     research: {
       title: '科研与项目经历',
       items: [
         {
-          title: 'AudioCC Lab — 语音智能体研究',
+          title: 'AudioCC Lab —— 语音智能体与 Benchmark 研究',
           date: '2026.08 — 至今',
           sub: '拟录取直博生 · 张王优老师 · 上海交通大学人工智能学院 · 进行中',
-          body: `聚焦交互场景语音 Benchmark 构建，评估语音 LLM / Omni 大模型的推理与理解能力，为语音智能体系统奠定评测基础。<br />结合 AudioCC Lab 在音频内容计算的积累，探索语音智能体在复杂声音场景下的感知、推理与行动机制。`,
+          body: `聚焦语音智能体的评测问题：构建交互场景语音 Benchmark，评估语音 LLM / Omni 大模型的推理与理解能力。`,
         },
         {
-          title: 'SCRIBE — Agentic RL 长循环训练范式研究',
+          title: 'VoxFlow —— 语音多智能体交互系统',
+          date: '2026.03 — 至今',
+          sub: 'AudioCC Lab · 负责人 · 独立提出并完成 · 因学术保密已闭源',
+          link: { label: 'GitHub', url: 'https://github.com/ZHYsfl/VoxFlow' },
+          body: `定义问题：多智能体系统中 Agent 数量增长带来的交互入口碎片化——每个 Agent 各需一个界面，与人自然习惯的语音通道相矛盾。<br />提出 <strong>单语音入口 + 多 Agent 总线</strong>架构，将多 Agent 协作的交互复杂度收敛至单一语音通道；新增 Agent 仅需注册三件套，系统交互能力随 Agent 注册持续扩展。<br />提出 <strong>"边听边想边做"</strong>的流式交互机制，支持中英文混说与播放中途打断（barge-in），打通本地全链路语音识别与合成，实现低延迟连续语音交互。<br />以课件制作为首任务闭环验证：纯语音完成需求澄清、初稿生成与多轮修改，预览随改随更新。`,
+        },
+        {
+          title: 'SCRIBE —— Agentic RL 长循环训练范式研究',
           date: '2026.04 — 2026.08',
           sub: '研究助理 · 冯二虎老师',
-          body: `面向 Agentic RL 与 Loop Engineering，提出 <strong>ReAct + Reflect + Summarize</strong> 三阶段显式训练范式，让 Agent 在多轮循环中沉淀可复用的反思与总结能力。<br />设计 <strong>Turn / Step / Token 三级信用分配</strong>机制，将 GRPO 轨迹级优势逐层分解到每个生成 token，解决长循环训练中的 credit assignment 问题。<br />构建面向 Agentic RL 的 <strong>13 维多维度奖励体系</strong>（格式正确性、摘要忠实度、方向中立性、token 复用率等），抑制 reward hacking 并稳定训练信号。<br />完成数据格式、历史压缩策略与 SFT / RL 训练 pipeline 设计，支撑在真实 Agent 任务上的端到端训练实验。`,
+          body: `定义问题：长循环 Agentic RL 中，轨迹级 GRPO 优势无法归因到单个决策与生成 token，长程任务训练信号稀薄。<br />提出 <strong>ReAct + Reflect + Summarize 三阶段显式训练范式</strong>，设计 <strong>Turn / Step / Token 三级信用分配</strong>机制，将轨迹级优势逐层分解至每个生成 token。<br />构建 <strong>13 维多维度奖励体系</strong>（格式正确性、摘要忠实度、方向中立性、token 复用率等），抑制 reward hacking 并稳定训练信号。<br />完成数据格式、历史压缩与 SFT / RL 训练 pipeline 设计，支撑真实 Agent 任务端到端训练，Agent 在多轮循环中收敛稳定并沉淀可复用的反思与总结能力。`,
         },
         {
-          title: 'AgentGenesis — 智能体学习与评测平台',
+          title: 'AgentGenesis —— 智能体评测协议与平台',
           date: '2026.02 — 至今',
           sub: '负责人 · 跨校团队（山大 / 北师大 / 吉大 / 太原理工）· 开源 · 已上线 PyPI',
-          body: `针对当前智能体评测环境碎片化、标准不统一的问题，设计并实现 <strong>三层渐进式评测协议</strong>（L1 单 Agent 循环、L2 同沙箱多 Agent 编排、L3 跨沙箱连接原语），统一单 / 多 Agent 评测标准。<br />后端采用 <strong>Go + gRPC + Docker</strong> 架构，实现 OS 级多 Agent 隔离评测，支持 <strong>22+ 评测任务</strong>的并发多测点执行。<br />设计 Adapter 模式解耦题目 API 与核心运行时，新增评测任务仅需更新适配器，无需改动调度引擎。<br />代码开源并采用 GitHub Flow 进行跨校协作开发。`,
-        },
-        {
-          title: 'EducationAgent — 语音多智能体实时协作系统',
-          date: '2026.03 — 2026.05',
-          sub: '负责人 · 学院实践课项目 · 开源',
-          body: `独立设计 <strong>VoiceAgent + PPTAgent 异步协作架构</strong>，选用 Go 语言实现高并发低延迟的实时交互系统。<br />突破传统固定顺序执行范式，实现 Observation / Thinking / Action <strong>动态编排</strong>，支持"边听边想"的流式交互。<br />设计专用通信协议实现双 Agent <strong>完全异步协作</strong>，提升语音智能体与 PPT 智能体之间的实时协同效率。`,
-        },
-        {
-          title: 'ToolCallingGo — Go 语言 Agent 工具框架',
-          date: '2026.03 — 2026.04',
-          sub: '独立开发 · 开源',
-          body: `针对 Go 生态 Agent 工具链薄弱的问题，独立开发轻量级 Agent SDK（基于 openai-go/v3）。<br />实现 <strong>双层并行机制</strong>：单 Agent 内多工具并行调用 + 多 Agent 会话级并行（Batch / BatchRace）。<br />内置级联终止、错误重试、事件流观测等可靠性机制，提供完整的调试与可观测性支持。`,
+          link: { label: 'GitHub', url: 'https://github.com/ZHYsfl/AgentGenesis' },
+          body: `定义问题：智能体评测环境碎片化、协议不统一，跨工作的评测结果不可比。<br />提出 <strong>三层渐进式评测协议</strong>（L1 单 Agent 循环、L2 同沙箱多 Agent 编排、L3 跨沙箱连接原语），统一单 / 多 Agent 评测标准；平台支撑 <strong>22+ 评测任务</strong>并发执行，开源并上线 PyPI。`,
         },
         {
           title: '生成式重排序算法研究',
           date: '2025.09 — 2026.01',
-          body: `从数学建模 Agent 研究转向，创新提出基于 <strong>Pairwise 的生成式重排序算法簇</strong>。<br />独立构建评测数据集，在 AutoDL <strong>4×A800</strong> 上完成 SFT 与 RL 全流程微调。<br />在 BRIGHT Benchmark 上完成系统评测；通过实验与数学推导发现算法固有局限，形成完整的科研闭环。`,
+          body: `定义问题：生成式重排序在推理密集型检索任务上的能力边界缺乏系统性验证。<br />提出基于 <strong>Pairwise 的生成式重排序算法簇</strong>，独立构建评测数据集，在 AutoDL <strong>4×A800</strong> 上完成 SFT 与 RL 全流程微调。<br />在 BRIGHT Benchmark 上完成系统评测，通过实验与数学推导发现算法固有局限，形成"假设—验证—结论"的完整科研闭环。`,
         },
       ],
     },
@@ -58,24 +53,24 @@ const copy = {
       title: '竞赛与荣誉',
       items: [
         '中国大学生服务外包创新创业大赛 · 全国三等奖（2025.06）——队长，Voice Agent 方向，赴青岛现场答辩',
-        '中关村 AI Agents Vibe Coding 黑客松 · 特别表彰（2025.07）——组长，获刘俊明老师与 Pine AI CTO 李博杰老师特别表彰',
+        '中关村 AI Agents Vibe Coding 黑客松 · 特别表彰（2025.07）——组长，获刘俊明老师与 Pine AI 前首席科学家李博杰老师特别表彰',
         'CleanRL 开源贡献 PR #535（2026.01）——改进 cleanrl_utils/buffers.py 张量重塑一致性处理',
       ],
     },
     skills: {
       title: '专业技能',
       items: [
-        '系统开发：精通 Go / Python；熟悉 gRPC、Docker、并发编程；具备从架构设计到部署上线的全栈工程能力。',
-        'AI 与 Agent：深入理解 Multi-Agent 通信协议、Tool Calling、RAG、MCP；具备大模型 SFT / RL 微调实战经验（Unsloth、AutoDL 多卡训练）。',
-        '工程素养：注重代码 review 与测试，长期践行 Vibe Coding + 文档驱动 + 人工 review 的开发模式；具备开源协作与跨校团队管理经验。',
+        '研究能力：完整的科研闭环经验——问题定义、方法创新、评测构建与实验分析；具备大模型 SFT / RL 训练实战经验。',
+        '研究方向：语音智能体、Agentic RL、多智能体系统与人机语音交互。',
+        '理论基础：扎实的数理基础与强化学习理论；兼具将研究想法快速验证落地的实现能力。',
       ],
     },
     traits: {
       title: '个人特质',
       items: [
-        '自驱型学习者：吉林大学鼎新图书馆打卡 800+ 次；完成强化学习 44 页手写笔记、机器学习 70 页手写及电子笔记；GitHub 过去一年 1.5k+ 次 commit。',
-        '团队领导力：大学期间所有项目均担任队长 / 负责人，曾为跨校团队成员开展 Git 协作培训，规范 GitHub Flow 开发流程。',
-        '抗压与解决问题能力：在科研探索中经历多次方向调整与失败实验，能够从中提炼方法论并持续改进。',
+        '研究自驱：独立完成多个从问题定义到实验验证的完整科研闭环；完成强化学习 44 页手写笔记，GitHub 过去一年 1.7k+ 次 commit。',
+        '团队领导力：大学期间所有项目均担任队长 / 负责人，主导跨校团队协作、代码评审与开发流程规范。',
+        '抗压与迭代：在多次科研方向调整与失败实验中提炼方法论并持续改进。',
       ],
     },
     contact: {
@@ -99,46 +94,41 @@ const copy = {
       gpa: 'GPA 3.79 / 4.0, top 4.94% of major (18 / 364), CET-6 549.',
       math: 'Core courses: Machine Learning 96.4; Linear Algebra 98.1; College Physics 97.2; Algorithm Design & Analysis 94.5.',
       cs: 'Probability 94.8; Data Structures (machine exam) 100; Calculus avg. 91.8.',
-      summary:
-        'Direct PhD focus: voice agents and voice benchmark construction. Solid math foundation, reinforcement learning theory, and hands-on LLM SFT / RL multi-GPU fine-tuning experience.',
+      summary: 'Direct PhD focus: voice agents.',
     },
     research: {
       title: 'Research & Projects',
       items: [
         {
-          title: 'AudioCC Lab — Voice Agent Research',
+          title: 'AudioCC Lab — Voice Agents & Benchmark Research',
           date: 'Aug 2026 — Present',
           sub: 'Admitted direct PhD student · Prof. Zhang Wangyou · SJTU School of AI · In progress',
-          body: `Focusing on voice benchmark construction for interactive scenarios, evaluating the reasoning and understanding of voice LLMs / Omni models to lay the evaluation foundation for voice agent systems.<br />Building on AudioCC Lab's expertise in audio content computing to explore voice agents' perception, reasoning, and action in complex acoustic scenes.`,
+          body: `Focusing on the evaluation problem of voice agents: constructing an interactive-scenario voice benchmark to assess the reasoning and understanding of voice LLMs / Omni models.`,
+        },
+        {
+          title: 'VoxFlow — Voice Multi-Agent Interaction System',
+          date: 'Mar 2026 — Present',
+          sub: 'AudioCC Lab · Lead · independently conceived and built · Closed source for academic confidentiality',
+          link: { label: 'GitHub', url: 'https://github.com/ZHYsfl/VoxFlow' },
+          body: `Formulated the problem: interaction entries fragment as agents multiply — each agent demands its own screen, conflicting with the natural human habit of conversation.<br />Proposed a <strong>single-voice-entry + multi-agent bus</strong> architecture that converges interaction complexity onto one voice channel; registering a new agent takes only three pieces, so system capability grows as agents are added.<br />Proposed a <strong>"listen-while-thinking"</strong> streaming mechanism with code-mixed Chinese-English speech and mid-playback <strong>barge-in</strong>, backed by a local full-stack ASR/TTS pipeline for low-latency continuous voice interaction.<br />Validated with a PPT-authoring task loop: requirement clarification, draft generation, and multi-round revision completed by voice alone, with preview updating as changes are made.`,
         },
         {
           title: 'SCRIBE — Agentic RL Long-Horizon Training Paradigm',
           date: 'Apr — Aug 2026',
           sub: 'Research Assistant · Prof. Feng Erhu',
-          body: `Proposed a <strong>ReAct + Reflect + Summarize</strong> three-stage explicit training paradigm for Agentic RL and Loop Engineering, letting agents accumulate reusable reflection and summarization abilities across long loops.<br />Designed <strong>Turn / Step / Token three-level credit assignment</strong>, decomposing GRPO trajectory-level advantages down to each generated token to address long-horizon credit assignment.<br />Built a <strong>13-dimension reward system</strong> (format correctness, summary fidelity, direction neutrality, token reuse rate, etc.) to suppress reward hacking and stabilize training signals.<br />Completed data format, history compression, and SFT / RL training pipeline design, supporting end-to-end experiments on real agent tasks.`,
+          body: `Formulated the problem: in long-horizon Agentic RL, trajectory-level GRPO advantage cannot be attributed to individual decisions or generated tokens, leaving long-horizon training signals sparse.<br />Proposed a <strong>ReAct + Reflect + Summarize three-stage explicit training paradigm</strong> with <strong>Turn / Step / Token three-level credit assignment</strong>, decomposing trajectory-level advantages down to each generated token.<br />Built a <strong>13-dimension reward system</strong> (format correctness, summary fidelity, direction neutrality, token reuse rate, etc.) to suppress reward hacking and stabilize training signals.<br />Designed the data format, history compression, and SFT / RL pipeline, supporting end-to-end training on real agent tasks; agents converge stably and accumulate reusable reflection and summarization across loops.`,
         },
         {
-          title: 'AgentGenesis — Agent Learning & Evaluation Platform',
+          title: 'AgentGenesis — Agent Evaluation Protocol & Platform',
           date: 'Feb 2026 — Present',
           sub: 'Lead · cross-university team (SDU / BNU / JLU / TYUT) · Open source · Published on PyPI',
-          body: `Designed a <strong>three-level progressive evaluation protocol</strong> (L1 single-agent loop, L2 multi-agent orchestration in a shared sandbox, L3 cross-sandbox connection primitives) to unify single- / multi-agent evaluation standards.<br />Backend on <strong>Go + gRPC + Docker</strong> with OS-level multi-agent isolation, supporting <strong>22+ evaluation tasks</strong> with concurrent multi-checkpoint execution.<br />Adapter pattern decouples task APIs from the core runtime; adding a task only requires a new adapter, no changes to the scheduling engine.<br />Open-sourced with GitHub Flow for cross-university collaboration.`,
-        },
-        {
-          title: 'EducationAgent — Voice Multi-Agent Real-Time Collaboration System',
-          date: 'Mar — May 2026',
-          sub: 'Lead · school practice course · Open source',
-          body: `Independently designed a <strong>VoiceAgent + PPTAgent async collaboration architecture</strong> in Go for high-concurrency, low-latency real-time interaction.<br />Broke the fixed sequential execution paradigm with <strong>dynamic Observation / Thinking / Action orchestration</strong>, enabling "listen-while-thinking" streaming interaction.<br />Custom communication protocol for <strong>fully asynchronous dual-agent collaboration</strong>, improving real-time coordination between the voice and PPT agents.`,
-        },
-        {
-          title: 'ToolCallingGo — Go Agent Tool Framework',
-          date: 'Mar — Apr 2026',
-          sub: 'Solo developer · Open source',
-          body: `Built a lightweight Agent SDK for Go's weak agent toolchain (based on openai-go/v3).<br /><strong>Two-level parallelism</strong>: multi-tool parallel calls within one agent + session-level multi-agent parallelism (Batch / BatchRace).<br />Built-in cascade termination, error retry, and event-stream observability for complete debugging and monitoring support.`,
+          link: { label: 'GitHub', url: 'https://github.com/ZHYsfl/AgentGenesis' },
+          body: `Formulated the problem: fragmented agent evaluation environments and inconsistent protocols make results across works incomparable.<br />Proposed a <strong>three-level progressive evaluation protocol</strong> (L1 single-agent loop, L2 in-sandbox multi-agent orchestration, L3 cross-sandbox connection primitives), unifying single- and multi-agent evaluation standards; the platform runs <strong>22+ evaluation tasks</strong> concurrently, open-sourced and published on PyPI.`,
         },
         {
           title: 'Generative Reranking Algorithm Research',
           date: 'Sep 2025 — Jan 2026',
-          body: `Pivoted from a math-modeling agent to an innovative <strong>pairwise-based generative reranking algorithm cluster</strong>.<br />Built the evaluation dataset independently; full SFT & RL fine-tuning on <strong>4×A800</strong> (AutoDL).<br />Systematic evaluation on BRIGHT Benchmark; identified inherent limitations through experiments and mathematical derivation — a complete research loop.`,
+          body: `Formulated the problem: the capability boundary of generative rerankers on reasoning-intensive retrieval tasks lacked systematic verification.<br />Proposed a <strong>pairwise-based generative reranking algorithm cluster</strong>; built the evaluation dataset independently and completed full SFT & RL fine-tuning on <strong>4×A800</strong> (AutoDL).<br />Systematic evaluation on the BRIGHT Benchmark; identified inherent limitations through experiments and mathematical derivation — a complete hypothesis-verify-conclude research loop.`,
         },
       ],
     },
@@ -146,24 +136,24 @@ const copy = {
       title: 'Honors & Experience',
       items: [
         'National Third Prize, China College Students Service Outsourcing Innovation & Entrepreneurship Competition (Jun 2025) — team leader, Voice Agent, on-site defense in Qingdao',
-        'Special recognition, Zhongguancun AI Agents Vibe Coding Hackathon (Jul 2025) — team leader, recognized by mentor Liu Junming and Pine AI CTO Li Bojie',
+        'Special recognition, Zhongguancun AI Agents Vibe Coding Hackathon (Jul 2025) — team leader, recognized by mentor Liu Junming and Pine AI former Chief Scientist Li Bojie',
         'CleanRL open-source contribution PR #535 (Jan 2026) — improved tensor reshaping consistency in cleanrl_utils/buffers.py',
       ],
     },
     skills: {
-      title: 'Skills & Engineering',
+      title: 'Skills',
       items: [
-        'Systems: proficient in Go / Python; familiar with gRPC, Docker, concurrency; full-stack capability from architecture design to deployment.',
-        'AI & Agents: deep understanding of multi-agent communication protocols, tool calling, RAG, MCP; hands-on LLM SFT / RL fine-tuning (Unsloth, multi-GPU AutoDL).',
-        'Engineering: code review and testing; long-term Vibe Coding + documentation-driven + human-review workflow; open-source collaboration and cross-university team management.',
+        'Research: full research-loop experience — problem formulation, method innovation, benchmark construction, and experiment analysis; hands-on LLM SFT / RL training.',
+        'Focus: voice agents, Agentic RL, multi-agent systems, and human-agent voice interaction.',
+        'Theory: solid mathematical foundation and reinforcement learning theory, plus the ability to validate research ideas quickly.',
       ],
     },
     traits: {
       title: 'Core Traits',
       items: [
-        'Self-driven learner: 800+ check-ins at Jilin University Dingxin Library; 44 pages of handwritten RL notes, 70 pages of handwritten & digital ML notes; 1.5k+ GitHub commits in the past year.',
-        'Team leadership: led every university project as captain / lead; trained cross-university teammates in Git collaboration and GitHub Flow.',
-        'Resilience & problem solving: navigated multiple direction changes and failed experiments in research, distilling methodology and improving continuously.',
+        'Research-driven: independently completed multiple research loops from problem formulation to experimental validation; 44 pages of handwritten RL notes; 1.7k+ GitHub commits in the past year.',
+        'Team leadership: led every university project as captain / lead; directed cross-university collaboration, code review, and development workflow.',
+        'Resilience: distilled methodology from multiple direction changes and failed experiments, iterating continuously.',
       ],
     },
     contact: {
@@ -242,7 +232,21 @@ export function ResumeSection() {
             {t.research.items.map((item, i) => (
               <div key={i} className="relative">
                 <span className="absolute -left-[31px] top-1.5 h-2.5 w-2.5 rounded-full bg-accent ring-4 ring-bg"></span>
-                {item.title && <p className="mb-1 font-medium text-fg">{item.title}</p>}
+                {item.title && (
+                  <p className="mb-1 font-medium text-fg">
+                    {item.title}
+                    {'link' in item && item.link && (
+                      <a
+                        href={item.link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-2 text-xs font-normal text-accent hover:underline"
+                      >
+                        {item.link.label} ↗
+                      </a>
+                    )}
+                  </p>
+                )}
                 <p className="mb-1 text-sm font-medium text-accent">{item.date}</p>
                 {item.sub && <p className="mb-2 text-sm italic text-muted">{item.sub}</p>}
                 <p
