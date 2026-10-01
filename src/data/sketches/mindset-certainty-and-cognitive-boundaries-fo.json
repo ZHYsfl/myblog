@@ -8,7 +8,7 @@
           "cy": 200,
           "radii": [82, 128],
           "labels": [
-            { "r": 128, "angle": -90, "text": { "zh": "心智模型", "en": "mindset" } },
+            { "r": 128, "angle": -58, "text": { "zh": "心智模型", "en": "mindset" } },
             { "r": 128, "angle": 0, "text": { "zh": "确定性", "en": "certainty" } },
             { "r": 128, "angle": 90, "text": { "zh": "认知边界", "en": "cognitive bounds" } },
             { "r": 128, "angle": 180, "text": { "zh": "人性善恶", "en": "human nature" } }
