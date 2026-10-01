@@ -1,284 +1,437 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-<meta charset="UTF-8" />
-<title>周浩洋 · 个人简历</title>
-<style>
-  @page { size: A4; margin: 0; }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --ink: #1c1c1a;
-    --body: #3d3d3a;
-    --muted: #8c8c86;
-    --accent: #c2432f;
-    --hairline: #e3e2dd;
-  }
-  html, body { background: #e9e8e4; }
-  body {
-    font-family: "DengXian", "Microsoft YaHei", "PingFang SC", "Noto Sans SC", sans-serif;
-    font-size: 9.9pt;
-    line-height: 1.62;
-    color: var(--body);
-    -webkit-font-smoothing: antialiased;
-  }
-  .page {
-    width: 210mm;
-    height: 296.5mm;
-    margin: 0 auto;
-    padding: 19mm 19mm 16mm;
-    background: #fdfdfc;
-    position: relative;
-    page-break-after: always;
-    overflow: hidden;
-  }
-  .serif { font-family: "Georgia", "Times New Roman", "SimSun", serif; }
+  <head>
+    <meta charset="UTF-8" />
+    <title>周浩洋 · 个人简历</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 0;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --ink: #1c1c1a;
+        --body: #3d3d3a;
+        --muted: #8c8c86;
+        --accent: #c2432f;
+        --hairline: #e3e2dd;
+      }
+      html,
+      body {
+        background: #e9e8e4;
+      }
+      body {
+        font-family: 'DengXian', 'Microsoft YaHei', 'PingFang SC', 'Noto Sans SC', sans-serif;
+        font-size: 9.9pt;
+        line-height: 1.62;
+        color: var(--body);
+        -webkit-font-smoothing: antialiased;
+      }
+      .page {
+        width: 210mm;
+        height: 296.5mm;
+        margin: 0 auto;
+        padding: 19mm 19mm 16mm;
+        background: #fdfdfc;
+        position: relative;
+        page-break-after: always;
+        overflow: hidden;
+      }
+      .serif {
+        font-family: 'Georgia', 'Times New Roman', 'SimSun', serif;
+      }
 
-  /* ---------- header ---------- */
-  .name {
-    font-size: 27pt;
-    font-weight: 700;
-    letter-spacing: 6px;
-    color: var(--ink);
-  }
-  .headline {
-    margin-top: 2.6mm;
-    font-size: 10.6pt;
-    color: var(--ink);
-    letter-spacing: 0.5px;
-  }
-  .contact {
-    margin-top: 1.8mm;
-    font-size: 9.2pt;
-    color: var(--muted);
-    letter-spacing: 0.3px;
-  }
-  .contact .sep { color: #cfceC8; margin: 0 2.2mm; }
-  .head-rule {
-    margin-top: 5.5mm;
-    border: none;
-    border-top: 1.5px solid var(--ink);
-  }
+      /* ---------- header ---------- */
+      .name {
+        font-size: 27pt;
+        font-weight: 700;
+        letter-spacing: 6px;
+        color: var(--ink);
+      }
+      .headline {
+        margin-top: 2.6mm;
+        font-size: 10.6pt;
+        color: var(--ink);
+        letter-spacing: 0.5px;
+      }
+      .contact {
+        margin-top: 1.8mm;
+        font-size: 9.2pt;
+        color: var(--muted);
+        letter-spacing: 0.3px;
+      }
+      .contact .sep {
+        color: #cfcec8;
+        margin: 0 2.2mm;
+      }
+      .head-rule {
+        margin-top: 5.5mm;
+        border: none;
+        border-top: 1.5px solid var(--ink);
+      }
 
-  /* ---------- sections ---------- */
-  .section { margin-top: 6.4mm; }
-  .sec-head {
-    display: flex;
-    align-items: center;
-    gap: 3mm;
-    margin-bottom: 3.2mm;
-  }
-  .sec-head::before {
-    content: "";
-    width: 2.6mm;
-    height: 2.6mm;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
-  .sec-title {
-    font-size: 12.5pt;
-    font-weight: 700;
-    letter-spacing: 4px;
-    color: var(--ink);
-    white-space: nowrap;
-  }
-  .sec-line {
-    flex: 1;
-    border-top: 0.6px solid var(--hairline);
-  }
+      /* ---------- sections ---------- */
+      .section {
+        margin-top: 6.4mm;
+      }
+      .sec-head {
+        display: flex;
+        align-items: center;
+        gap: 3mm;
+        margin-bottom: 3.2mm;
+      }
+      .sec-head::before {
+        content: '';
+        width: 2.6mm;
+        height: 2.6mm;
+        background: var(--accent);
+        flex-shrink: 0;
+      }
+      .sec-title {
+        font-size: 12.5pt;
+        font-weight: 700;
+        letter-spacing: 4px;
+        color: var(--ink);
+        white-space: nowrap;
+      }
+      .sec-line {
+        flex: 1;
+        border-top: 0.6px solid var(--hairline);
+      }
 
-  /* ---------- entries ---------- */
-  .entry { margin-top: 3.8mm; }
-  .entry:first-of-type { margin-top: 1mm; }
-  .entry-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    gap: 6mm;
-  }
-  .entry-title .t {
-    font-size: 11.2pt;
-    font-weight: 700;
-    color: var(--ink);
-  }
-  .entry-title .d {
-    font-size: 9.2pt;
-    color: var(--muted);
-    white-space: nowrap;
-    font-family: "Georgia", "Times New Roman", serif;
-  }
-  .entry-sub {
-    font-size: 9.2pt;
-    color: var(--muted);
-    font-style: italic;
-    margin-top: 0.5mm;
-  }
-  ul { list-style: none; margin-top: 1.4mm; }
-  li {
-    position: relative;
-    padding-left: 4.4mm;
-    margin-top: 0.9mm;
-    text-align: justify;
-  }
-  li::before {
-    content: "";
-    position: absolute;
-    left: 0.6mm;
-    top: 0.55em;
-    width: 1.5mm;
-    height: 1.5mm;
-    background: var(--accent);
-    opacity: 0.55;
-  }
-  strong { color: var(--ink); font-weight: 700; }
-  .gh {
-    font-size: 8.2pt;
-    font-weight: 400;
-    color: var(--accent);
-    text-decoration: none;
-    margin-left: 2.4mm;
-    letter-spacing: 0.3px;
-    vertical-align: 1px;
-  }
-  .gh::after { content: " ↗"; font-size: 7.5pt; }
+      /* ---------- entries ---------- */
+      .entry {
+        margin-top: 3.8mm;
+      }
+      .entry:first-of-type {
+        margin-top: 1mm;
+      }
+      .entry-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 6mm;
+      }
+      .entry-title .t {
+        font-size: 11.2pt;
+        font-weight: 700;
+        color: var(--ink);
+      }
+      .entry-title .d {
+        font-size: 9.2pt;
+        color: var(--muted);
+        white-space: nowrap;
+        font-family: 'Georgia', 'Times New Roman', serif;
+      }
+      .entry-sub {
+        font-size: 9.2pt;
+        color: var(--muted);
+        font-style: italic;
+        margin-top: 0.5mm;
+      }
+      ul {
+        list-style: none;
+        margin-top: 1.4mm;
+      }
+      li {
+        position: relative;
+        padding-left: 4.4mm;
+        margin-top: 0.9mm;
+        text-align: justify;
+      }
+      li::before {
+        content: '';
+        position: absolute;
+        left: 0.6mm;
+        top: 0.55em;
+        width: 1.5mm;
+        height: 1.5mm;
+        background: var(--accent);
+        opacity: 0.55;
+      }
+      strong {
+        color: var(--ink);
+        font-weight: 700;
+      }
+      .gh {
+        font-size: 8.2pt;
+        font-weight: 400;
+        color: var(--accent);
+        text-decoration: none;
+        margin-left: 2.4mm;
+        letter-spacing: 0.3px;
+        vertical-align: 1px;
+      }
+      .gh::after {
+        content: ' ↗';
+        font-size: 7.5pt;
+      }
 
-  /* ---------- two-column lists ---------- */
-  .plain li { padding-left: 4.2mm; }
-  .kv { color: var(--ink); font-weight: 700; }
+      /* ---------- two-column lists ---------- */
+      .plain li {
+        padding-left: 4.2mm;
+      }
+      .kv {
+        color: var(--ink);
+        font-weight: 700;
+      }
 
-  /* ---------- footer ---------- */
-  .footer {
-    position: absolute;
-    left: 18mm;
-    right: 18mm;
-    bottom: 9mm;
-    padding-top: 2mm;
-    border-top: 0.6px solid var(--hairline);
-    display: flex;
-    justify-content: space-between;
-    font-size: 8pt;
-    color: var(--muted);
-    letter-spacing: 1px;
-  }
-</style>
-</head>
-<body>
+      /* ---------- footer ---------- */
+      .footer {
+        position: absolute;
+        left: 18mm;
+        right: 18mm;
+        bottom: 9mm;
+        padding-top: 2mm;
+        border-top: 0.6px solid var(--hairline);
+        display: flex;
+        justify-content: space-between;
+        font-size: 8pt;
+        color: var(--muted);
+        letter-spacing: 1px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ================= PAGE 1 ================= -->
+    <div class="page">
+      <div class="name serif">周浩洋</div>
+      <div class="headline">
+        上海交通大学 · 人工智能学院 · 直博生（已双选 AudioCC Lab / 张王优老师）
+      </div>
+      <div class="contact">
+        <span class="serif">132-2329-1973</span
+        ><span class="sep">·</span>zhouhy5523@mails.jlu.edu.cn<span class="sep">·</span
+        >github.com/ZHYsfl
+      </div>
+      <hr class="head-rule" />
 
-<!-- ================= PAGE 1 ================= -->
-<div class="page">
-  <div class="name serif">周浩洋</div>
-  <div class="headline">上海交通大学 · 人工智能学院 · 直博生（已双选 AudioCC Lab / 张王优老师）</div>
-  <div class="contact">
-    <span class="serif">132-2329-1973</span><span class="sep">·</span>zhouhy5523@mails.jlu.edu.cn<span class="sep">·</span>github.com/ZHYsfl
-  </div>
-  <hr class="head-rule" />
+      <div class="section">
+        <div class="sec-head">
+          <span class="sec-title">教育背景</span><span class="sec-line"></span>
+        </div>
 
-  <div class="section">
-    <div class="sec-head"><span class="sec-title">教育背景</span><span class="sec-line"></span></div>
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t">上海交通大学 · 人工智能学院 · 直博</span
+            ><span class="d">2027.09 —</span>
+          </div>
+          <div class="entry-sub">导师：张王优教授 ｜ 实验室：AudioCC Lab ｜ 方向：语音智能体</div>
+        </div>
 
-    <div class="entry">
-      <div class="entry-title"><span class="t">上海交通大学 · 人工智能学院 · 直博</span><span class="d">2027.09 —</span></div>
-      <div class="entry-sub">导师：张王优教授 ｜ 实验室：AudioCC Lab ｜ 方向：语音智能体</div>
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t">吉林大学 · 软件学院 · 软件工程 · 本科</span
+            ><span class="d">2023.09 — 2027.06（预计）</span>
+          </div>
+          <ul>
+            <li>GPA：<strong>3.79 / 4.0</strong>（专业前 4.94%，18 / 364）｜ CET-6：549 分</li>
+            <li>
+              核心课程：机器学习 96.4；线性代数 98.1；大学物理 97.2；算法设计与分析 94.5；概率论
+              94.8；数据结构机考 100；微积分均分 91.8
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-head">
+          <span class="sec-title">科研与项目经历</span><span class="sec-line"></span>
+        </div>
+
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t">AudioCC Lab —— 语音智能体与 Benchmark 研究</span
+            ><span class="d">2026.08 — 至今</span>
+          </div>
+          <div class="entry-sub">拟录取直博生 · 张王优老师 · 上海交通大学人工智能学院 · 进行中</div>
+          <ul>
+            <li>
+              聚焦语音智能体的评测问题：构建交互场景语音 Benchmark，评估语音 LLM / Omni
+              大模型的推理与理解能力。
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t"
+              >VoxFlow —— 语音多智能体交互系统<a class="gh" href="https://github.com/ZHYsfl/VoxFlow"
+                >GitHub</a
+              ></span
+            ><span class="d">2026.03 — 至今</span>
+          </div>
+          <div class="entry-sub">AudioCC Lab · 负责人 · 独立提出并完成 · 因学术保密已闭源</div>
+          <ul>
+            <li>
+              <strong>定义问题：</strong>多智能体系统中 Agent 数量增长带来的交互入口碎片化——每个
+              Agent 各需一个界面，与人自然习惯的语音通道相矛盾。
+            </li>
+            <li>
+              提出 <strong>单语音入口 + 多 Agent 总线</strong>架构，将多 Agent
+              协作的交互复杂度收敛至单一语音通道；新增 Agent 仅需注册三件套，系统交互能力随 Agent
+              注册持续扩展。
+            </li>
+            <li>
+              提出
+              <strong>"边听边想边做"</strong
+              >的流式交互机制，支持中英文混说与播放中途打断（barge-in），打通本地全链路语音识别与合成，实现低延迟连续语音交互。
+            </li>
+            <li>
+              以课件制作为首任务闭环验证：纯语音完成需求澄清、初稿生成与多轮修改，预览随改随更新。
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t">SCRIBE —— Agentic RL 长循环训练范式研究</span
+            ><span class="d">2026.04 — 2026.08</span>
+          </div>
+          <div class="entry-sub">研究助理 · 冯二虎老师</div>
+          <ul>
+            <li>
+              <strong>定义问题：</strong>长循环 Agentic RL 中，轨迹级 GRPO
+              优势无法归因到单个决策与生成 token，长程任务训练信号稀薄。
+            </li>
+            <li>
+              提出 <strong>ReAct + Reflect + Summarize 三阶段显式训练范式</strong>，设计
+              <strong>Turn / Step / Token 三级信用分配</strong>机制，将轨迹级优势逐层分解至每个生成
+              token。
+            </li>
+            <li>
+              构建 <strong>13 维多维度奖励体系</strong>（格式正确性、摘要忠实度、方向中立性、token
+              复用率等），抑制 reward hacking 并稳定训练信号。
+            </li>
+            <li>
+              完成数据格式、历史压缩与 SFT / RL 训练 pipeline 设计，支撑真实 Agent
+              任务端到端训练，Agent 在多轮循环中收敛稳定并沉淀可复用的反思与总结能力。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer"><span>周浩洋 · 个人简历</span><span class="serif">1 / 2</span></div>
     </div>
 
-    <div class="entry">
-      <div class="entry-title"><span class="t">吉林大学 · 软件学院 · 软件工程 · 本科</span><span class="d">2023.09 — 2027.06（预计）</span></div>
-      <ul>
-        <li>GPA：<strong>3.79 / 4.0</strong>（专业前 4.94%，18 / 364）｜ CET-6：549 分</li>
-        <li>核心课程：机器学习 96.4；线性代数 98.1；大学物理 97.2；算法设计与分析 94.5；概率论 94.8；数据结构机考 100；微积分均分 91.8</li>
-      </ul>
+    <!-- ================= PAGE 2 ================= -->
+    <div class="page">
+      <div class="section" style="margin-top: 0">
+        <div class="sec-head">
+          <span class="sec-title">科研与项目经历（续）</span><span class="sec-line"></span>
+        </div>
+
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t"
+              >AgentGenesis —— 智能体评测协议与平台<a
+                class="gh"
+                href="https://github.com/ZHYsfl/AgentGenesis"
+                >GitHub</a
+              ></span
+            ><span class="d">2026.02 — 至今</span>
+          </div>
+          <div class="entry-sub">
+            负责人 · 跨校团队（山大 / 北师大 / 吉大 / 太原理工）· 开源 · 已上线 PyPI
+          </div>
+          <ul>
+            <li>
+              <strong>定义问题：</strong>智能体评测环境碎片化、协议不统一，跨工作的评测结果不可比。
+            </li>
+            <li>
+              提出 <strong>三层渐进式评测协议</strong>（L1 单 Agent 循环、L2 同沙箱多 Agent 编排、L3
+              跨沙箱连接原语），统一单 / 多 Agent 评测标准；平台支撑
+              <strong>22+ 评测任务</strong>并发执行，开源并上线 PyPI。
+            </li>
+          </ul>
+        </div>
+
+        <div class="entry">
+          <div class="entry-title">
+            <span class="t">生成式重排序算法研究</span><span class="d">2025.09 — 2026.01</span>
+          </div>
+          <ul>
+            <li>
+              <strong>定义问题：</strong
+              >生成式重排序在推理密集型检索任务上的能力边界缺乏系统性验证。
+            </li>
+            <li>
+              提出基于 <strong>Pairwise 的生成式重排序算法簇</strong>，独立构建评测数据集，在 AutoDL
+              <strong>4×A800</strong> 上完成 SFT 与 RL 全流程微调。
+            </li>
+            <li>
+              在 BRIGHT Benchmark
+              上完成系统评测，通过实验与数学推导发现算法固有局限，形成"假设—验证—结论"的完整科研闭环。
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="sec-head">
+          <span class="sec-title">竞赛与荣誉</span><span class="sec-line"></span>
+        </div>
+        <ul class="plain">
+          <li>
+            <span class="kv">中国大学生服务外包创新创业大赛 · 全国三等奖</span>（2025.06）——
+            队长，Voice Agent 方向，赴青岛现场答辩
+          </li>
+          <li>
+            <span class="kv">中关村 AI Agents Vibe Coding 黑客松 · 特别表彰</span>（2025.07）——
+            组长，获刘俊明老师与 Pine AI 前首席科学家李博杰老师特别表彰
+          </li>
+          <li>
+            <span class="kv">CleanRL 开源贡献 PR #535</span>（2026.01）—— 改进
+            cleanrl_utils/buffers.py 张量重塑一致性处理
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="sec-head">
+          <span class="sec-title">专业技能</span><span class="sec-line"></span>
+        </div>
+        <ul class="plain">
+          <li>
+            <span class="kv">研究能力：</span
+            >完整的科研闭环经验——问题定义、方法创新、评测构建与实验分析；具备大模型 SFT / RL
+            训练实战经验
+          </li>
+          <li>
+            <span class="kv">研究方向：</span>语音智能体、Agentic RL、多智能体系统与人机语音交互
+          </li>
+          <li>
+            <span class="kv">理论基础：</span
+            >扎实的数理基础与强化学习理论；兼具将研究想法快速验证落地的实现能力
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <div class="sec-head">
+          <span class="sec-title">个人特质</span><span class="sec-line"></span>
+        </div>
+        <ul class="plain">
+          <li>
+            <span class="kv">研究自驱：</span
+            >独立完成多个从问题定义到实验验证的完整科研闭环；完成强化学习 44 页手写笔记，GitHub
+            过去一年 1.5k+ 次 commit
+          </li>
+          <li>
+            <span class="kv">团队领导力：</span>大学期间所有项目均担任队长 /
+            负责人，主导跨校团队协作、代码评审与开发流程规范
+          </li>
+          <li>
+            <span class="kv">抗压与迭代：</span>在多次科研方向调整与失败实验中提炼方法论并持续改进
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer"><span>周浩洋 · 个人简历</span><span class="serif">2 / 2</span></div>
     </div>
-  </div>
-
-  <div class="section">
-    <div class="sec-head"><span class="sec-title">科研与项目经历</span><span class="sec-line"></span></div>
-
-    <div class="entry">
-      <div class="entry-title"><span class="t">AudioCC Lab —— 语音智能体与 Benchmark 研究</span><span class="d">2026.08 — 至今</span></div>
-      <div class="entry-sub">拟录取直博生 · 张王优老师 · 上海交通大学人工智能学院 · 进行中</div>
-      <ul>
-        <li>聚焦语音智能体的评测问题：构建交互场景语音 Benchmark，评估语音 LLM / Omni 大模型的推理与理解能力。</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title"><span class="t">VoxFlow —— 语音多智能体交互系统<a class="gh" href="https://github.com/ZHYsfl/VoxFlow">GitHub</a></span><span class="d">2026.03 — 至今</span></div>
-      <div class="entry-sub">AudioCC Lab · 负责人 · 独立提出并完成 · 因学术保密已闭源</div>
-      <ul>
-        <li><strong>定义问题：</strong>多智能体系统中 Agent 数量增长带来的交互入口碎片化——每个 Agent 各需一个界面，与人自然习惯的语音通道相矛盾。</li>
-        <li>提出 <strong>单语音入口 + 多 Agent 总线</strong>架构，将多 Agent 协作的交互复杂度收敛至单一语音通道；新增 Agent 仅需注册三件套，系统交互能力随 Agent 注册持续扩展。</li>
-        <li>提出 <strong>"边听边想边做"</strong>的流式交互机制，支持中英文混说与播放中途打断（barge-in），打通本地全链路语音识别与合成，实现低延迟连续语音交互。</li>
-        <li>以课件制作为首任务闭环验证：纯语音完成需求澄清、初稿生成与多轮修改，预览随改随更新。</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title"><span class="t">SCRIBE —— Agentic RL 长循环训练范式研究</span><span class="d">2026.04 — 2026.08</span></div>
-      <div class="entry-sub">研究助理 · 冯二虎老师</div>
-      <ul>
-        <li><strong>定义问题：</strong>长循环 Agentic RL 中，轨迹级 GRPO 优势无法归因到单个决策与生成 token，长程任务训练信号稀薄。</li>
-        <li>提出 <strong>ReAct + Reflect + Summarize 三阶段显式训练范式</strong>，设计 <strong>Turn / Step / Token 三级信用分配</strong>机制，将轨迹级优势逐层分解至每个生成 token。</li>
-        <li>构建 <strong>13 维多维度奖励体系</strong>（格式正确性、摘要忠实度、方向中立性、token 复用率等），抑制 reward hacking 并稳定训练信号。</li>
-        <li>完成数据格式、历史压缩与 SFT / RL 训练 pipeline 设计，支撑真实 Agent 任务端到端训练，Agent 在多轮循环中收敛稳定并沉淀可复用的反思与总结能力。</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="footer"><span>周浩洋 · 个人简历</span><span class="serif">1 / 2</span></div>
-</div>
-
-<!-- ================= PAGE 2 ================= -->
-<div class="page">
-  <div class="section" style="margin-top: 0;">
-    <div class="sec-head"><span class="sec-title">科研与项目经历（续）</span><span class="sec-line"></span></div>
-
-    <div class="entry">
-      <div class="entry-title"><span class="t">AgentGenesis —— 智能体评测协议与平台<a class="gh" href="https://github.com/ZHYsfl/AgentGenesis">GitHub</a></span><span class="d">2026.02 — 至今</span></div>
-      <div class="entry-sub">负责人 · 跨校团队（山大 / 北师大 / 吉大 / 太原理工）· 开源 · 已上线 PyPI</div>
-      <ul>
-        <li><strong>定义问题：</strong>智能体评测环境碎片化、协议不统一，跨工作的评测结果不可比。</li>
-        <li>提出 <strong>三层渐进式评测协议</strong>（L1 单 Agent 循环、L2 同沙箱多 Agent 编排、L3 跨沙箱连接原语），统一单 / 多 Agent 评测标准；平台支撑 <strong>22+ 评测任务</strong>并发执行，开源并上线 PyPI。</li>
-      </ul>
-    </div>
-
-    <div class="entry">
-      <div class="entry-title"><span class="t">生成式重排序算法研究</span><span class="d">2025.09 — 2026.01</span></div>
-      <ul>
-        <li><strong>定义问题：</strong>生成式重排序在推理密集型检索任务上的能力边界缺乏系统性验证。</li>
-        <li>提出基于 <strong>Pairwise 的生成式重排序算法簇</strong>，独立构建评测数据集，在 AutoDL <strong>4×A800</strong> 上完成 SFT 与 RL 全流程微调。</li>
-        <li>在 BRIGHT Benchmark 上完成系统评测，通过实验与数学推导发现算法固有局限，形成"假设—验证—结论"的完整科研闭环。</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section">
-    <div class="sec-head"><span class="sec-title">竞赛与荣誉</span><span class="sec-line"></span></div>
-    <ul class="plain">
-      <li><span class="kv">中国大学生服务外包创新创业大赛 · 全国三等奖</span>（2025.06）—— 队长，Voice Agent 方向，赴青岛现场答辩</li>
-      <li><span class="kv">中关村 AI Agents Vibe Coding 黑客松 · 特别表彰</span>（2025.07）—— 组长，获刘俊明老师与 Pine AI 前首席科学家李博杰老师特别表彰</li>
-      <li><span class="kv">CleanRL 开源贡献 PR #535</span>（2026.01）—— 改进 cleanrl_utils/buffers.py 张量重塑一致性处理</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="sec-head"><span class="sec-title">专业技能</span><span class="sec-line"></span></div>
-    <ul class="plain">
-      <li><span class="kv">研究能力：</span>完整的科研闭环经验——问题定义、方法创新、评测构建与实验分析；具备大模型 SFT / RL 训练实战经验</li>
-      <li><span class="kv">研究方向：</span>语音智能体、Agentic RL、多智能体系统与人机语音交互</li>
-      <li><span class="kv">理论基础：</span>扎实的数理基础与强化学习理论；兼具将研究想法快速验证落地的实现能力</li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <div class="sec-head"><span class="sec-title">个人特质</span><span class="sec-line"></span></div>
-    <ul class="plain">
-      <li><span class="kv">研究自驱：</span>独立完成多个从问题定义到实验验证的完整科研闭环；完成强化学习 44 页手写笔记，GitHub 过去一年 1.5k+ 次 commit</li>
-      <li><span class="kv">团队领导力：</span>大学期间所有项目均担任队长 / 负责人，主导跨校团队协作、代码评审与开发流程规范</li>
-      <li><span class="kv">抗压与迭代：</span>在多次科研方向调整与失败实验中提炼方法论并持续改进</li>
-    </ul>
-  </div>
-
-  <div class="footer"><span>周浩洋 · 个人简历</span><span class="serif">2 / 2</span></div>
-</div>
-
-</body>
+  </body>
 </html>
