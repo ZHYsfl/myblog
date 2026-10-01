@@ -5,7 +5,7 @@
 <script is:inline>
   (function () {
     const stored = localStorage.getItem('myblog:theme');
-    const theme = stored === 'dark' || stored === 'light' ? stored : 'dark';
+    const theme = stored === 'dark' || stored === 'light' ? stored : 'light';
     document.documentElement.setAttribute('data-theme', theme);
   })();
 </script>
