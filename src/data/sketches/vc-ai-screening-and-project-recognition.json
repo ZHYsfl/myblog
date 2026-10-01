@@ -1,0 +1,78 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "风投机构的 AI 筛选漏斗", "en": "VC AI Screening Funnel" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 120, "y": 120, "label": { "zh": "玩具项目甲", "en": "toy A" }, "r": 4 },
+            { "x": 120, "y": 190, "label": { "zh": "玩具项目乙", "en": "toy B" }, "r": 4 },
+            { "x": 120, "y": 260, "label": { "zh": "玩具项目丙", "en": "toy C" }, "r": 4 }
+          ],
+          "edges": []
+        },
+        {
+          "type": "arrow",
+          "from": [200, 190],
+          "to": [380, 190],
+          "label": { "zh": "AI 分析筛选", "en": "AI screening" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "grid",
+          "x": 380,
+          "y": 95,
+          "w": 160,
+          "h": 190,
+          "cols": 3,
+          "rows": 4,
+          "accentCells": [[1, 1]]
+        },
+        {
+          "type": "arrow",
+          "from": [540, 190],
+          "to": [700, 190],
+          "label": { "zh": "广撒网邮件", "en": "mass email" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "circle",
+          "x": 790,
+          "y": 190,
+          "r": 50,
+          "accent": false,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 790,
+          "y": 272,
+          "content": { "zh": "收到群发邮件", "en": "received blast" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 335,
+          "content": { "zh": "被 AI 筛中，也算一种间接认可", "en": "screened in = a nod" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

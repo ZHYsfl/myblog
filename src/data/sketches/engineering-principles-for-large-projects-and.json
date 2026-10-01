@@ -1,0 +1,84 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "大型项目生存法则", "en": "Laws for Large Repos" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "grid",
+          "x": 60,
+          "y": 90,
+          "w": 400,
+          "h": 220,
+          "cols": 2,
+          "rows": 2,
+          "accentCells": [[1, 1]]
+        },
+        {
+          "type": "text",
+          "x": 160,
+          "y": 155,
+          "content": { "zh": "开闭原则", "en": "open-closed" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 360,
+          "y": 155,
+          "content": { "zh": "解耦·依赖注入", "en": "decoupling + DI" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 160,
+          "y": 265,
+          "content": { "zh": "测试覆盖 >95%", "en": "tests >95%" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 360,
+          "y": 265,
+          "content": { "zh": "git 是死律", "en": "git is a must" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "measure",
+          "from": [600, 100],
+          "to": [600, 310],
+          "label": { "zh": "单文件 ≤250 行", "en": "≤250 lines per file" }
+        },
+        {
+          "type": "axis",
+          "y": 330,
+          "from": 540,
+          "to": 940,
+          "ticks": 5,
+          "labels": [
+            { "zh": "0", "en": "0" },
+            { "zh": "1w", "en": "10k" },
+            { "zh": "2w", "en": "20k" },
+            { "zh": "3w", "en": "30k" },
+            { "zh": "4w", "en": "40k" },
+            { "zh": "5w", "en": "50k" }
+          ]
+        }
+      ]
+    }
+  ]
+}

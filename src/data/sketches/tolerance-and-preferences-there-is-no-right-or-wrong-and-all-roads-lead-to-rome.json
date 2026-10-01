@@ -1,0 +1,68 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 130, "y": 90, "label": { "zh": "低调内敛", "en": "low-key" }, "r": 5 },
+            { "x": 130, "y": 290, "label": { "zh": "张扬外放", "en": "bold & loud" }, "r": 5 },
+            { "x": 320, "y": 55, "label": { "zh": "条理规范", "en": "orderly" }, "r": 5 },
+            { "x": 320, "y": 325, "label": { "zh": "不拘小节", "en": "big-picture" }, "r": 5 },
+            { "x": 500, "y": 60, "label": { "zh": "规律早起", "en": "early riser" }, "r": 5 },
+            { "x": 500, "y": 320, "label": { "zh": "深夜创作", "en": "night owl" }, "r": 5 },
+            {
+              "x": 740,
+              "y": 190,
+              "label": { "zh": "罗马·成功", "en": "Rome · success" },
+              "accent": true,
+              "r": 24
+            }
+          ],
+          "edges": [
+            [0, 6],
+            [1, 6],
+            [2, 6],
+            [3, 6],
+            [4, 6],
+            [5, 6]
+          ],
+          "edgeAccent": []
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "条条大路通罗马", "en": "All roads lead to Rome" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 230,
+          "y": 352,
+          "content": {
+            "zh": "偏好无对错，只是价值观不同",
+            "en": "Preferences are neither right nor wrong"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 740,
+          "y": 262,
+          "content": {
+            "zh": "欣赏每种偏好背后的特质",
+            "en": "Value the trait behind each preference"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

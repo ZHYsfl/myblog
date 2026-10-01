@@ -1,0 +1,111 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "第二次带队的十五天", "en": "15 days leading, again" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "axis",
+          "y": 300,
+          "from": 100,
+          "to": 900,
+          "ticks": 3,
+          "labels": ["7.30", "8.4", "8.9", "8.13"]
+        },
+        {
+          "type": "text",
+          "x": 233,
+          "y": 215,
+          "content": { "zh": "一期 · 具身：小车避障与机械臂", "en": "P1 embodied: car & arm" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 517,
+          "y": 165,
+          "content": { "zh": "二期 · 具身×Agent：无人机真机", "en": "P2: real drone, OpenClaw" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 767,
+          "y": 215,
+          "content": { "zh": "三期 · Agent：语音臂与 RAG", "en": "P3: voice arm, RAG MVP" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 46,
+          "content": { "zh": "优秀的人是一个结合态", "en": "greatness is a product" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "rings",
+          "cx": 500,
+          "cy": 200,
+          "radii": [115]
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 500, "y": 85, "label": { "zh": "技术实力", "en": "technical skill" }, "r": 3.5 },
+            { "x": 590, "y": 128, "label": { "zh": "团队思维", "en": "team mindset" }, "r": 3.5 },
+            {
+              "x": 612,
+              "y": 226,
+              "label": { "zh": "社交交流", "en": "social connection" },
+              "r": 3.5
+            },
+            { "x": 550, "y": 304, "label": { "zh": "好的输入", "en": "good inputs" }, "r": 3.5 },
+            { "x": 450, "y": 304, "label": { "zh": "自驱努力", "en": "self-drive" }, "r": 3.5 },
+            {
+              "x": 388,
+              "y": 226,
+              "label": { "zh": "收敛产出", "en": "convergent output" },
+              "r": 3.5
+            },
+            { "x": 410, "y": 128, "label": { "zh": "独特生态位", "en": "unique niche" }, "r": 3.5 }
+          ],
+          "edges": []
+        },
+        {
+          "type": "circle",
+          "x": 500,
+          "y": 200,
+          "r": 24,
+          "accent": true
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 197,
+          "content": { "zh": "优秀的人", "en": "the whole person" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

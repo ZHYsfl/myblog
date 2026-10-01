@@ -1,0 +1,114 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "axis",
+          "x": 210,
+          "from": 60,
+          "to": 340,
+          "ticks": 7,
+          "labels": [
+            { "zh": "L7 业务应用", "en": "L7 apps" },
+            { "zh": "L6 数据语义", "en": "L6 data" },
+            { "zh": "L5 框架与库", "en": "L5 libs" },
+            { "zh": "L4 运行时", "en": "L4 runtime" },
+            { "zh": "L3 网络分布式", "en": "L3 network" },
+            { "zh": "L2 操作系统", "en": "L2 OS" },
+            { "zh": "L1 指令集", "en": "L1 ISA" },
+            { "zh": "L0 物理硬件", "en": "L0 hardware" }
+          ]
+        },
+        {
+          "type": "arrow",
+          "from": [760, 70],
+          "to": [760, 330],
+          "label": { "zh": "LLM 自顶向下进攻", "en": "LLM attacks from the top" },
+          "accent": true,
+          "both": false
+        },
+        { "type": "dot", "x": 210, "y": 140, "accent": true, "r": 3.5 },
+        { "type": "dot", "x": 210, "y": 340, "accent": false, "r": 3 },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "计算机全栈八层", "en": "The Eight-Layer Stack" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 470,
+          "y": 130,
+          "content": { "zh": "梦想在 L5/L7 · 时间耗在 L0–L4", "en": "dream L5/L7 · live L0–L4" },
+          "size": "s",
+          "tone": "ink",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 760,
+          "y": 360,
+          "content": { "zh": "越底层越物理 · 越难攻陷", "en": "the deeper, the safer" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "arrow",
+          "from": [330, 80],
+          "to": [330, 320],
+          "label": { "zh": "自顶向下 · 处处碰壁", "en": "top-down · hits walls" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "path",
+          "points": [
+            [255, 130],
+            [295, 130],
+            [295, 185],
+            [255, 185],
+            [255, 240],
+            [295, 240]
+          ],
+          "closed": false,
+          "accent": false
+        },
+        {
+          "type": "arrow",
+          "from": [660, 320],
+          "to": [660, 80],
+          "label": { "zh": "自底向上 · 摧枯拉朽", "en": "bottom-up · unstoppable" },
+          "accent": true,
+          "both": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "万法归宗", "en": "All Paths Converge" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 360,
+          "content": { "zh": "别让 L2 的痛点 · 挡住 L5 的开发", "en": "keep L2 pain from L5 work" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

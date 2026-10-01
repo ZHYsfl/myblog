@@ -1,0 +1,90 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "rings",
+          "cx": 300,
+          "cy": 170,
+          "radii": [40, 82],
+          "labels": [
+            {
+              "r": 82,
+              "text": { "zh": "Claude Code harness", "en": "Claude Code harness" },
+              "angle": -90
+            }
+          ]
+        },
+        { "type": "circle", "x": 300, "y": 170, "r": 26, "accent": false, "dashed": false },
+        {
+          "type": "rings",
+          "cx": 700,
+          "cy": 170,
+          "radii": [40, 82],
+          "labels": [
+            {
+              "r": 82,
+              "text": { "zh": "Kimi Code CLI harness", "en": "Kimi Code CLI harness" },
+              "angle": -90
+            }
+          ]
+        },
+        { "type": "circle", "x": 700, "y": 170, "r": 26, "accent": false, "dashed": false },
+        {
+          "type": "arrow",
+          "from": [405, 170],
+          "to": [595, 170],
+          "label": { "zh": "生态之争", "en": "ecosystem battle" },
+          "accent": false,
+          "both": false
+        },
+        { "type": "spiral", "x": 500, "y": 300, "r0": 8, "r1": 42, "turns": 3, "accent": true },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "Harness 生态之争", "en": "The Harness Battleground" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 300,
+          "y": 170,
+          "content": { "zh": "Claude", "en": "Claude" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 170,
+          "content": { "zh": "Kimi K2.6", "en": "Kimi K2.6" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 300,
+          "y": 288,
+          "content": { "zh": "模型 × 自家 CLI 针对性训练", "en": "trained on its own CLI" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 356,
+          "content": { "zh": "放进别家 harness · 工具调用死循环", "en": "mismatch → endless loop" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

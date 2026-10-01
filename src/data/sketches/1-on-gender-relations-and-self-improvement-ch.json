@@ -1,0 +1,154 @@
+{
+  "plates": [
+    {
+      "elements": [
+        { "type": "circle", "x": 230, "y": 165, "r": 42, "accent": true, "dashed": false },
+        { "type": "circle", "x": 770, "y": 165, "r": 42, "accent": false, "dashed": true },
+        {
+          "type": "arrow",
+          "from": [312, 165],
+          "to": [688, 165],
+          "label": { "zh": "95% + 5% 混着吃", "en": "mix 95% + 5%" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "bars",
+          "x": 430,
+          "y": 312,
+          "w": 140,
+          "h": 70,
+          "values": [0.95, 0.05],
+          "labels": [
+            { "zh": "红丸 95%", "en": "red 95%" },
+            { "zh": "蓝丸 5%", "en": "blue 5%" }
+          ],
+          "accentIndex": 0
+        },
+        {
+          "type": "path",
+          "points": [
+            [230, 212],
+            [230, 262]
+          ],
+          "closed": false,
+          "accent": false
+        },
+        { "type": "dot", "x": 150, "y": 288, "accent": false, "r": 3 },
+        { "type": "dot", "x": 230, "y": 288, "accent": false, "r": 3 },
+        { "type": "dot", "x": 310, "y": 288, "accent": false, "r": 3 },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "红药丸与蓝药丸", "en": "Red Pill, Blue Pill" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 230,
+          "y": 160,
+          "content": { "zh": "红丸 · 直面现实", "en": "RED · harsh truth" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 770,
+          "y": 160,
+          "content": { "zh": "蓝丸 · 舒适幻想", "en": "BLUE · illusion" },
+          "size": "m",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 105,
+          "content": { "zh": "取其精华 · 去其极端", "en": "keep the essence" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 230,
+          "y": 325,
+          "content": { "zh": "Game 三派：展示·颜值·实战", "en": "flex · looks · hustle" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "nodes",
+          "items": [
+            {
+              "x": 150,
+              "y": 290,
+              "label": { "zh": "看透现实", "en": "see reality clearly" },
+              "r": 5
+            },
+            { "x": 370, "y": 220, "label": { "zh": "真诚链接", "en": "sincere bonds" }, "r": 5 },
+            { "x": 590, "y": 150, "label": { "zh": "乐趣从赢", "en": "joy from winning" }, "r": 5 },
+            {
+              "x": 820,
+              "y": 80,
+              "label": { "zh": "接受权衡", "en": "accept trade-offs" },
+              "accent": true,
+              "r": 7
+            }
+          ],
+          "edges": [
+            [0, 1],
+            [1, 2],
+            [2, 3]
+          ],
+          "edgeAccent": []
+        },
+        {
+          "type": "arrow",
+          "from": [845, 66],
+          "to": [950, 42],
+          "label": { "zh": "向上", "en": "onward" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "四条自强之道", "en": "Four Paths to Strength" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 332,
+          "content": { "zh": "红丸为骨 · 蓝丸为心", "en": "red spine · blue heart" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 360,
+          "content": { "zh": "拒绝躺平 · 知行合一", "en": "act on what you know" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

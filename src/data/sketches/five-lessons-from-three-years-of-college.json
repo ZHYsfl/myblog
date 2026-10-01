@@ -1,0 +1,137 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 120, "y": 310, "label": { "zh": "① 评价体系", "en": "1 metrics" }, "r": 5 },
+            { "x": 310, "y": 265, "label": { "zh": "② 充实幸福", "en": "2 fulfillment" }, "r": 5 },
+            {
+              "x": 500,
+              "y": 215,
+              "label": { "zh": "③ 实践迭代", "en": "3 practice loop" },
+              "r": 5
+            },
+            {
+              "x": 690,
+              "y": 155,
+              "label": { "zh": "④ 黑色生命力", "en": "4 dark resilience" },
+              "r": 5
+            },
+            {
+              "x": 870,
+              "y": 95,
+              "label": { "zh": "⑤ 审美", "en": "5 taste" },
+              "accent": true,
+              "r": 6
+            }
+          ],
+          "edges": [
+            [0, 1],
+            [1, 2],
+            [2, 3],
+            [3, 4]
+          ],
+          "edgeAccent": [3]
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "三年 · 五条领悟", "en": "Five lessons from three years" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 352,
+          "content": {
+            "zh": "犯过的错误，最终都变成了财富",
+            "en": "Mistakes, in the end, became wealth"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 345,
+          "content": { "zh": "错的 reward → 私有评价", "en": "wrong reward → own metrics" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "spiral",
+          "x": 500,
+          "y": 195,
+          "r0": 14,
+          "r1": 135,
+          "turns": 3.5,
+          "accent": true
+        },
+        {
+          "type": "dot",
+          "x": 500,
+          "y": 195,
+          "accent": false,
+          "r": 3.5
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "实践 · 反思 · 迭代", "en": "practice · reflect · iterate" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 655,
+          "y": 130,
+          "content": { "zh": "实践", "en": "practice" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 640,
+          "y": 290,
+          "content": { "zh": "反思", "en": "reflect" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 355,
+          "y": 300,
+          "content": { "zh": "迭代", "en": "iterate" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 195,
+          "content": { "zh": "错误→财富", "en": "error → wealth" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "一年后，把分区还给 D 盘", "en": "Year later: 250 GB to D:" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "path",
+          "points": [
+            [120, 170],
+            [560, 170],
+            [560, 245],
+            [120, 245]
+          ],
+          "closed": true
+        },
+        {
+          "type": "measure",
+          "from": [150, 208],
+          "to": [320, 208],
+          "label": { "zh": "Ubuntu · 250GB", "en": "Ubuntu · 250 GB" }
+        },
+        {
+          "type": "curve",
+          "points": [
+            [220, 168],
+            [330, 112],
+            [440, 168]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 330,
+          "y": 96,
+          "content": { "zh": "归还给 D 盘", "en": "returned to D:" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            {
+              "x": 740,
+              "y": 118,
+              "label": { "zh": "Win · 体验第一", "en": "Windows: UX first" },
+              "r": 4
+            },
+            {
+              "x": 740,
+              "y": 252,
+              "label": { "zh": "WSL · 生态第一", "en": "WSL: ecosystem first" },
+              "r": 4
+            },
+            {
+              "x": 885,
+              "y": 185,
+              "label": { "zh": "最优解", "en": "sweet spot" },
+              "accent": true,
+              "r": 6
+            }
+          ],
+          "edges": [
+            [0, 2],
+            [1, 2]
+          ]
+        },
+        {
+          "type": "axis",
+          "y": 330,
+          "from": 80,
+          "to": 920,
+          "ticks": 2,
+          "labels": [
+            { "zh": "去年 · 装双系统", "en": "a year ago: dual-boot" },
+            { "zh": "一年间", "en": "a year of dual-boot" },
+            { "zh": "今天 · 归还分区", "en": "today: space returned" }
+          ]
+        }
+      ]
+    }
+  ]
+}

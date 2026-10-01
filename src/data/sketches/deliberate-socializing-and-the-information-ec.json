@@ -1,0 +1,75 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 36,
+          "content": { "zh": "社交即生态", "en": "socializing as ecosystem" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 60,
+          "content": { "zh": "感知世界真实的纹理", "en": "sense the world's texture" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 80,
+          "y": 100,
+          "content": { "zh": "每周 ≥1 次深度交流", "en": ">=1 deep talk weekly" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 500, "y": 205, "label": { "zh": "我", "en": "me" }, "accent": true, "r": 5 },
+            { "x": 235, "y": 105, "label": { "zh": "朋友", "en": "friend" }, "r": 4 },
+            { "x": 500, "y": 95, "label": { "zh": "陌生人", "en": "stranger" }, "r": 4 },
+            { "x": 765, "y": 105, "label": { "zh": "创业者", "en": "founder" }, "r": 4 },
+            { "x": 820, "y": 255, "label": { "zh": "科研学者", "en": "researcher" }, "r": 4 },
+            { "x": 640, "y": 318, "label": { "zh": "前辈大佬", "en": "mentor" }, "r": 4 },
+            { "x": 360, "y": 318, "label": { "zh": "同行", "en": "peer" }, "r": 4 },
+            { "x": 180, "y": 255, "label": { "zh": "不同画像的人", "en": "diverse folks" }, "r": 4 }
+          ],
+          "edges": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, 4],
+            [0, 5],
+            [0, 6],
+            [0, 7]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 356,
+          "content": { "zh": "样本不足，决策即盲猜", "en": "no samples, just guesses" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 930,
+          "y": 330,
+          "content": { "zh": "资源思维 → 生态思维", "en": "network → ecosystem" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        }
+      ]
+    }
+  ]
+}

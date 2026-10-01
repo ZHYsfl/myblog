@@ -1,0 +1,85 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "path",
+          "points": [
+            [90, 245],
+            [450, 245]
+          ],
+          "closed": false,
+          "accent": false
+        },
+        {
+          "type": "curve",
+          "points": [
+            [560, 150],
+            [705, 225],
+            [930, 305]
+          ],
+          "accent": false,
+          "closed": false
+        },
+        {
+          "type": "dot",
+          "x": 570,
+          "y": 155,
+          "accent": true,
+          "r": 4
+        },
+        {
+          "type": "angle",
+          "x": 500,
+          "y": 205,
+          "r": 78,
+          "fromDeg": 28,
+          "toDeg": 152,
+          "label": { "zh": "两种分布", "en": "two distributions" }
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 44,
+          "content": { "zh": "注意力分布的几何学", "en": "The geometry of attention" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 270,
+          "y": 205,
+          "content": {
+            "zh": "编程：均匀分布（自指 <0.4）",
+            "en": "code: uniform (self-attn <0.4)"
+          },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 745,
+          "y": 118,
+          "content": { "zh": "开放领域：聚焦近处（0.55）", "en": "open domain: recency (0.55)" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 336,
+          "content": {
+            "zh": "Opus 4.5：多问一答，注意力抵达所有上下文",
+            "en": "Opus 4.5 answers every question at once"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

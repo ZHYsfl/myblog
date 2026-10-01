@@ -1,0 +1,146 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": { "zh": "从超级单兵到团队思维", "en": "Solo → Team Thinking" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "circle",
+          "x": 170,
+          "y": 195,
+          "r": 58,
+          "accent": false,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 170,
+          "y": 292,
+          "content": { "zh": "超级单兵", "en": "solo warrior" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "measure",
+          "from": [70, 110],
+          "to": [270, 110],
+          "label": { "zh": "八成时间·十二成产出", "en": "80% time, 120% output" }
+        },
+        {
+          "type": "arrow",
+          "from": [245, 195],
+          "to": [420, 195],
+          "label": { "zh": "跃迁", "en": "shift" },
+          "accent": false,
+          "both": false
+        },
+        {
+          "type": "rings",
+          "cx": 680,
+          "cy": 195,
+          "radii": [60, 110],
+          "labels": [{ "r": 110, "text": { "zh": "团队轨道", "en": "team orbit" }, "angle": -90 }]
+        },
+        {
+          "type": "orbitDots",
+          "x": 680,
+          "y": 195,
+          "r": 110,
+          "count": 6,
+          "accentEvery": 0,
+          "startDeg": 0
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 338,
+          "content": { "zh": "单兵强，不如团队强", "en": "a team outruns a solo" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 44,
+          "content": { "zh": "团队思维五条规则", "en": "Five Team-Thinking Rules" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "circle",
+          "x": 500,
+          "y": 205,
+          "r": 42,
+          "accent": true,
+          "dashed": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 209,
+          "content": { "zh": "团队引擎", "en": "team engine" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 500, "y": 70, "label": { "zh": "认知谦逊", "en": "humility" }, "r": 4 },
+            {
+              "x": 628,
+              "y": 163,
+              "label": { "zh": "探讨代替命令", "en": "discuss, not order" },
+              "r": 4
+            },
+            {
+              "x": 579,
+              "y": 314,
+              "label": { "zh": "失败内归因", "en": "own the failure" },
+              "r": 4
+            },
+            {
+              "x": 421,
+              "y": 314,
+              "label": { "zh": "托举他人成长", "en": "lift others' growth" },
+              "r": 4
+            },
+            { "x": 372, "y": 163, "label": { "zh": "感恩", "en": "gratitude" }, "r": 4 }
+          ],
+          "edges": [
+            [0, 1],
+            [1, 2],
+            [2, 3],
+            [3, 4],
+            [4, 0]
+          ],
+          "edgeAccent": []
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 354,
+          "content": { "zh": "被尊重的人迸发出创造力", "en": "respect fuels creativity" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

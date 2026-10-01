@@ -1,0 +1,185 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "nodes",
+          "items": [
+            {
+              "x": 225,
+              "y": 105,
+              "label": { "zh": "产品经理", "en": "product manager" },
+              "accent": false,
+              "r": 4
+            },
+            {
+              "x": 775,
+              "y": 105,
+              "label": { "zh": "创意设计", "en": "creative design" },
+              "accent": false,
+              "r": 4
+            },
+            {
+              "x": 215,
+              "y": 268,
+              "label": { "zh": "架构与代码", "en": "architecture & code" },
+              "accent": false,
+              "r": 4
+            },
+            {
+              "x": 785,
+              "y": 268,
+              "label": { "zh": "课程与教学", "en": "teaching" },
+              "accent": false,
+              "r": 4
+            },
+            {
+              "x": 500,
+              "y": 186,
+              "label": { "zh": "生态位", "en": "niche" },
+              "accent": true,
+              "r": 7
+            }
+          ],
+          "edges": [
+            [0, 4],
+            [1, 4],
+            [2, 4],
+            [3, 4]
+          ],
+          "edgeAccent": []
+        },
+        {
+          "type": "circle",
+          "x": 500,
+          "y": 186,
+          "r": 58,
+          "accent": false,
+          "dashed": true
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": {
+            "zh": "差异化生态位：AI 是放大器",
+            "en": "Differentiated niche: AI as amplifier"
+          },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 292,
+          "content": { "zh": "AI=放大器，不是附和者", "en": "AI amplifies, never flatters" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 118,
+          "y": 168,
+          "content": { "zh": "just show what you do", "en": "just show what you do" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 882,
+          "y": 168,
+          "content": { "zh": "附和 ≠ 幻觉", "en": "flattery ≠ hallucination" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 330,
+          "content": {
+            "zh": "Bruno Simon：复合型人才，身价翻数十倍",
+            "en": "Bruno Simon: composite talent, worth ×10"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "spiral",
+          "x": 320,
+          "y": 205,
+          "r0": 8,
+          "r1": 118,
+          "turns": 4,
+          "accent": false
+        },
+        {
+          "type": "dot",
+          "x": 320,
+          "y": 205,
+          "accent": true,
+          "r": 4.5
+        },
+        {
+          "type": "curve",
+          "points": [
+            [540, 300],
+            [660, 296],
+            [730, 268],
+            [905, 85]
+          ],
+          "accent": true,
+          "closed": false
+        },
+        {
+          "type": "text",
+          "x": 320,
+          "y": 56,
+          "content": { "zh": "先探索，后收敛", "en": "explore first, then converge" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 168,
+          "y": 322,
+          "content": { "zh": "数百步探索，无明显进步", "en": "hundreds of steps, little gain" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 368,
+          "y": 208,
+          "content": { "zh": "一步开窍", "en": "the aha-moment step" },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 735,
+          "y": 66,
+          "content": {
+            "zh": "总结后突然开窍，快速收敛",
+            "en": "sudden convergence after reflection"
+          },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

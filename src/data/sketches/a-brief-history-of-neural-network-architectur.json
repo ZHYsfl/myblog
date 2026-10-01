@@ -1,0 +1,69 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "两次架构设计", "en": "Two Waves of Arch Design" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "spiral",
+          "x": 240,
+          "y": 205,
+          "r0": 6,
+          "r1": 88,
+          "turns": 4
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 318,
+          "content": { "zh": "半小时的神经网络史", "en": "30 min of NN history" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [360, 205],
+          "to": [590, 205],
+          "label": { "zh": "异曲同工", "en": "same craft" }
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 700, "y": 118, "label": { "zh": "思考", "en": "reason" }, "r": 4 },
+            { "x": 615, "y": 262, "label": { "zh": "行动", "en": "act" }, "r": 4 },
+            { "x": 785, "y": 262, "label": { "zh": "观察", "en": "observe" }, "r": 4 }
+          ],
+          "edges": [
+            [0, 1],
+            [1, 2],
+            [2, 0]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 298,
+          "content": { "zh": "ReAct 循环", "en": "the ReAct loop" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [800, 140],
+          "to": [935, 75],
+          "label": { "zh": "打破思维惯式", "en": "break the old mindset" },
+          "accent": true
+        }
+      ]
+    }
+  ]
+}

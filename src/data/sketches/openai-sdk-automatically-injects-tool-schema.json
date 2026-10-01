@@ -1,0 +1,74 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": { "zh": "不必手写工具 Schema", "en": "Stop Typing Out Schemas" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 230, "y": 120, "label": { "zh": "名称", "en": "name" }, "r": 4 },
+            { "x": 230, "y": 190, "label": { "zh": "参数", "en": "params" }, "r": 4 },
+            { "x": 230, "y": 260, "label": { "zh": "描述", "en": "description" }, "r": 4 }
+          ],
+          "edges": []
+        },
+        {
+          "type": "arrow",
+          "from": [300, 190],
+          "to": [575, 190],
+          "label": { "zh": "create() 自动注入", "en": "create() injects it" },
+          "accent": true
+        },
+        {
+          "type": "circle",
+          "x": 680,
+          "y": 190,
+          "r": 95,
+          "dashed": true
+        },
+        {
+          "type": "text",
+          "x": 680,
+          "y": 82,
+          "content": { "zh": "系统提示词", "en": "system prompt" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 680,
+          "y": 190,
+          "content": { "zh": "自然语言即可", "en": "plain words suffice" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "path",
+          "points": [
+            [240, 295],
+            [480, 295]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 360,
+          "y": 318,
+          "content": { "zh": "手写即浪费 token", "en": "typing it wastes tokens" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

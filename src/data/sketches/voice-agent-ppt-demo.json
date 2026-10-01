@@ -1,0 +1,70 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "wave",
+          "x": 110,
+          "y": 280,
+          "w": 170,
+          "h": 70,
+          "cycles": 4,
+          "accent": false
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 320, "y": 250, "label": { "zh": "人", "en": "human" }, "r": 10 },
+            {
+              "x": 520,
+              "y": 110,
+              "label": { "zh": "语音 Agent", "en": "Voice Agent" },
+              "accent": true,
+              "r": 12
+            },
+            { "x": 770, "y": 240, "label": { "zh": "PPT Agent", "en": "PPT Agent" }, "r": 10 }
+          ],
+          "edges": [
+            [0, 1],
+            [1, 2],
+            [2, 0]
+          ],
+          "edgeAccent": [0]
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 40,
+          "content": {
+            "zh": "几分钟，用语音做好一份 PPT",
+            "en": "A PPT in minutes, built by voice"
+          },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 352,
+          "content": {
+            "zh": "无微调 · 无 skill · 边说边改",
+            "en": "No fine-tuning · no skills · revise as you talk"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 195,
+          "y": 262,
+          "content": { "zh": "语音", "en": "speech" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}

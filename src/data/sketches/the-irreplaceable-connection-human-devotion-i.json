@@ -1,0 +1,79 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 38,
+          "content": { "zh": "皆可自动化，未皆自动化", "en": "can be ≠ will be" },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 760,
+          "y": 62,
+          "content": { "zh": "AI 的浪潮", "en": "the AI tide" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "wave",
+          "x": 90,
+          "y": 150,
+          "w": 820,
+          "h": 110,
+          "cycles": 5,
+          "points": [0.3, 0.55, 0.8, 1.0]
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 260, "y": 290, "label": { "zh": "口碑", "en": "word of mouth" }, "r": 4 },
+            {
+              "x": 500,
+              "y": 290,
+              "label": { "zh": "人与人的连接", "en": "human connection" },
+              "accent": true,
+              "r": 4.5
+            },
+            {
+              "x": 740,
+              "y": 290,
+              "label": { "zh": "半生的热爱", "en": "lifelong devotion" },
+              "r": 4
+            }
+          ]
+        },
+        {
+          "type": "path",
+          "points": [
+            [140, 290],
+            [860, 290]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 318,
+          "content": { "zh": "不会全部被自动化的", "en": "not all will be" },
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 80,
+          "y": 352,
+          "content": { "zh": "40 年教龄 · 4 辆车 · 先学后付", "en": "coach · 40y · 4 cars" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}

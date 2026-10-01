@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection, render } from 'astro:content';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { PostLanguageRedirect } from '@/components/post/PostLanguageRedirect';
+import { PostSketch } from '@/components/post/PostSketch';
 import { formatDate, getCategoryName } from '@/lib/utils';
 import type { CategoryId } from '@/lib/constants';
 
@@ -66,6 +67,7 @@ const switchHref = translation ? `/posts/${translation.data.lang}/${translation.
         )
       }
     </header>
+    <PostSketch slug={post.data.slug} lang={lang as 'zh' | 'en'} client:load />
     <div class="prose">
       <Content />
     </div>
