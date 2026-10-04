@@ -1,0 +1,326 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 30,
+          "content": {
+            "zh": "六个并发时序模板 · 一个语音运行时",
+            "en": "six concurrency timing templates · one voice runtime"
+          },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 330, "y": 200, "r": 44, "accent": true },
+        {
+          "type": "text",
+          "x": 330,
+          "y": 201,
+          "content": "VoxFlow",
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 330, "y": 200, "r": 0 },
+            { "x": 330, "y": 80, "r": 5, "label": "fan-out" },
+            { "x": 434, "y": 140, "r": 5, "label": "watchdog" },
+            { "x": 434, "y": 260, "r": 5, "label": "detachable link" },
+            { "x": 330, "y": 320, "r": 5, "label": "done channel" },
+            { "x": 226, "y": 260, "r": 5, "label": "generation" },
+            { "x": 226, "y": 140, "r": 5, "label": "bell ringer" }
+          ],
+          "edges": [
+            [0, 1],
+            [0, 2],
+            [0, 3],
+            [0, 4],
+            [0, 5],
+            [0, 6]
+          ]
+        },
+        { "type": "dot", "x": 578, "y": 104 },
+        {
+          "type": "text",
+          "x": 592,
+          "y": 104,
+          "content": {
+            "zh": "迭代半月 · 修复 10+ bug",
+            "en": "half a month iterating · 10+ bugs fixed"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 578, "y": 144 },
+        {
+          "type": "text",
+          "x": 592,
+          "y": 144,
+          "content": {
+            "zh": "全部代码第二遍逐行 review",
+            "en": "second line-by-line review of all the code"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 578, "y": 184 },
+        {
+          "type": "text",
+          "x": 592,
+          "y": 184,
+          "content": {
+            "zh": "文档 3k+ 行 · 架构图定稿",
+            "en": "3k+ lines of docs · architecture diagram"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 578, "y": 224 },
+        {
+          "type": "text",
+          "x": 592,
+          "y": 224,
+          "content": { "zh": "6 个可复用时序模板", "en": "6 reusable timing templates" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 578, "y": 272, "accent": true },
+        {
+          "type": "text",
+          "x": 592,
+          "y": 272,
+          "content": { "zh": "语音改 PPT · 2–3s 落地", "en": "voice PPT edits · land in 2–3s" },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        }
+      ]
+    },
+    {
+      "after": "Template 3",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": {
+            "zh": "打断源链接进来，随时可收回",
+            "en": "the interrupt source links in — revocable at will"
+          },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "path",
+          "points": [
+            [120, 108],
+            [432, 108]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 88,
+          "content": { "zh": "ctx · 打断源", "en": "ctx · interruption source" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "path",
+          "points": [
+            [420, 96],
+            [444, 120]
+          ],
+          "accent": true
+        },
+        {
+          "type": "path",
+          "points": [
+            [444, 96],
+            [420, 120]
+          ],
+          "accent": true
+        },
+        {
+          "type": "text",
+          "x": 462,
+          "y": 108,
+          "content": { "zh": "打断权限已收回", "en": "interrupt privilege revoked" },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        },
+        {
+          "type": "arrow",
+          "from": [150, 108],
+          "to": [150, 192]
+        },
+        {
+          "type": "text",
+          "x": 164,
+          "y": 146,
+          "content": "AfterFunc",
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "path",
+          "points": [
+            [120, 200],
+            [890, 200]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 120,
+          "y": 222,
+          "content": {
+            "zh": "readerCtx（底层只认它）",
+            "en": "readerCtx (all the underlying knows)"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 430, "y": 200, "accent": true, "r": 7 },
+        {
+          "type": "text",
+          "x": 430,
+          "y": 176,
+          "content": "tool delta → stopLink()",
+          "size": "s",
+          "tone": "accent",
+          "align": "center"
+        },
+        {
+          "type": "path",
+          "points": [
+            [80, 300],
+            [930, 300]
+          ]
+        },
+        {
+          "type": "text",
+          "x": 80,
+          "y": 322,
+          "content": { "zh": "gctx · 生死源", "en": "gctx · life-and-death source" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "arrow",
+          "from": [640, 236],
+          "to": [640, 290]
+        },
+        {
+          "type": "text",
+          "x": 656,
+          "y": 258,
+          "content": { "zh": "免疫打断，仍受 gctx 管辖", "en": "immune, yet still under gctx" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 890,
+          "y": 168,
+          "content": { "zh": "defer stopLink() · 幂等", "en": "defer stopLink() · idempotent" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": {
+            "zh": "迭代铸就 · 语音改 PPT",
+            "en": "forged by iteration · voice-driven PPT editing"
+          },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 74,
+          "content": { "zh": "语音指令", "en": "voice command" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "wave", "x": 150, "y": 116, "w": 260, "h": 48, "cycles": 5 },
+        {
+          "type": "bars",
+          "x": 150,
+          "y": 315,
+          "w": 300,
+          "h": 150,
+          "values": [40, 1],
+          "labels": [
+            { "zh": "上一代 · 分钟级", "en": "before · minutes" },
+            { "zh": "现在 · 2–3s", "en": "now · 2–3s" }
+          ],
+          "accentIndex": 1
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 128,
+          "content": { "zh": "效率提升", "en": "speedup of" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 178,
+          "content": { "zh": "数十倍", "en": "tens of ×" },
+          "size": "l",
+          "tone": "accent",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 700,
+          "y": 222,
+          "content": { "zh": "说完即改好", "en": "edited as you finish speaking" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "spiral", "x": 884, "y": 92, "r0": 5, "r1": 26, "turns": 2.2 },
+        {
+          "type": "text",
+          "x": 930,
+          "y": 330,
+          "content": { "zh": "完美不是一次做出来的", "en": "perfection is forged, not born" },
+          "size": "s",
+          "tone": "muted",
+          "align": "right"
+        }
+      ]
+    }
+  ]
+}

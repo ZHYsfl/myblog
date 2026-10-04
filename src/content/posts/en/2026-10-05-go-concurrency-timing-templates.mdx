@@ -1,0 +1,297 @@
+---
+title: 'Six Go Concurrency Timing Templates Behind a Real-Time Voice Agent'
+date: 2026-10-05
+category: 'ai-infra'
+tags: ['VoxFlow', 'Voice Agent', 'Go', 'Concurrency', 'Templates']
+lang: 'en'
+slug: 'go-concurrency-timing-templates'
+translationOf: 'go-concurrency-timing-templates'
+readingTime: 10
+description: ''
+---
+
+Perfection is not made in one pass — it is forged through iteration. After half a month of iteration, VoxFlow has had 10+ bugs fixed; I completed a second, line-by-line review of the entire codebase, wrote 3,000+ lines of documentation, drew the architecture diagram, and distilled 6 reusable concurrency timing templates: fan-out, watchdog, detachable link, done channel, generation, and bell ringer. The walkthrough of each template is below the video.
+
+The most striking improvement of the current version over the previous generation: afterwards, we edit the PPT by voice — say which part to change and that part changes, landing within 2–3 seconds, essentially finished the moment you stop speaking. Compared with the previous minute-level turnaround for PPT edits, that is an efficiency gain of tens of times. This owes mainly to the 10+ bug fixes and the prompt-engineering changes.
+
+Demo of the latest system:
+
+<video controls width="600" src="/assets/posts/go-concurrency-timing-templates/voxflow.mp4"></video>
+
+The Go concurrency timing template collection:
+
+## Template 1: fan-out — run a batch of independent tasks concurrently, results returned to their original slots in order
+
+**Scenario**: you get N mutually independent tasks at once (the classic case: multiple tool calls in one round of LLM response), run them concurrently, and the results must fall back into the slice in input order for an orderly downstream consumer.
+
+**Where it lives**: `src/agent_runtime/tool_exec.go:21`
+
+### ① Generic version (stdlib only, correct on any Go version)
+
+```go
+results := make([]string, len(tasks)) // preallocate to exact length: never use append
+var wg sync.WaitGroup
+for i, t := range tasks {
+	wg.Add(1) // must precede `go` — Add and Wait have a happens-before relationship
+	go func(idx int, task Task) {
+		defer wg.Done() // defer: returns the count even on panic
+		results[idx] = run(ctx, task)
+	}(i, t) // pass by value: the closure does not eat the loop variable
+}
+wg.Wait()
+```
+
+### ② Bounded concurrency (tasks may number in the hundreds, or downstream has a QPS limit)
+
+```go
+results := make([]string, len(tasks)) // still preallocate to exact length
+sem := make(chan struct{}, 8)         // at most 8 in flight at any moment
+var wg sync.WaitGroup
+for i, t := range tasks {
+	sem <- struct{}{} // claim a slot first: when slots are full we wait here, and no further goroutines are ever created
+	wg.Add(1)
+	go func(idx int, task Task) {
+		defer wg.Done()
+		defer func() { <-sem }()
+		results[idx] = run(ctx, task)
+	}(i, t)
+}
+wg.Wait()
+```
+
+### ③ panic isolation (optional; a safety net for external code such as tools/plugins)
+
+Swap the element type for a struct that carries an error (given first here for self-containment; `doTask` returns a `Result` with `Err == nil` on success):
+
+```go
+type Result struct {
+	Msg string // content on success
+	Err error  // error on failure/panic
+}
+```
+
+Note that `wg.Add(1)` stays in its original position — it is not displaced by this recover layer:
+
+```go
+results := make([]Result, len(tasks))
+var wg sync.WaitGroup
+for i, t := range tasks {
+	wg.Add(1)
+	go func(idx int, task Task) {
+		defer wg.Done()
+		defer func() {
+			if r := recover(); r != nil {
+				results[idx] = Result{Err: fmt.Errorf("panic: %v\n%s", r, debug.Stack())}
+			}
+		}()
+		results[idx] = doTask(ctx, task)
+	}(i, t)
+}
+wg.Wait()
+```
+
+---
+
+## Template 2: watchdog — waiting for something that may never arrive
+
+**Scenario**: the connection is established, but the peer may stop sending bytes mid-stream (hung / half-open / packet loss). Cap the inter-frame silence: when the deadline hits, cut the connection and report an error instead of freezing silently.
+
+**Where it lives**: `src/internal/llm/stream.go` (`idleTimeout`), `src/internal/voiceengine/producer.go` (`Producer.Watchdog`, the same late-fire insurance)
+
+```go
+// Package-level var instead of a constant inside the function: tests can squeeze it to milliseconds.
+// Hard-code it, and either tests really wait 30s, or the timeout branch never gets exercised.
+var idleTimeout = 30 * time.Second
+
+// runGuarded runs the "read one frame, handle one frame" loop; if inter-frame silence exceeds idleTimeout,
+// the watchdog cuts it off and wraps up. readFrame is a blocking read: it returns true when a frame arrives,
+// and false when the stream ends / is cut. Contract: onTimeout must be able to tear down readFrame's
+// underlying layer (e.g. stream.Close), otherwise the main loop never exits.
+func runGuarded(
+	readFrame func() bool,
+	handleFrame func(),
+	onTimeout func(), // report error + close the gate + tear down the underlying layer — all the watchdog's
+) {
+	timer := time.NewTimer(idleTimeout)
+	disarm := make(chan struct{}) // the watchdog's exit when the stream ends normally
+
+	var lastBeat atomic.Int64 // timestamp (nanos) of the most recent frame; 0 = no frame yet
+	var timedOut atomic.Bool  // the watchdog has wrapped up; the main loop must not report again
+
+	go func() {
+		defer timer.Stop() // stop the watch at wrap-up; a no-op if it already fired
+		for {
+			select {
+			case <-timer.C:
+				if lastBeat.Load() != 0 &&
+					time.Since(time.Unix(0, lastBeat.Load())) < idleTimeout {
+					continue // late-fire race: a frame just arrived, re-arm and confess
+				}
+				timedOut.Store(true)
+				onTimeout() // includes tearing down the underlying → readFrame returns false → loop exits
+				return
+			case <-disarm:
+				return
+			}
+		}
+	}()
+
+	for readFrame() {
+		lastBeat.Store(time.Now().UnixNano())
+		timer.Reset(idleTimeout) // re-arm on every frame: first-frame timeout is just a special case of idle timeout
+		handleFrame()
+	}
+	close(disarm) // normal wrap-up — only here
+
+	if timedOut.Load() {
+		return // error already reported, gate already closed
+	}
+	// Read to completion normally. Business-specific error checks go here.
+}
+```
+
+---
+
+## Template 3: detachable link — a blade you can retract at any time
+
+**Scenario**: one stream carries two cancellation sources — one governs life and death (server shutdown, watchdog), the other governs interruption (the user barges in). The first half must be interruptible; past a certain point (e.g. once tool calls start streaming) it becomes immune to interruption, but the life-and-death source stays in force. The link is not permanent: revoke the privilege with the stop function instead of manufacturing another ctx to isolate it.
+
+**Where it lives**: `src/internal/voiceengine/producer.go:117`
+
+```go
+// run's lifetime hangs on gctx (life-and-death source); ctx is the interruption source, linked in via AfterFunc
+// and revocable at any time via stopLink. On seeing a tool delta, unlink: this round of inference becomes
+// interruption-immune on the spot.
+func run(gctx, ctx context.Context) {
+	readerCtx, cancelRead := context.WithCancel(gctx)
+	defer cancelRead()
+
+	stopLink := context.AfterFunc(ctx, cancelRead) // link the interruption source; returns the revoke function
+	defer stopLink()                               // unlink on both exit paths — idempotent
+
+	events := stream(readerCtx) // the underlying layer only knows readerCtx: while the link lives, the blade reaches
+	for ev := range events {
+		if isToolDelta(ev) {
+			stopLink() // unlink = revoke the interruption privilege; gctx's execution authority is unaffected
+			// ...
+		}
+		// ...
+	}
+}
+```
+
+Mind the return value of `context.AfterFunc` (`stop func() bool`) — it is the thing itself: calling it revokes the link, and it is idempotent (repeat calls return false with no side effects), so `defer stopLink()` and mid-flight unlinking can coexist.
+
+---
+
+## Template 4: done channel — the known lifespan endpoint of a known goroutine
+
+**Scenario**: the caller `go`-spawns one specific goroutine and only wants to know "when does it die." One `chan struct{}` suffices: the producer `defer close`s, the waiter `<-done`s. A WaitGroup is for "a batch of nameless goroutines" — here there is exactly one named goroutine, and you don't use a sledgehammer to kill a chicken.
+
+**Where it lives**: `src/internal/voiceengine/producer.go:67`
+
+```go
+// Producer side: done is created by the caller and passed in; close is the broadcast of "I'm dead".
+// defer guarantees the signal fires on any exit path (return / unwinding panic).
+func (p *Producer) Run(ctx context.Context, args Args, done chan<- struct{}) {
+	defer close(done)
+	// ...
+}
+
+// Consumer side:
+done := make(chan struct{})
+go producer.Run(ctx, args, done)
+
+select {
+case <-done: // collect the corpse: every exit path of Run converges here
+	// cleanup after normal or abnormal termination
+case <-ctx.Done():
+	// leave early if out of patience; Run must also select on ctx internally, otherwise goroutine leak
+}
+```
+
+Use `close` rather than `done <- struct{}{}`: close is a non-blocking broadcast — multiple waiters (logging, status bar, the ignition gate of the next turn) all receive it at once. close sends no value; the zero value of `chan struct{}` happens to be `struct{}{}`, so it looks like "you received an empty one" when really "the channel closed and gave you a default value to send you off." After close, a hundred `<-done`s all return the zero value immediately, never blocking; a send feeds only one receiver, and can jam the producer when nobody is receiving.
+
+---
+
+## Template 5: generation — verify the color when you can't catch up
+
+**Scenario**: the pipeline is asynchronous (produce → queue → consume → downstream in flight). At any moment, an external event (the **invalidation signal**: the user barging in, in this project) demands that everything already issued be voided — but cancel only propagates along the ctx derivation chain: queued batches, sentences mid-synthesis, and established connections hang on no ctx chain at all, so cancel reaches none of them. Solution: a monotonic counter + dyeing at birth + a color check at every checkpoint cancel cannot reach.
+
+**Where it lives**: `src/internal/voiceengine/state.go:55`, `src/internal/engineserver/consumer.go:133`
+
+```go
+// Dyeing side: read once at the start of a batch — everything in this batch carries the same color.
+gen := e.Generation()
+ch <- Item{Payload: seg, Gen: gen}
+
+// Invalidation side: +1 when the invalidation signal arrives. Old numbers are monotonically non-reusable — naturally immune to ABA.
+func (e *Engine) Invalidate() { e.generation.Add(1) }
+
+// Consumption side: verify the color at every point cancel cannot reach.
+func consume(it Item) {
+	if it.Gen != e.Generation() {
+		return // shard of a voided generation: don't accumulate, don't assemble, don't deliver
+	}
+	// ...
+}
+```
+
+Rules:
+
+- **No half-sentence crosses generations**: on seeing a new-generation token, the buffer clears the old generation's half-sentence first, then accumulates (`sentence_buf.go:66`).
+- **Shards don't assemble into new speech**: a generation roll = ignition of a new turn; shards accumulated by the old turn are discarded on the spot (`consumer.go:79`).
+- **In-flight data may be abandoned**: frames already pushed past the boundary (browser/player) are color-checked downstream — the backend doesn't chase data it has already sent; the backend only checks within its own boundary (the shipping gate: old-generation tokens don't ship, `consumer.go:91`).
+- Dyeing is **revocation**, not **notification**: it doesn't stop anyone; it only guarantees that shards of the old world can't slip into the new turn.
+
+---
+
+## Template 6: bell ringer — one works, one watches; all they share is a bell
+
+**Scenario**: one goroutine is stuck in a long task (model inference runs for minutes), and an external event (a new message arriving) must be able to cut it off at any time. The worker can't get out by itself — a watcher must be posted separately to ring the bell; the pair's only intersection is that "cancel button." Same skeleton as Template 2 (watchdog); only the trigger differs: the watchdog acts when **time** is up, the bell ringer acts when an **event** arrives.
+
+**Where it lives**: `src/internal/agents/host/host.go`
+
+```go
+type Host struct {
+    mu     sync.Mutex
+    cancel context.CancelFunc // non-nil = a job is running
+}
+
+// Watcher: when the event arrives, ring the bell if a job is running; don't ring during idle gaps — nobody to interrupt.
+func (h *Host) watch(ctx context.Context, events <-chan struct{}) {
+    for {
+        select {
+        case <-ctx.Done():
+            return
+        case <-events:
+            h.mu.Lock()
+            if h.cancel != nil {
+                h.cancel()
+            }
+            h.mu.Unlock()
+        }
+    }
+}
+
+// Worker (single-threaded main loop): register the bell, run the job, record the outcome itself.
+func (h *Host) run(ctx context.Context) {
+    prevKilled := false // local memory: did the previous job die? Not shared state!
+    for {
+        batch := waitWork(ctx) // wakes on incoming mail by itself — doesn't rely on the bell
+        workCtx, cancel := context.WithCancel(ctx)
+
+        h.mu.Lock()
+        h.cancel = cancel
+        h.mu.Unlock()
+
+        killed := h.do(workCtx, batch, prevKilled) // run the job; ctx cancellation = killed by the bell
+
+        h.mu.Lock()
+        h.cancel = nil
+        h.mu.Unlock()
+        cancel()
+        prevKilled = killed // record the outcome: the next job decides whether to carry the "interrupted" tag
+    }
+}
+```
