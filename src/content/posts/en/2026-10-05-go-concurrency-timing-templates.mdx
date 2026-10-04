@@ -156,6 +156,8 @@ func runGuarded(
 
 **Scenario**: one stream carries two cancellation sources — one governs life and death (server shutdown, watchdog), the other governs interruption (the user barges in). The first half must be interruptible; past a certain point (e.g. once tool calls start streaming) it becomes immune to interruption, but the life-and-death source stays in force. The link is not permanent: revoke the privilege with the stop function instead of manufacturing another ctx to isolate it.
 
+![detachable link: ctx links into readerCtx via AfterFunc; calling stopLink() cancels the arrow link](/assets/posts/go-concurrency-timing-templates/detachable_link.png)
+
 **Where it lives**: `src/internal/voiceengine/producer.go:117`
 
 ```go
