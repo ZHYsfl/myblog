@@ -1,0 +1,142 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": { "zh": "AI-Whys · 开源", "en": "AI-Whys · open-sourced" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 330, "y": 200, "r": 120 },
+        { "type": "circle", "x": 330, "y": 200, "r": 46, "accent": true },
+        {
+          "type": "text",
+          "x": 330,
+          "y": 201,
+          "content": "AI-Whys",
+          "size": "s",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "nodes",
+          "items": [
+            { "x": 330, "y": 200, "r": 0 },
+            {
+              "x": 330,
+              "y": 80,
+              "r": 5,
+              "label": { "zh": "数学公式推导", "en": "math derivations" }
+            },
+            {
+              "x": 226,
+              "y": 260,
+              "r": 5,
+              "label": { "zh": "插图辅助记忆", "en": "excalidraw illustrations" }
+            },
+            {
+              "x": 434,
+              "y": 260,
+              "r": 5,
+              "label": { "zh": "底层复现代码", "en": "bottom-up reproduction code" }
+            }
+          ],
+          "edges": [
+            [0, 1],
+            [0, 2],
+            [0, 3]
+          ]
+        },
+        { "type": "dot", "x": 590, "y": 108 },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 108,
+          "content": { "zh": "耗时 1 个月整理", "en": "one month of distillation" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 590, "y": 148 },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 148,
+          "content": { "zh": "38 个实验", "en": "38 experiments" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 590, "y": 188 },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 188,
+          "content": {
+            "zh": "深度学习 × 强化学习",
+            "en": "deep learning × reinforcement learning"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 590, "y": 236, "accent": true },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 236,
+          "content": {
+            "zh": "GitHub 开源 · 欢迎 PR",
+            "en": "open-sourced on GitHub · PRs welcome"
+          },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 276,
+          "content": { "zh": "写给三种读者", "en": "for three kinds of readers" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 590, "y": 302 },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 302,
+          "content": { "zh": "本科生 · 从底层系统学起", "en": "undergrads · learn bottom-up" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 590, "y": 330 },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 330,
+          "content": { "zh": "准研究生 · 入学前系统复习", "en": "incoming grads · review early" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        },
+        { "type": "dot", "x": 590, "y": 358 },
+        {
+          "type": "text",
+          "x": 604,
+          "y": 358,
+          "content": { "zh": "研究生 · 速查算法细节", "en": "grads · look up the details" },
+          "size": "s",
+          "tone": "muted",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}
