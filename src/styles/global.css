@@ -299,6 +299,22 @@ html[data-lang='en'] [data-lang-block='en'] {
   transition: color 0.18s linear;
 }
 
+.np-expand-hint {
+  animation: np-expand-hint-bob 2.4s ease-in-out infinite;
+}
+
+@keyframes np-expand-hint-bob {
+  0%,
+  100% {
+    transform: translateY(1px);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translateY(-2px);
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .np-vinyl {
     animation: none;
@@ -306,5 +322,9 @@ html[data-lang='en'] [data-lang-block='en'] {
 
   .np-char {
     transition: none;
+  }
+
+  .np-expand-hint {
+    animation: none;
   }
 }

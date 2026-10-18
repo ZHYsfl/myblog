@@ -7,6 +7,7 @@ import {
   Repeat1,
   Repeat,
   Shuffle,
+  ChevronUp,
 } from 'lucide-react';
 import { useMusic } from '@/lib/musicStore';
 import { useLang } from '@/lib/useLang';
@@ -72,6 +73,15 @@ export function GlobalPlayer() {
       <div className="flex items-center gap-3 px-3 py-2 sm:hidden">
         <button
           type="button"
+          onClick={expand}
+          aria-label={lang === 'en' ? 'Expand player' : '展开歌词'}
+          title={lang === 'en' ? 'Expand player' : '展开歌词'}
+          className="np-expand-hint shrink-0 text-muted transition-colors hover:text-fg"
+        >
+          <ChevronUp className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
           onClick={togglePlay}
           aria-label={
             isPlaying ? (lang === 'en' ? 'Pause' : '暂停') : lang === 'en' ? 'Play' : '播放'
@@ -127,6 +137,15 @@ export function GlobalPlayer() {
 
       {/* desktop */}
       <div className="mx-auto hidden max-w-7xl items-center gap-4 px-4 py-3 sm:flex sm:px-6 lg:px-8">
+        <button
+          type="button"
+          onClick={expand}
+          aria-label={lang === 'en' ? 'Expand player' : '展开歌词'}
+          title={lang === 'en' ? 'Expand player' : '展开歌词'}
+          className="np-expand-hint shrink-0 text-muted transition-colors hover:text-fg"
+        >
+          <ChevronUp className="h-5 w-5" />
+        </button>
         <div className="hidden w-48 sm:block">
           <p className="truncate text-sm font-medium text-fg">{currentSong.title}</p>
           <p className="truncate text-xs text-muted">
