@@ -22,6 +22,7 @@ interface MusicState {
   duration: number;
   volume: number;
   mode: PlayMode;
+  expanded: boolean;
 }
 
 const STORAGE_KEY = 'myblog-music';
@@ -33,6 +34,7 @@ const initialState: MusicState = {
   duration: 0,
   volume: 0.8,
   mode: 'order',
+  expanded: false,
 };
 
 function isBrowser() {
@@ -242,6 +244,14 @@ class MusicStore {
     saveState(this.state);
   };
 
+  expand = () => {
+    this.setState({ expanded: true });
+  };
+
+  collapse = () => {
+    this.setState({ expanded: false });
+  };
+
   save = () => saveState(this.state);
 }
 
@@ -287,5 +297,7 @@ export function useMusic() {
     seek: store.seek,
     setVolume: store.setVolume,
     cycleMode: store.cycleMode,
+    expand: store.expand,
+    collapse: store.collapse,
   };
 }

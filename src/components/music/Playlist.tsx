@@ -3,7 +3,7 @@ import { Play, Pause, Music } from 'lucide-react';
 import { useLang } from '@/lib/useLang';
 
 export function Playlist() {
-  const { songs, currentIndex, isPlaying, playIndex, togglePlay } = useMusic();
+  const { songs, currentIndex, isPlaying, playIndex, expand } = useMusic();
   const [lang] = useLang();
 
   return (
@@ -16,7 +16,10 @@ export function Playlist() {
             key={`${index}-${song.title}`}
             type="button"
             data-play-index={index}
-            onClick={() => (isCurrent ? togglePlay() : playIndex(index))}
+            onClick={() => {
+              if (!isCurrent) playIndex(index);
+              expand();
+            }}
             className={`group flex w-full items-center gap-4 rounded-lg border px-4 py-3 text-left transition-all ${
               isCurrent
                 ? 'border-accent/30 bg-accent/[0.04]'

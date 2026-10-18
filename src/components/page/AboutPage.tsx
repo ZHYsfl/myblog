@@ -14,12 +14,12 @@ const copy = {
   zh: {
     aboutLabel: 'About',
     title: '关于我',
-    tagline: '研究全双工端到端实时语音交互大模型，也造语音智能体。',
-    intro1: `我是<strong>周浩洋</strong>，上海交通大学人工智能学院直博生（AudioCC Lab，导师张王优），吉林大学软件学院本科。研究方向是全双工端到端实时交互语音大模型与语音智能体——既做评测它们的 Benchmark，也做实现它们的系统。`,
+    tagline: '训练全双工端到端实时语音交互大模型，也造语音智能体。',
+    intro1: `我是<strong>周浩洋</strong>，上海交通大学人工智能学院直博生（AudioCC Lab，导师张王优），吉林大学软件学院本科。研究方向是全双工端到端实时交互语音大模型与语音智能体——既训练模型，也做评测它的 Benchmark、造实现它的系统。`,
     intro2:
       '之前研究 Agentic RL 的长循环训练（SCRIBE），做过智能体评测平台 AgentGenesis 和语音多智能体系统 VoxFlow。这个博客记录技术与科研，也记录生活——不追热点，写什么取决于最近在为什么问题头疼。',
     doing: '在研究',
-    doing1: '全双工端到端实时语音交互大模型与语音智能体：定评测标准，也造真正可用的系统。',
+    doing1: '全双工端到端实时语音交互大模型与语音智能体：训练模型、定评测标准、造真正可用的系统。',
     doing2: 'Agentic RL：长循环训练中的信用分配与奖励设计。',
     doing3: '开源：AgentGenesis 维护者，CleanRL 贡献者。',
     off: '不在研究的时候',
@@ -36,13 +36,13 @@ const copy = {
   en: {
     aboutLabel: 'About',
     title: 'About Me',
-    tagline: 'I research full-duplex end-to-end real-time speech models — and build voice agents.',
-    intro1: `I'm <strong>Haoyang Zhou</strong>, a direct PhD student at the School of AI, Shanghai Jiao Tong University (AudioCC Lab, advised by Prof. Zhang Wangyou), with a B.E. from the Software College of Jilin University. My research focuses on full-duplex end-to-end real-time speech interaction models and voice agents — both the benchmarks that evaluate them and the systems that realize them.`,
+    tagline: 'I train full-duplex end-to-end real-time speech models — and build voice agents.',
+    intro1: `I'm <strong>Haoyang Zhou</strong>, a direct PhD student at the School of AI, Shanghai Jiao Tong University (AudioCC Lab, advised by Prof. Zhang Wangyou), with a B.E. from the Software College of Jilin University. My research focuses on full-duplex end-to-end real-time speech interaction models and voice agents — I train the models, build the benchmarks that evaluate them, and create the systems that realize them.`,
     intro2:
       'Before this, I worked on long-horizon Agentic RL training (SCRIBE), built an agent evaluation platform (AgentGenesis), and a voice multi-agent system (VoxFlow). This blog covers research and life — no hot takes, just whatever problem is currently keeping me up.',
     doing: 'Working On',
     doing1:
-      'Full-duplex end-to-end real-time speech interaction models and voice agents: setting the benchmarks, and building systems that pass them.',
+      'Full-duplex end-to-end real-time speech interaction models and voice agents: training the models, setting the benchmarks, and building systems that pass them.',
     doing2: 'Agentic RL: credit assignment and reward design for long-horizon training.',
     doing3: 'Open source: maintainer of AgentGenesis, contributor to CleanRL.',
     off: 'Off Duty',

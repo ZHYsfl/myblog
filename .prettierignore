@@ -26,3 +26,8 @@ mysong/
 
 # Lockfile
 package-lock.json
+
+# generated lyric timestamps
+public/lyrics/
+# python pipeline scripts
+scripts/*.py

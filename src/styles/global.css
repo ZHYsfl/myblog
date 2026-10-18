@@ -274,3 +274,37 @@ html[data-lang='zh'] [data-lang-block='zh'],
 html[data-lang='en'] [data-lang-block='en'] {
   display: block;
 }
+
+/* NowPlaying overlay */
+@keyframes np-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.np-vinyl {
+  animation: np-spin 24s linear infinite;
+}
+
+.np-vinyl.paused {
+  animation-play-state: paused;
+}
+
+.np-lyrics-mask {
+  mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 14%, black 86%, transparent);
+}
+
+.np-char {
+  transition: color 0.18s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .np-vinyl {
+    animation: none;
+  }
+
+  .np-char {
+    transition: none;
+  }
+}

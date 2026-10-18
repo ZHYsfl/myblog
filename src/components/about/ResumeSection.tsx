@@ -20,7 +20,7 @@ const copy = {
           title: 'AudioCC Lab —— 全双工语音大模型与语音智能体研究',
           date: '2026.08 — 至今',
           sub: '拟录取直博生 · 张王优老师 · 上海交通大学人工智能学院 · 进行中',
-          body: `聚焦全双工端到端实时交互语音大模型与语音智能体：构建交互场景语音 Benchmark，评估并改进语音 LLM / Omni 大模型的实时交互、推理与理解能力。`,
+          body: `聚焦全双工端到端实时交互语音大模型与语音智能体：训练端到端实时语音大模型，构建交互场景语音 Benchmark，评估并改进模型的实时交互、推理与理解能力。`,
         },
         {
           title: 'VoxFlow —— 语音多智能体交互系统',
@@ -104,7 +104,7 @@ const copy = {
           title: 'AudioCC Lab — Full-Duplex Speech Models & Voice Agent Research',
           date: 'Aug 2026 — Present',
           sub: 'Admitted direct PhD student · Prof. Zhang Wangyou · SJTU School of AI · In progress',
-          body: `Focusing on full-duplex end-to-end real-time speech interaction models and voice agents: constructing interactive-scenario voice benchmarks to evaluate and improve the real-time interaction, reasoning, and understanding of speech LLMs / Omni models.`,
+          body: `Focusing on full-duplex end-to-end real-time speech interaction models and voice agents: training end-to-end real-time speech models, and constructing interactive-scenario voice benchmarks to evaluate and improve the models' real-time interaction, reasoning, and understanding.`,
         },
         {
           title: 'VoxFlow — Voice Multi-Agent Interaction System',

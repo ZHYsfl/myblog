@@ -25,6 +25,7 @@ export function GlobalPlayer() {
     seek,
     setVolume,
     cycleMode,
+    expand,
   } = useMusic();
   const [lang] = useLang();
 
@@ -61,7 +62,12 @@ export function GlobalPlayer() {
   const artist = lang === 'en' ? 'HaoYang Zhou' : currentSong.artist;
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-bg/90 backdrop-blur-lg">
+    <div
+      className="fixed bottom-0 left-0 right-0 z-50 cursor-pointer border-t border-border bg-bg/90 backdrop-blur-lg"
+      onClick={(e) => {
+        if (!(e.target as HTMLElement).closest('button, input')) expand();
+      }}
+    >
       {/* mobile mini row */}
       <div className="flex items-center gap-3 px-3 py-2 sm:hidden">
         <button

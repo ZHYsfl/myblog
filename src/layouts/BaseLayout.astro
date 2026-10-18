@@ -3,6 +3,7 @@ import ThemeScript from '@/components/layout/ThemeScript.astro';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { GlobalPlayer } from '@/components/music/GlobalPlayer';
+import { NowPlaying } from '@/components/music/NowPlaying';
 import { SITE } from '@/lib/constants';
 import '@/styles/global.css';
 
@@ -271,5 +272,6 @@ const pageTitle = title ? `${title} | ${SITE.authorEn}` : `${SITE.authorEn}`;
     </main>
     <Footer client:load />
     <GlobalPlayer client:load />
+    <NowPlaying client:load />
   </body>
 </html>
