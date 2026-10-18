@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { GalaxyScene } from '@/components/home/GalaxyScene';
 import { PostListItem } from '@/components/post/PostListItem';
 import { LangText } from '@/components/ui/LangText';
 import { useLang } from '@/lib/useLang';
@@ -28,15 +27,6 @@ const copy = {
 export function HomePage({ posts }: HomePageProps) {
   const [lang] = useLang();
   const t = copy[lang];
-
-  const activePosts = posts.filter((p) => p.data.lang === lang);
-  const counts = activePosts.reduce(
-    (acc, post) => {
-      acc[post.data.category] = (acc[post.data.category] || 0) + 1;
-      return acc;
-    },
-    {} as Record<string, number>
-  );
 
   const sortByDate = (a: HomePost, b: HomePost) =>
     new Date(b.data.date).getTime() - new Date(a.data.date).getTime();
@@ -72,13 +62,6 @@ export function HomePage({ posts }: HomePageProps) {
   return (
     <div className="min-h-screen bg-bg">
       <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <GalaxyScene counts={counts} />
-        </div>
-
-        {/* gradient overlay for text readability */}
-        <div className="pointer-events-none absolute inset-0 z-10 bg-gradient-to-b from-bg/30 via-bg/60 to-bg" />
-
         <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center">
           <div className="pointer-events-auto max-w-3xl">
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
