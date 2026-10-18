@@ -39,6 +39,15 @@ export function Footer() {
               GitHub
             </a>
             <a
+              href="/rss.xml"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="RSS"
+              className="transition-colors hover:text-fg"
+            >
+              RSS
+            </a>
+            <a
               href={`mailto:${SITE.email}`}
               aria-label="Email"
               className="transition-colors hover:text-fg"
