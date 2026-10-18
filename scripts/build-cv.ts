@@ -7,6 +7,7 @@
  */
 
 import { chromium } from 'playwright';
+import sharp from 'sharp';
 import { copy } from '../src/components/about/resume-copy';
 
 const zh = copy.zh;
@@ -14,6 +15,12 @@ const zh = copy.zh;
 const esc = (s: string) => s;
 const contact = zh.contact.items.map((i) => i.replace(/^[^：:]*[：:]\s*/, ''));
 const name = '周浩洋';
+
+const photo = await sharp('public/images/about/photo2.jpg')
+  .resize(160, 160, { fit: 'cover' })
+  .jpeg({ quality: 82, mozjpeg: true })
+  .toBuffer();
+const photoUri = `data:image/jpeg;base64,${photo.toString('base64')}`;
 
 const section = (title: string, inner: string) => `
   <section>
@@ -70,6 +77,11 @@ const html = `<!doctype html>
     line-height: 1.58;
   }
   header { margin-bottom: 7mm; }
+  .head-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 8mm; }
+  .me {
+    width: 21mm; height: 21mm; object-fit: cover;
+    border-radius: 2.5mm; border: 1px solid #e9e9e6; flex-shrink: 0;
+  }
   h1 { font-size: 21pt; font-weight: 600; letter-spacing: 0.06em; }
   .tagline { margin-top: 1.2mm; color: #6f6f6a; font-size: 9.6pt; letter-spacing: 0.04em; }
   .contact { margin-top: 2.6mm; color: #6f6f6a; font-size: 8.8pt; letter-spacing: 0.02em; }
@@ -106,9 +118,14 @@ const html = `<!doctype html>
 </head>
 <body>
   <header>
-    <h1>${name}</h1>
-    <p class="tagline">全双工端到端实时语音交互大模型 · 语音智能体</p>
-    <p class="contact">${contact.map((c) => `<span>${c}</span>`).join('')}<span>博客 zhysfl.github.io/myblog</span></p>
+    <div class="head-row">
+      <div>
+        <h1>${name}</h1>
+        <p class="tagline">全双工端到端实时语音交互大模型 · 语音智能体</p>
+        <p class="contact">${contact.map((c) => `<span>${c}</span>`).join('')}<span>博客 zhouhaoyang.me</span></p>
+      </div>
+      <img class="me" src="${photoUri}" alt="" />
+    </div>
     <hr />
   </header>
   ${section(zh.education.title, edu)}
