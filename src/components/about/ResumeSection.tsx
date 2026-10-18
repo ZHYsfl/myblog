@@ -29,23 +29,16 @@ export function ResumeSection() {
             className="h-full w-full object-cover object-[50%_42%] transition-transform duration-700 hover:scale-105"
           />
         </div>
-        <div className="col-span-12 aspect-[4/3] overflow-hidden rounded-2xl sm:col-span-7 sm:row-span-2 sm:aspect-auto">
-          <img
-            src="/images/about/photo1.jpg"
-            alt="Haoyang Zhou"
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-        </div>
-        <div className="col-span-6 aspect-square overflow-hidden rounded-2xl sm:col-span-5">
-          <img
-            src="/images/about/photo2.jpg"
-            alt="Haoyang Zhou"
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
-          />
-        </div>
-        <div className="col-span-6 aspect-square overflow-hidden rounded-2xl sm:col-span-5">
+        <div className="col-span-7 aspect-[3/4] overflow-hidden rounded-2xl">
           <img
             src="/images/about/photo3.jpg"
+            alt="Haoyang Zhou"
+            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+          />
+        </div>
+        <div className="col-span-5 overflow-hidden rounded-2xl">
+          <img
+            src="/images/about/photo2.jpg"
             alt="Haoyang Zhou"
             className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
           />
