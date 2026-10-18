@@ -13,13 +13,12 @@
         },
         {
           "type": "path",
-          "points": [[90, 250], [330, 250], [450, 170], [880, 170]],
+          "points": [[90, 250], [450, 250], [880, 160]],
           "accent": true
         },
         { "type": "dot", "x": 90, "y": 250, "r": 5 },
-        { "type": "dot", "x": 330, "y": 250, "r": 5 },
-        { "type": "dot", "x": 450, "y": 170, "r": 5 },
-        { "type": "dot", "x": 880, "y": 170, "accent": true, "r": 7 },
+        { "type": "dot", "x": 450, "y": 250, "r": 5 },
+        { "type": "dot", "x": 880, "y": 160, "accent": true, "r": 7 },
         {
           "type": "text",
           "x": 90,
@@ -31,16 +30,16 @@
         },
         {
           "type": "text",
-          "x": 210,
+          "x": 270,
           "y": 288,
-          "content": { "zh": "10.11 高铁 <6h", "en": "10.11 HSR <6h" },
+          "content": { "zh": "10.11 · 高铁 <6h", "en": "10.11 · HSR <6h" },
           "size": "s",
           "tone": "muted",
           "align": "center"
         },
         {
           "type": "text",
-          "x": 330,
+          "x": 450,
           "y": 288,
           "content": { "zh": "徐汇 · 单间", "en": "Xuhui · studio" },
           "size": "s",
@@ -49,9 +48,9 @@
         },
         {
           "type": "text",
-          "x": 520,
-          "y": 140,
-          "content": { "zh": "地铁 3-4 站 · 走 100m ×2", "en": "3-4 subway stops" },
+          "x": 645,
+          "y": 120,
+          "content": { "zh": "通勤 ≈30min · 地铁 3-4 站", "en": "commute ≈30min · 3-4 stops" },
           "size": "s",
           "tone": "muted",
           "align": "center"
@@ -59,17 +58,11 @@
         {
           "type": "text",
           "x": 880,
-          "y": 138,
+          "y": 122,
           "content": { "zh": "SAI", "en": "SAI" },
           "size": "m",
           "tone": "ink",
           "align": "center"
-        },
-        {
-          "type": "measure",
-          "from": [470, 205],
-          "to": [860, 205],
-          "label": { "zh": "通勤 ≈30min", "en": "commute ≈30min" }
         }
       ]
     },
