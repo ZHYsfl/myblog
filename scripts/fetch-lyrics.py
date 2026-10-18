@@ -68,8 +68,11 @@ def fetch_lrc(mid: str) -> str:
 
 
 CREDIT_RE = re.compile(
-    r"(词|曲|编曲|制作人|监制|吉他|贝斯|鼓|和声|录音|混音|母带|OP|SP|作词|作曲|演唱|原唱)\s*[:：]"
+    r"(作词|作曲|词|曲|编曲|制作人|监制|吉他|贝斯|鼓|和声|录音|混音|母带|OP|SP|演唱|原唱|录制|编写|发行|出品)"
+    r"[\w/、]*\s*[:：]"
 )
+TITLE_LINE_RE = re.compile(r"^.{1,30}\s[-–—]\s.{1,30}(\s*\(.*\))?$")
+BRACKET_JUNK_RE = re.compile(r"^【[^】]*】$")
 
 
 def parse_lrc(lrc: str) -> list[str]:
@@ -79,12 +82,45 @@ def parse_lrc(lrc: str) -> list[str]:
         if not m:
             continue
         text = m.group(2).strip()
-        if not text or CREDIT_RE.search(text):
+        if not text or CREDIT_RE.search(text) or BRACKET_JUNK_RE.match(text):
+            continue
+        # "歌名 - 歌手 (xxx)" credit line, always first and never sung
+        if not lines and TITLE_LINE_RE.match(text):
             continue
         lines.append(text)
     # de-dup while keeping order (lrc repeats chorus; alignment needs the
     # full sequence though, so DO NOT dedup — covers repeat too)
     return lines
+
+
+def netease_search(title: str) -> int | None:
+    q = urllib.parse.quote(title)
+    url = f"https://music.163.com/api/search/get?s={q}&type=1&limit=10"
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "Mozilla/5.0", "Referer": "https://music.163.com"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            songs = json.loads(r.read().decode("utf-8")).get("result", {}).get("songs", [])
+    except Exception:
+        return None
+    norm = re.sub(r"[\s（）()]", "", title).lower()
+    for s in songs:
+        if re.sub(r"[\s（）()]", "", s["name"]).lower() == norm:
+            return s["id"]
+    return songs[0]["id"] if songs else None
+
+
+def netease_lrc(song_id: int) -> str:
+    url = f"https://music.163.com/api/song/lyric?id={song_id}&lv=1"
+    req = urllib.request.Request(
+        url, headers={"User-Agent": "Mozilla/5.0", "Referer": "https://music.163.com"}
+    )
+    try:
+        with urllib.request.urlopen(req, timeout=15) as r:
+            return json.loads(r.read().decode("utf-8")).get("lrc", {}).get("lyric", "")
+    except Exception:
+        return ""
 
 
 def norm_text(s: str) -> str:
@@ -127,10 +163,19 @@ def main() -> None:
 
         lines = parse_lrc(fetch_lrc(cand["songmid"]))
         singer = "/".join(a["name"] for a in cand["singer"])
+        source = "qq"
+        if not lines:
+            nid = netease_search(base if base != title else title)
+            nlines = parse_lrc(netease_lrc(nid)) if nid else []
+            if nlines:
+                lines = nlines
+                singer = f"netease#{nid}"
+                source = "netease"
         rec = {
             "mid": cand["songmid"],
             "name": cand["songname"],
             "singer": singer,
+            "source": source,
             "lines": lines,
             "sim": None,
         }

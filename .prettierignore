@@ -32,3 +32,4 @@ public/lyrics/
 # python pipeline scripts
 scripts/*.py
 scripts/lyrics-ref/
+public/lyrics-v2/

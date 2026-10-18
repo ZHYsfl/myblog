@@ -44,3 +44,5 @@ image.png
 .claude/image.png
 image2.png
 scripts/lyrics-ref/
+
+*.pycpublic/lyrics-v2/
