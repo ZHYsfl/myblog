@@ -53,6 +53,17 @@ export function PostArchive({ posts }: PostArchiveProps) {
       <header className="mb-20 text-center">
         <h1 className="mb-5 font-serif text-4xl font-bold text-fg sm:text-5xl">{title}</h1>
         <p className="mx-auto max-w-md text-base leading-relaxed text-muted">{subtitle}</p>
+        <p className="mt-4 text-sm text-muted">
+          {lang === 'zh' ? '本站支持 ' : 'Subscribe via '}
+          <a
+            href="/rss.xml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-accent transition-colors hover:underline"
+          >
+            {lang === 'zh' ? 'RSS 订阅' : 'RSS'}
+          </a>
+        </p>
       </header>
 
       {years.map((year) => (

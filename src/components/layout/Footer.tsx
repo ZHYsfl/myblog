@@ -5,10 +5,12 @@ const copy = {
   zh: {
     wechat: '微信',
     tagline: '专注代码，认真思考。',
+    rss: '支持 RSS 订阅',
   },
   en: {
     wechat: 'WeChat',
     tagline: 'Focused on code, thoughtful thinking.',
+    rss: 'RSS feed available',
   },
 };
 
@@ -60,7 +62,10 @@ export function Footer() {
           </div>
         </div>
         <p className="mt-12 text-center text-xs text-muted/60">
-          © {new Date().getFullYear()} {SITE.authorEn}. {t.tagline}
+          © {new Date().getFullYear()} {SITE.authorEn}. {t.tagline} ·{' '}
+          <a href="/rss.xml" className="transition-colors hover:text-fg">
+            {t.rss}
+          </a>
         </p>
       </div>
     </footer>
