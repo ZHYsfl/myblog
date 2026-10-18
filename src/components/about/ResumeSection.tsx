@@ -22,25 +22,25 @@ export function ResumeSection() {
 
       {/* magazine photo grid */}
       <div className="mx-auto mb-14 grid max-w-4xl grid-cols-12 gap-4 sm:gap-6">
-        <div className="col-span-12 aspect-[16/9] overflow-hidden rounded-2xl sm:aspect-[21/9]">
+        <div className="col-span-12 aspect-[4/3] overflow-hidden rounded-2xl">
           <img
             src="/images/about/photo0.jpg"
             alt="Haoyang Zhou"
-            className="h-full w-full object-cover object-[50%_42%] transition-transform duration-700 hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
           />
         </div>
-        <div className="col-span-7 aspect-[3/4] overflow-hidden rounded-2xl">
+        <div className="col-span-6 aspect-[4/3] overflow-hidden rounded-2xl">
           <img
             src="/images/about/photo3.jpg"
             alt="Haoyang Zhou"
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            className="h-full w-full object-cover object-[50%_62%] transition-transform duration-700 hover:scale-105"
           />
         </div>
-        <div className="col-span-5 overflow-hidden rounded-2xl">
+        <div className="col-span-6 aspect-[4/3] overflow-hidden rounded-2xl">
           <img
             src="/images/about/photo2.jpg"
             alt="Haoyang Zhou"
-            className="h-full w-full object-cover transition-transform duration-700 hover:scale-105"
+            className="h-full w-full object-cover object-[50%_45%] transition-transform duration-700 hover:scale-105"
           />
         </div>
       </div>
