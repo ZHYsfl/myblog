@@ -150,6 +150,43 @@ h6 {
   margin: 2em 0;
 }
 
+/* Mobile: inline %-width photo groups become an even flex row */
+@media (max-width: 639px) {
+  .prose p:has(> img[width$='%']) {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .prose p:has(> img[width$='%']) > img {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+    height: auto;
+    margin: 0;
+  }
+}
+
+/* Sketch plates: horizontal scroll on small screens, hidden scrollbar */
+.sketch-scroll {
+  scrollbar-width: none;
+}
+
+.sketch-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.sketch-plate.can-scroll::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10;
+  width: 2.5rem;
+  pointer-events: none;
+  background: linear-gradient(to right, transparent, var(--surface));
+}
+
 .prose ul,
 .prose ol {
   padding-left: 1.75rem;

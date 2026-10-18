@@ -47,32 +47,9 @@ export function HeroSketch({ lang }: { lang: 'zh' | 'en' }) {
       if (disposed || !host.isConnected) return;
       const palette = readPalette();
       const dpr = Math.min(window.devicePixelRatio, 2);
-      const cssW = host.clientWidth;
-      const cssH = host.clientHeight;
-      if (cssW === 0) return;
-
-      const bg = document.createElement('canvas');
-      bg.width = cssW * dpr;
-      bg.height = cssH * dpr;
-      const bctx = bg.getContext('2d')!;
-      bctx.scale(dpr, dpr);
-      bctx.fillStyle = palette.hairline;
-      for (let x = 13; x < cssW; x += 26) {
-        for (let y = 13; y < cssH; y += 26) {
-          bctx.globalAlpha = 0.5;
-          bctx.fillRect(x, y, 1.6, 1.6);
-        }
-      }
+      if (host.clientWidth === 0) return;
 
       host.innerHTML = '';
-      const bgDiv = document.createElement('div');
-      bgDiv.style.position = 'absolute';
-      bgDiv.style.inset = '0';
-      bgDiv.style.backgroundImage = `url(${bg.toDataURL()})`;
-      bgDiv.style.backgroundSize = `${cssW}px ${cssH}px`;
-      bgDiv.style.opacity = '0.7';
-      host.appendChild(bgDiv);
-
       elements.forEach((el, idx) => {
         const c = document.createElement('canvas');
         c.width = W * dpr;
@@ -103,7 +80,7 @@ export function HeroSketch({ lang }: { lang: 'zh' | 'en' }) {
     <div
       ref={hostRef}
       aria-hidden="true"
-      className="relative aspect-[1000/380] w-full overflow-hidden rounded-2xl border border-border bg-surface"
+      className="relative aspect-[1000/380] w-full overflow-hidden"
     />
   );
 }

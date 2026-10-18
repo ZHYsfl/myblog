@@ -77,12 +77,6 @@ export function HomePage({ posts }: HomePageProps) {
             <h1 className="mb-8 font-serif text-5xl font-bold leading-tight tracking-tight text-fg sm:text-7xl lg:text-8xl">
               {SITE.authorEn}
             </h1>
-            <p className="mx-auto max-w-xl text-lg leading-relaxed text-fg/90 sm:text-xl">
-              <span data-lang-block="zh">外包记忆和部分思考，保留理解和部分思考。</span>
-              <span data-lang-block="en">
-                Outsource memory and part of thinking; preserve understanding and part of thinking.
-              </span>
-            </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <a
                 href="/posts"
@@ -105,7 +99,7 @@ export function HomePage({ posts }: HomePageProps) {
           </div>
         </div>
 
-        <div className="pointer-events-none absolute bottom-10 left-0 right-0 z-20 flex flex-col items-center gap-2">
+        <div className="pointer-events-none absolute bottom-20 left-0 right-0 z-20 flex flex-col items-center gap-2 sm:bottom-10">
           <span className="text-xs text-muted">
             <LangText zh="向下滚动" en="Scroll down" />
           </span>

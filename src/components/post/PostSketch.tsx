@@ -38,41 +38,55 @@ export function PostSketch({ slug, lang }: { slug: string; lang: 'zh' | 'en' }) 
 
     let disposed = false;
     let cleanups: Array<() => void> = [];
-    const hosts: Array<{ plate: Plate; div: HTMLDivElement; seed: string }> = [];
+    const hosts: Array<{
+      plate: Plate;
+      div: HTMLDivElement;
+      outer: HTMLDivElement;
+      scroll: HTMLDivElement;
+      seed: string;
+    }> = [];
 
     const article = anchor.closest('article');
 
     normalizePlates(spec).forEach((plate, i) => {
+      const outer = document.createElement('div');
+      outer.className =
+        'sketch-plate relative mb-10 mt-8 w-full overflow-hidden rounded-2xl border border-border bg-surface';
+      outer.setAttribute('aria-hidden', 'true');
+      const scroll = document.createElement('div');
+      scroll.className = 'sketch-scroll overflow-x-auto';
       const div = document.createElement('div');
-      div.className =
-        'sketch-plate relative mb-10 mt-8 aspect-[1000/380] w-full overflow-hidden rounded-2xl border border-border bg-surface';
-      div.setAttribute('aria-hidden', 'true');
+      div.className = 'relative aspect-[1000/380] w-full min-w-[620px]';
+      scroll.appendChild(div);
+      outer.appendChild(scroll);
       const seed = `${slug}:${i}`;
 
       if (plate.placement === 'end') {
         const prose = article?.querySelector('.prose');
-        prose?.insertAdjacentElement('afterend', div);
+        prose?.insertAdjacentElement('afterend', outer);
       } else if (plate.after) {
         const headings = Array.from(article?.querySelectorAll('.prose h2') ?? []);
         const hit = headings.find((h) => h.textContent?.includes(plate.after!));
         if (hit) {
-          hit.insertAdjacentElement('afterend', div);
+          hit.insertAdjacentElement('afterend', outer);
         } else {
-          (article?.querySelector('.prose') ?? anchor).insertAdjacentElement('afterend', div);
+          (article?.querySelector('.prose') ?? anchor).insertAdjacentElement('afterend', outer);
         }
       } else {
-        anchor.parentElement?.insertBefore(div, anchor);
+        anchor.parentElement?.insertBefore(outer, anchor);
       }
-      hosts.push({ plate, div, seed });
+      hosts.push({ plate, div, outer, scroll, seed });
     });
 
     const renderAll = () => {
       cleanups.forEach((fn) => fn());
       cleanups = [];
       if (disposed) return;
-      hosts.forEach(({ plate, div, seed }) => {
-        if (document.body.contains(div))
+      hosts.forEach(({ plate, div, outer, scroll, seed }) => {
+        if (document.body.contains(div)) {
           cleanups.push(renderSketch(div, plate.elements, seed, lang));
+          outer.classList.toggle('can-scroll', scroll.scrollWidth > scroll.clientWidth + 1);
+        }
       });
     };
     renderAll();

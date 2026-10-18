@@ -1,7 +1,7 @@
 export const SITE = {
   title: '周浩洋 | Haoyang Zhou',
   description:
-    '外包记忆和部分思考，保留理解和部分思考。Voice Agent、Agentic AI、Deep Learning、Speech Intelligence 与认知架构的数字花园。',
+    '周浩洋的数字花园：全双工端到端实时语音交互大模型、语音智能体、Agentic AI 与深度学习。',
   url: 'https://zhysfl.github.io/myblog',
   author: '周浩洋',
   authorEn: 'Haoyang Zhou',

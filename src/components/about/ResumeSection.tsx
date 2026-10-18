@@ -11,16 +11,16 @@ const copy = {
       gpa: 'GPA 3.79 / 4.0，专业前 4.94%（18 / 364），英语六级 549 分。',
       math: '核心课程：机器学习 96.4；线性代数 98.1；大学物理 97.2；算法设计与分析 94.5。',
       cs: '概率论 94.8；数据结构期末机考 100；微积分三学期均分 91.8。',
-      summary: '直博方向：语音智能体。',
+      summary: '直博方向：全双工端到端实时语音交互大模型与语音智能体。',
     },
     research: {
       title: '科研与项目经历',
       items: [
         {
-          title: 'AudioCC Lab —— 语音智能体与 Benchmark 研究',
+          title: 'AudioCC Lab —— 全双工语音大模型与语音智能体研究',
           date: '2026.08 — 至今',
           sub: '拟录取直博生 · 张王优老师 · 上海交通大学人工智能学院 · 进行中',
-          body: `聚焦语音智能体的评测问题：构建交互场景语音 Benchmark，评估语音 LLM / Omni 大模型的推理与理解能力。`,
+          body: `聚焦全双工端到端实时交互语音大模型与语音智能体：构建交互场景语音 Benchmark，评估并改进语音 LLM / Omni 大模型的实时交互、推理与理解能力。`,
         },
         {
           title: 'VoxFlow —— 语音多智能体交互系统',
@@ -61,7 +61,7 @@ const copy = {
       title: '专业技能',
       items: [
         '研究能力：完整的科研闭环经验——问题定义、方法创新、评测构建与实验分析；具备大模型 SFT / RL 训练实战经验。',
-        '研究方向：语音智能体、Agentic RL、多智能体系统与人机语音交互。',
+        '研究方向：全双工端到端实时语音交互大模型、语音智能体、Agentic RL 与人机语音交互。',
         '理论基础：扎实的数理基础与强化学习理论；兼具将研究想法快速验证落地的实现能力。',
       ],
     },
@@ -94,16 +94,17 @@ const copy = {
       gpa: 'GPA 3.79 / 4.0, top 4.94% of major (18 / 364), CET-6 549.',
       math: 'Core courses: Machine Learning 96.4; Linear Algebra 98.1; College Physics 97.2; Algorithm Design & Analysis 94.5.',
       cs: 'Probability 94.8; Data Structures (machine exam) 100; Calculus avg. 91.8.',
-      summary: 'Direct PhD focus: voice agents.',
+      summary:
+        'Direct PhD focus: full-duplex end-to-end real-time speech interaction models and voice agents.',
     },
     research: {
       title: 'Research & Projects',
       items: [
         {
-          title: 'AudioCC Lab — Voice Agents & Benchmark Research',
+          title: 'AudioCC Lab — Full-Duplex Speech Models & Voice Agent Research',
           date: 'Aug 2026 — Present',
           sub: 'Admitted direct PhD student · Prof. Zhang Wangyou · SJTU School of AI · In progress',
-          body: `Focusing on the evaluation problem of voice agents: constructing an interactive-scenario voice benchmark to assess the reasoning and understanding of voice LLMs / Omni models.`,
+          body: `Focusing on full-duplex end-to-end real-time speech interaction models and voice agents: constructing interactive-scenario voice benchmarks to evaluate and improve the real-time interaction, reasoning, and understanding of speech LLMs / Omni models.`,
         },
         {
           title: 'VoxFlow — Voice Multi-Agent Interaction System',
@@ -144,7 +145,7 @@ const copy = {
       title: 'Skills',
       items: [
         'Research: full research-loop experience — problem formulation, method innovation, benchmark construction, and experiment analysis; hands-on LLM SFT / RL training.',
-        'Focus: voice agents, Agentic RL, multi-agent systems, and human-agent voice interaction.',
+        'Focus: full-duplex end-to-end real-time speech interaction models, voice agents, Agentic RL, and human-agent voice interaction.',
         'Theory: solid mathematical foundation and reinforcement learning theory, plus the ability to validate research ideas quickly.',
       ],
     },

@@ -62,7 +62,65 @@ export function GlobalPlayer() {
 
   return (
     <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-border bg-bg/90 backdrop-blur-lg">
-      <div className="mx-auto flex max-w-7xl items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
+      {/* mobile mini row */}
+      <div className="flex items-center gap-3 px-3 py-2 sm:hidden">
+        <button
+          type="button"
+          onClick={togglePlay}
+          aria-label={
+            isPlaying ? (lang === 'en' ? 'Pause' : '暂停') : lang === 'en' ? 'Play' : '播放'
+          }
+          className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-fg text-bg"
+        >
+          {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4 fill-current" />}
+        </button>
+        <div className="min-w-0 flex-1">
+          <p className="truncate text-sm font-medium leading-tight text-fg">
+            {currentSong.title}
+            <span className="font-normal text-muted"> · {artist}</span>
+          </p>
+          <input
+            type="range"
+            min={0}
+            max={duration || 1}
+            value={progress}
+            onChange={(e) => seek(Number(e.target.value))}
+            className="mt-1.5 h-1 w-full cursor-pointer appearance-none rounded-full bg-border"
+            style={{ accentColor: 'var(--fg)' }}
+            aria-label={lang === 'en' ? 'Progress' : '播放进度'}
+          />
+        </div>
+        <button
+          type="button"
+          onClick={prev}
+          aria-label={lang === 'en' ? 'Previous' : '上一首'}
+          className="shrink-0 text-muted transition-colors hover:text-fg"
+        >
+          <SkipBack className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
+          onClick={next}
+          aria-label={lang === 'en' ? 'Next' : '下一首'}
+          className="shrink-0 text-muted transition-colors hover:text-fg"
+        >
+          <SkipForward className="h-4 w-4" />
+        </button>
+        <button
+          type="button"
+          onClick={cycleMode}
+          aria-label={modeLabel}
+          title={modeLabel}
+          className={`shrink-0 rounded-full p-1.5 transition-colors ${
+            mode === 'order' ? 'text-muted hover:text-fg' : 'text-accent'
+          }`}
+        >
+          {modeIcon}
+        </button>
+      </div>
+
+      {/* desktop */}
+      <div className="mx-auto hidden max-w-7xl items-center gap-4 px-4 py-3 sm:flex sm:px-6 lg:px-8">
         <div className="hidden w-48 sm:block">
           <p className="truncate text-sm font-medium text-fg">{currentSong.title}</p>
           <p className="truncate text-xs text-muted">
