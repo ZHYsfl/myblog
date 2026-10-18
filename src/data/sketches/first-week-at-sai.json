@@ -1,0 +1,128 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 90,
+          "y": 48,
+          "content": { "zh": "上海 · 第一周", "en": "Shanghai · Week One" },
+          "size": "m",
+          "tone": "ink",
+          "align": "left"
+        },
+        {
+          "type": "path",
+          "points": [[90, 250], [330, 250], [450, 170], [880, 170]],
+          "accent": true
+        },
+        { "type": "dot", "x": 90, "y": 250, "r": 5 },
+        { "type": "dot", "x": 330, "y": 250, "r": 5 },
+        { "type": "dot", "x": 450, "y": 170, "r": 5 },
+        { "type": "dot", "x": 880, "y": 170, "accent": true, "r": 7 },
+        {
+          "type": "text",
+          "x": 90,
+          "y": 288,
+          "content": { "zh": "邢台", "en": "Xingtai" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 210,
+          "y": 288,
+          "content": { "zh": "10.11 高铁 <6h", "en": "10.11 HSR <6h" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 330,
+          "y": 288,
+          "content": { "zh": "徐汇 · 单间", "en": "Xuhui · studio" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 520,
+          "y": 140,
+          "content": { "zh": "地铁 3-4 站 · 走 100m ×2", "en": "3-4 subway stops" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 880,
+          "y": 138,
+          "content": { "zh": "SAI", "en": "SAI" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "measure",
+          "from": [470, 205],
+          "to": [860, 205],
+          "label": { "zh": "通勤 ≈30min", "en": "commute ≈30min" }
+        }
+      ]
+    },
+    {
+      "placement": "end",
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 52,
+          "content": { "zh": "AI 时代最美好的品质", "en": "the finest qualities of the AI era" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "grid",
+          "x": 260,
+          "y": 110,
+          "w": 480,
+          "h": 150,
+          "cols": 3,
+          "rows": 1,
+          "accentCells": [[1, 0]]
+        },
+        {
+          "type": "text",
+          "x": 340,
+          "y": 192,
+          "content": { "zh": "好奇心", "en": "curiosity" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 192,
+          "content": { "zh": "审美力", "en": "taste" },
+          "size": "m",
+          "tone": "accent",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 660,
+          "y": 192,
+          "content": { "zh": "克制感", "en": "restraint" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}
