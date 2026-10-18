@@ -50,6 +50,7 @@ export const copy = {
     honors: {
       title: '竞赛与荣誉',
       items: [
+        'ai-whys 自学仓库 · GitHub 110+ stars（持续更新）——深度学习 / 强化学习 / AI Agent 系统性笔记与实现',
         '中国大学生服务外包创新创业大赛 · 全国三等奖（2025.06）——队长，Voice Agent 方向，赴青岛现场答辩',
         '中关村 AI Agents Vibe Coding 黑客松 · 特别表彰（2025.07）——组长，获刘俊明老师与 Pine AI 前首席科学家李博杰老师特别表彰',
         'CleanRL 开源贡献 PR #535（2026.01）——改进 cleanrl_utils/buffers.py 张量重塑一致性处理',
@@ -60,6 +61,7 @@ export const copy = {
       items: [
         '研究能力：完整的科研闭环经验——问题定义、方法创新、评测构建与实验分析；具备大模型 SFT / RL 训练实战经验。',
         '研究方向：全双工端到端实时语音交互大模型、语音智能体、Agentic RL 与人机语音交互。',
+        '音频工程：熟练使用 Qwen3-ASR / ForcedAligner 等开源语音模型；自建"官方 LRC 对齐 + 字级时间戳"管线，支撑本站音乐页 108 首翻唱的逐字卡拉 OK 歌词。',
         '理论基础：扎实的数理基础与强化学习理论；兼具将研究想法快速验证落地的实现能力。',
       ],
     },
@@ -134,6 +136,7 @@ export const copy = {
     honors: {
       title: 'Honors & Experience',
       items: [
+        'ai-whys self-study repo · 110+ GitHub stars (ongoing) — systematic notes and implementations on deep learning, RL, and AI agents',
         'National Third Prize, China College Students Service Outsourcing Innovation & Entrepreneurship Competition (Jun 2025) — team leader, Voice Agent, on-site defense in Qingdao',
         'Special recognition, Zhongguancun AI Agents Vibe Coding Hackathon (Jul 2025) — team leader, recognized by mentor Liu Junming and Pine AI former Chief Scientist Li Bojie',
         'CleanRL open-source contribution PR #535 (Jan 2026) — improved tensor reshaping consistency in cleanrl_utils/buffers.py',
@@ -144,6 +147,7 @@ export const copy = {
       items: [
         'Research: full research-loop experience — problem formulation, method innovation, benchmark construction, and experiment analysis; hands-on LLM SFT / RL training.',
         'Focus: full-duplex end-to-end real-time speech interaction models, voice agents, Agentic RL, and human-agent voice interaction.',
+        'Audio engineering: hands-on with open-source speech models (Qwen3-ASR / ForcedAligner); built an official-LRC-aligned char-level timestamp pipeline powering word-by-word karaoke lyrics for 108 covers on this site.',
         'Theory: solid mathematical foundation and reinforcement learning theory, plus the ability to validate research ideas quickly.',
       ],
     },
