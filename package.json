@@ -21,7 +21,8 @@
     "migrate:posts": "tsx scripts/migrate-posts.ts",
     "prepare:songs": "tsx scripts/prepare-songs.ts",
     "new:post": "tsx scripts/new-post.ts",
-    "lint:content": "tsx scripts/lint-content.ts"
+    "lint:content": "tsx scripts/lint-content.ts",
+    "build-cv": "tsx scripts/build-cv.ts"
   },
   "dependencies": {
     "@astrojs/mdx": "^6.0.3",

@@ -45,6 +45,7 @@ image.png
 image2.png
 scripts/lyrics-ref/
 
-*.pycpublic/lyrics-v2/
+*.pyc
+public/lyrics-v2/
 
 *.pyc

@@ -61,7 +61,7 @@ export const copy = {
       items: [
         '研究能力：完整的科研闭环经验——问题定义、方法创新、评测构建与实验分析；具备大模型 SFT / RL 训练实战经验。',
         '研究方向：全双工端到端实时语音交互大模型、语音智能体、Agentic RL 与人机语音交互。',
-        '音频工程：熟练使用 Qwen3-ASR / ForcedAligner 等开源语音模型；自建"官方 LRC 对齐 + 字级时间戳"管线，支撑本站音乐页 108 首翻唱的逐字卡拉 OK 歌词。',
+        '音频工程：熟悉开源语音模型的落地应用，为本站音乐页 108 首翻唱实现了逐字卡拉 OK 歌词。',
         '理论基础：扎实的数理基础与强化学习理论；兼具将研究想法快速验证落地的实现能力。',
       ],
     },
@@ -147,7 +147,7 @@ export const copy = {
       items: [
         'Research: full research-loop experience — problem formulation, method innovation, benchmark construction, and experiment analysis; hands-on LLM SFT / RL training.',
         'Focus: full-duplex end-to-end real-time speech interaction models, voice agents, Agentic RL, and human-agent voice interaction.',
-        'Audio engineering: hands-on with open-source speech models (Qwen3-ASR / ForcedAligner); built an official-LRC-aligned char-level timestamp pipeline powering word-by-word karaoke lyrics for 108 covers on this site.',
+        'Audio engineering: hands-on application of open-source speech models, powering word-by-word karaoke lyrics for 108 covers on this site.',
         'Theory: solid mathematical foundation and reinforcement learning theory, plus the ability to validate research ideas quickly.',
       ],
     },
