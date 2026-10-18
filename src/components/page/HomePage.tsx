@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { HeroSketch } from '@/components/home/HeroSketch';
 import { PostListItem } from '@/components/post/PostListItem';
 import { LangText } from '@/components/ui/LangText';
 import { useLang } from '@/lib/useLang';
@@ -62,6 +63,12 @@ export function HomePage({ posts }: HomePageProps) {
   return (
     <div className="min-h-screen bg-bg">
       <section className="relative h-screen w-full overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 z-0 hidden items-center justify-center px-6 sm:flex">
+          <div className="w-full max-w-4xl">
+            <HeroSketch lang={lang} />
+          </div>
+        </div>
+
         <div className="pointer-events-none absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center">
           <div className="pointer-events-auto max-w-3xl">
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.25em] text-accent">
@@ -91,6 +98,9 @@ export function HomePage({ posts }: HomePageProps) {
               >
                 <LangText zh="了解更多" en="Learn More" />
               </a>
+            </div>
+            <div className="mx-auto mt-12 w-full max-w-sm sm:hidden">
+              <HeroSketch lang={lang} />
             </div>
           </div>
         </div>
