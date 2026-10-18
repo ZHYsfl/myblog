@@ -6,6 +6,12 @@
     "file": "/songs/星光降落_周浩洋.m4a"
   },
   {
+    "id": "bad-girl",
+    "title": "Bad Girl",
+    "artist": "周浩洋",
+    "file": "/songs/Bad Girl_周浩洋.m4a"
+  },
+  {
     "id": "",
     "title": "甜甜的",
     "artist": "周浩洋",
@@ -394,12 +400,6 @@
     "title": "大笨钟",
     "artist": "周浩洋",
     "file": "/songs/大笨钟_周浩洋.m4a"
-  },
-  {
-    "id": "bad-girl",
-    "title": "Bad Girl",
-    "artist": "周浩洋",
-    "file": "/songs/Bad Girl_周浩洋.m4a"
   },
   {
     "id": "",
