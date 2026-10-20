@@ -68,7 +68,7 @@ export const copy = {
     traits: {
       title: '个人特质',
       items: [
-        '研究自驱：独立完成多个从问题定义到实验验证的完整科研闭环；完成强化学习 44 页手写笔记，GitHub 过去一年 1.7k+ 次 commit。',
+        '研究自驱：独立完成多个从问题定义到实验验证的完整科研闭环；完成强化学习 44 页手写笔记，GitHub 过去一年 1.9k+ 次 commit。',
         '团队领导力：大学期间所有项目均担任队长 / 负责人，主导跨校团队协作、代码评审与开发流程规范。',
         '抗压与迭代：在多次科研方向调整与失败实验中提炼方法论并持续改进。',
       ],
@@ -154,7 +154,7 @@ export const copy = {
     traits: {
       title: 'Core Traits',
       items: [
-        'Research-driven: independently completed multiple research loops from problem formulation to experimental validation; 44 pages of handwritten RL notes; 1.7k+ GitHub commits in the past year.',
+        'Research-driven: independently completed multiple research loops from problem formulation to experimental validation; 44 pages of handwritten RL notes; 1.9k+ GitHub commits in the past year.',
         'Team leadership: led every university project as captain / lead; directed cross-university collaboration, code review, and development workflow.',
         'Resilience: distilled methodology from multiple direction changes and failed experiments, iterating continuously.',
       ],
