@@ -1,0 +1,71 @@
+---
+title: 'Why Do Industry Moats, Research Incentives, and Instant Gratification Point in Different Directions?'
+date: 2026-10-27
+category: 'ai-infra'
+tags: ['AI Infra', 'Coding Agents', 'Research Incentives', 'Engineering Culture']
+lang: 'en'
+slug: 'ai-industrys-absurd-misalignment'
+translationOf: 'ai-industrys-absurd-misalignment'
+readingTime: 7
+description: ''
+---
+
+I have noticed an interesting pattern. When it comes to innovation in model architectures and algorithms on one hand, and engineering work around data, infrastructure, and environments on the other, large companies, publication-driven researchers, and undergraduates starting out in CS/AI today exhibit three very different preferences.
+
+That is where the most absurd misalignment lies: **the work that creates durable competitive strength is often not the work that brings individuals the quickest rewards, recognition, or gratification.**
+
+## Large companies: architectures can be published; hard-earned lessons cannot
+
+Model architecture matters enormously to large companies, but the architecture itself is often less mysterious than we imagine. Many mainstream designs are available in papers and open-source code. Knowing about Transformers, MoE, or a particular training algorithm is not the same as being able to build and operate a model at the same scale, reliably.
+
+The hardest advantages to replicate often live in data, infrastructure, and environments: fluctuations in network communication, memory fragmentation, data cleaning, recovery from interrupted training runs, and countless problems that only appear at real-world scale. Someone has to encounter these pitfalls and fill them in, one by one, at enormous cost in time and capital.
+
+Even when a competitor has the architecture, then, they may not have the resources or operational knowledge to make it work. **The blueprints can be open-source; the craftsmanship acquired while building the factory is much harder to copy.**
+
+## Researchers: important work is not always rewarded
+
+Yet researchers at large companies today — or, more broadly, researchers whose performance is measured by publications — often prefer architectures and algorithms to the messy work of data and infrastructure.
+
+The reason is no mystery: academic evaluation prizes novelty. A new algorithm or architecture fits naturally into a paper's problem-method-experiment narrative. Saying “I reduced memory fragmentation in PagedAttention” or “I cleaned millions of corrupted data samples” is more likely to be categorized as an engineering contribution. Such work can certainly become excellent research, but its value is often harder for existing evaluation systems to recognize.
+
+So people gravitate toward elegant mathematical derivations rather than a room full of alarming servers or millions of garbled records. This is not merely a personal preference for glamorous work; it is also a rational response to an incentive structure. **When important work is less visible, people naturally move toward work that is easier to see and reward.**
+
+## Beginners: people who want to build can still bypass engineering
+
+Most undergraduates are not under pressure to publish. College is also the time to build foundations, so many choose to work on systems and projects. That should be an excellent path.
+
+In the past, an undergraduate building a system independently faced a long learning curve: Python, backend frameworks, databases, concurrency, and machine-learning algorithms. If you could not write the code, the project simply stopped. Coding agents have now turned code and algorithms into something we can shape through natural language. They deliver the dopamine of creation much earlier: describe an idea, watch a working demo appear, and only then decide whether to understand it.
+
+This is tremendous progress, but it conceals a trap. People naturally prefer immediate feedback, and the tedious bugs along the way are far less appealing than the impressive result. Few people are willing to sit with an error and trace it to its root. It is much easier to keep handing the problem back to AI until the code happens to run.
+
+There is nothing wrong with delegating a problem to AI. The real problem is ending a long conversation with working code but no understanding of the system. If AI eventually succeeds, the capability may still not have settled into the person. If AI fails, the project may simply be abandoned.
+
+**A generation that appears enthusiastic about building things may also find it unusually easy to bypass engineering fundamentals.** That is the most subtle part of the misalignment.
+
+## What happens when the three preferences meet
+
+Put these three preferences together, and a strange structure emerges:
+
+- Industry moats increasingly depend on the engineering depths of data, infrastructure, and environments.
+- Research KPIs more readily reward architectures and algorithms that can be presented as paper contributions.
+- Beginners immerse themselves in the engineering practice of vibe coding, yet may skip debugging and first principles, acquiring neither deep engineering nor algorithmic understanding.
+
+This also makes me reconsider a question people often ask: with ByteDance's enormous resources, why is its model performance sometimes compared unfavorably with teams such as Kimi, GLM, and DeepSeek?
+
+I do not want to reduce such a complicated question to a single corporate culture. Model quality depends on talent, data, compute, organization, and time; a few product results are not enough to judge an entire company. But one possibility deserves attention: **if a highly quantified OKR system continually rewards short-cycle, presentable outcomes, then work that creates durable advantages but cannot quickly become a highlight may receive recognition far below its value.**
+
+OKRs may suit rapid trial and error in internet products, but they may not suit large-model development, which resembles a precise, tightly integrated form of heavy industry. An organization must ask not only “How much did we ship?” but also “Did the people doing the unglamorous work receive rewards commensurate with its value?”
+
+Beginners face a similar incentive problem. In the past, the pain of being unable to proceed forced newcomers to revisit the fundamentals. Now, a quick “This doesn't work; fix it for me” can temporarily remove that pain. Tools can absolutely solve problems for us, but they can just as easily help us bypass learning. Which option do you think most people will choose?
+
+## I cannot change everyone else, but I can change myself
+
+None of this means architectures and algorithms matter more than data and infrastructure — or that either side is unimportant. Nor does it mean we must repeat every painful step by hand to claim genuine learning. Every part matters. Evaluation metrics, organizational structures, available resources, and human nature simply push us toward different positions.
+
+I cannot change large companies or other people, but I can change myself.
+
+When doing research, I can ask not only “Is this novel?” but also “Does it solve a real and difficult problem?” When using a coding agent, I can ask not only “Does it run now?” but also “Why is this the right solution?” Once a tool hands me a result, I can take one more step toward understanding it.
+
+I hope large companies become more willing to reward the unglamorous work behind models, researchers become more willing to pursue important work even when it is messy, and beginners become more willing to investigate the foundations of engineering and algorithms.
+
+**AI can lower the barrier to making things; it should not relieve me of the responsibility to understand them.** If I can start by changing that much in myself, that is enough. That is the point of this essay.

@@ -1,0 +1,98 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 42,
+          "content": {
+            "zh": "各自向前，方向却不同",
+            "en": "Moving forward, aiming elsewhere"
+          },
+          "size": "l",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 82,
+          "content": { "zh": "三种位置", "en": "Three positions" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 855,
+          "y": 82,
+          "content": { "zh": "被奖励的方向", "en": "What gets rewarded" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 140,
+          "content": { "zh": "大厂", "en": "Industry" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [265, 140],
+          "to": [845, 140],
+          "label": { "zh": "数据 · Infra · 环境", "en": "data · infra · environments" },
+          "accent": true
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 216,
+          "content": { "zh": "研究员", "en": "Researchers" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [265, 216],
+          "to": [590, 216],
+          "label": { "zh": "架构 · 算法", "en": "architecture · algorithms" },
+          "accent": false
+        },
+        {
+          "type": "text",
+          "x": 150,
+          "y": 292,
+          "content": { "zh": "初学者", "en": "Learners" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "arrow",
+          "from": [265, 292],
+          "to": [715, 292],
+          "label": { "zh": "即时可运行的 Demo", "en": "a working demo, now" },
+          "accent": false
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 348,
+          "content": {
+            "zh": "各自合理，放在一起却错位",
+            "en": "Sensible alone. Misaligned together."
+          },
+          "size": "s",
+          "tone": "accent",
+          "align": "center"
+        }
+      ]
+    }
+  ]
+}
