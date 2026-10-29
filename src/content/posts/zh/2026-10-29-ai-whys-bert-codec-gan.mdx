@@ -1,0 +1,26 @@
+---
+title: 'AI-Whys 新增 BERT、Codec 和 GAN：现在一共有 40 个实验'
+date: 2026-10-29
+category: 'ai-theory'
+tags: ['BERT', 'Neural Audio Codec', 'GAN', '开源']
+lang: 'zh'
+slug: 'ai-whys-bert-codec-gan'
+translationOf: 'ai-whys-bert-codec-gan'
+readingTime: 2
+description: ''
+---
+
+AI-Whys 增加了 BERT、Codec 和 GAN 的笔记和代码实现，现在一共有 40 个实验！
+
+图 1 · BERT：让模型做“完形填空”自学语言——随机遮住句子 15% 的词让它猜回来，再顺手判断两句话是不是上下文。预训练一次，分类、问答、命名实体识别都能接上去微调。BERT 是 NLP 的地基。
+
+![BERT 预训练与下游任务微调架构图](/assets/posts/ai-whys-bert-codec-gan/093a07cc061da97e420771e4ee6090d0.jpg)
+
+图 2 · Neural Audio Codec（含训练方法 GAN）：语音大模型的地基。文本大模型需要文本 token，那语音大模型就需要语音 token。而语音 token 是如何获得的？Codec 就是做这个的。Codec 的训练方法包含 GAN（生成对抗网络）。
+
+![Neural Audio Codec 与 GAN 训练架构图](/assets/posts/ai-whys-bert-codec-gan/42dcecb9b0c330aaa04441c264a8d66e.jpg)
+
+上述架构的算法底层代码复现都已经跑通！欢迎关注：
+
+- [NLP / BERT 代码](https://github.com/ZHYsfl/ai-whys/tree/main/code/nlp)
+- [Neural Audio Codec 代码](https://github.com/ZHYsfl/ai-whys/tree/main/code/codec)

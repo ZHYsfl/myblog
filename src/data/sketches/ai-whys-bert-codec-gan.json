@@ -1,0 +1,99 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": { "zh": "AI-Whys · 40 个实验", "en": "AI-Whys · 40 experiments" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 76,
+          "content": { "zh": "新增笔记 + 底层代码复现", "en": "new notes + bottom-up code" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "circle", "x": 220, "y": 190, "r": 78 },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 194,
+          "content": "BERT",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 500, "y": 190, "r": 78, "accent": true },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 194,
+          "content": "Codec",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 780, "y": 190, "r": 78 },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 194,
+          "content": "GAN",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 300,
+          "content": { "zh": "完形填空 · NLP 地基", "en": "masked learning · NLP foundation" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 300,
+          "content": {
+            "zh": "语音 token · 语音大模型地基",
+            "en": "speech tokens · speech model foundation"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 300,
+          "content": {
+            "zh": "生成对抗 · Codec 训练",
+            "en": "adversarial learning · Codec training"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "dot", "x": 420, "y": 348, "accent": true },
+        {
+          "type": "text",
+          "x": 440,
+          "y": 348,
+          "content": { "zh": "38 → 40 · 全部跑通", "en": "38 → 40 · all reproductions running" },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}

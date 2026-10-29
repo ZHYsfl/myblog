@@ -1,0 +1,26 @@
+---
+title: 'AI-Whys Adds BERT, Codec, and GAN: 40 Experiments and Counting'
+date: 2026-10-29
+category: 'ai-theory'
+tags: ['BERT', 'Neural Audio Codec', 'GAN', 'Open Source']
+lang: 'en'
+slug: 'ai-whys-bert-codec-gan'
+translationOf: 'ai-whys-bert-codec-gan'
+readingTime: 2
+description: ''
+---
+
+AI-Whys now includes notes and code implementations for BERT, Codec, and GAN, bringing the collection to 40 experiments!
+
+Figure 1 · BERT: learning language through fill-in-the-blank training. The model randomly masks 15% of the words in a sentence and learns to recover them, while also predicting whether two sentences form a continuous context. After pretraining once, BERT can be fine-tuned for classification, question answering, named entity recognition, and more. BERT laid the foundation for NLP.
+
+![BERT pretraining and downstream fine-tuning architecture](/assets/posts/ai-whys-bert-codec-gan/093a07cc061da97e420771e4ee6090d0.jpg)
+
+Figure 2 · Neural Audio Codec (including GAN-based training): a foundation for large speech models. Large language models need text tokens, and large speech models likewise need speech tokens. How are those speech tokens obtained? That is exactly what a Codec does. Its training methods include GANs (generative adversarial networks).
+
+![Neural Audio Codec and GAN training architecture](/assets/posts/ai-whys-bert-codec-gan/42dcecb9b0c330aaa04441c264a8d66e.jpg)
+
+The bottom-up reproductions of these algorithms are all running successfully. Follow the project here:
+
+- [NLP / BERT code](https://github.com/ZHYsfl/ai-whys/tree/main/code/nlp)
+- [Neural Audio Codec code](https://github.com/ZHYsfl/ai-whys/tree/main/code/codec)
