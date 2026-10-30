@@ -1,0 +1,96 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": { "zh": "那些引路的人", "en": "The people who shaped my path" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 76,
+          "content": { "zh": "老师 · 前辈 · 贵人", "en": "teachers · mentors · benefactors" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "circle", "x": 220, "y": 180, "r": 70 },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 184,
+          "content": "2023",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 500, "y": 180, "r": 70, "accent": true },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 184,
+          "content": "2025",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 780, "y": 180, "r": 70 },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 184,
+          "content": "2026",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 286,
+          "content": { "zh": "专业选择 · 编程启蒙", "en": "choosing CS · discovering code" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 286,
+          "content": { "zh": "创业目标 · 技术引路", "en": "entrepreneurship · technical guidance" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 286,
+          "content": { "zh": "研究品味 · 长期主义", "en": "research taste · long-term thinking" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "dot", "x": 352, "y": 344, "accent": true },
+        {
+          "type": "text",
+          "x": 372,
+          "y": 344,
+          "content": {
+            "zh": "感谢启发、帮助与提携，也把这份影响传下去",
+            "en": "grateful for every gift of guidance — and ready to pass it on"
+          },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}
