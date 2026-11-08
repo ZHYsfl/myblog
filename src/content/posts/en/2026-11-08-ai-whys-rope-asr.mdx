@@ -1,0 +1,31 @@
+---
+title: 'AI-Whys Adds RoPE and Two ASR Approaches: 19 Chapters, 41 Experiments'
+date: 2026-11-08
+category: 'ai-theory'
+tags: ['RoPE', 'ASR', 'Conformer', 'AuT', 'Open Source']
+lang: 'en'
+slug: 'ai-whys-rope-asr'
+translationOf: 'ai-whys-rope-asr'
+readingTime: 2
+description: ''
+---
+
+AI-Whys now includes RoPE and two approaches to ASR, bringing the collection to 19 chapters and 41 experiments!
+
+Rotary Position Embedding (RoPE) is a modern alternative to the sinusoidal positional encoding used in the original Transformer, and it is widely used in today's large models. Instead of directly adding position vectors to token embeddings and thereby mixing positional information into the token semantics, RoPE delays the injection of positional information until the Q and K stage, applying it through rotation.
+
+There are two major modern approaches to ASR. The first is Conformer + CTC (Figure 1). In the second, after AuT pretraining, its encoder is connected to a projector and then to the decoder of a text LLM, followed by fine-tuning (Figure 2). Whenever attention is used in either approach, RoPE can provide positional encoding for Q and K.
+
+Figure 1 · The Conformer + CTC approach:
+
+![Conformer + CTC automatic speech recognition architecture](/assets/posts/ai-whys-rope-asr/50097d0c15ef321de0850a6fad225037.jpg)
+
+Figure 2 · Connecting a pretrained AuT encoder to a projector and a text LLM decoder:
+
+![AuT pretraining and text LLM fine-tuning architecture](/assets/posts/ai-whys-rope-asr/abcb132f36652d415fe0ab1645bb7293.jpg)
+
+For the bottom-up code reproductions of these architectures, follow [the AI-Whys ASR code](https://github.com/ZHYsfl/ai-whys/tree/main/code/asr).
+
+The code also includes a GQA implementation, introducing the concepts of MHA, MQA, and GQA.
+
+![The AI-Whys repository: 19 chapters and 41 experiments](/assets/posts/ai-whys-rope-asr/a171da966e4d6519e17d9544130383cd.jpg)

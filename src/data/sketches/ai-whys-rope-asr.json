@@ -1,0 +1,102 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": {
+            "zh": "AI-Whys · 19 章 · 41 个实验",
+            "en": "AI-Whys · 19 chapters · 41 experiments"
+          },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 76,
+          "content": { "zh": "新增 RoPE + 两种 ASR 路线", "en": "new: RoPE + two ASR approaches" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "circle", "x": 220, "y": 185, "r": 76 },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 189,
+          "content": "RoPE",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 500, "y": 185, "r": 76, "accent": true },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 189,
+          "content": "CTC",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 780, "y": 185, "r": 76 },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 189,
+          "content": "AuT",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 294,
+          "content": {
+            "zh": "旋转注入 · Q / K 位置编码",
+            "en": "rotation · Q / K position encoding"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 294,
+          "content": { "zh": "Conformer + CTC", "en": "Conformer + CTC" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 294,
+          "content": { "zh": "AuT + Projector + LLM", "en": "AuT + Projector + LLM" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "dot", "x": 370, "y": 346, "accent": true },
+        {
+          "type": "text",
+          "x": 390,
+          "y": 346,
+          "content": {
+            "zh": "底层代码复现 · 顺带实现 MHA / MQA / GQA",
+            "en": "bottom-up code · including MHA / MQA / GQA"
+          },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+---
+title: 'AI-Whys 新增 RoPE 与两条 ASR 路线：19 个章节、41 个实验'
+date: 2026-11-08
+category: 'ai-theory'
+tags: ['RoPE', 'ASR', 'Conformer', 'AuT', '开源']
+lang: 'zh'
+slug: 'ai-whys-rope-asr'
+translationOf: 'ai-whys-rope-asr'
+readingTime: 2
+description: ''
+---
+
+AI-Whys 增加了 RoPE、ASR（两种路线）！现在一共有 19 个章节、41 个实验。
+
+旋转位置编码（RoPE）是经典 Transformer 里正弦位置编码的现代替代，被广泛用在今天的大模型里。RoPE 避免了经典正弦编码把位置向量直接加到 token embedding 上造成的位置语义混合污染，而是把位置信息推迟到 Q 和 K 阶段，以旋转方式注入。
+
+ASR 有现代两种大的路线：第一种是 Conformer + CTC 路线（图 1）；第二种是 AuT 预训练后，其 encoder 接 projector，然后接文本大模型的 decoder 后微调的路线（图 2）。这两种路线里用到 attention 时，都可以使用 RoPE 进行 Q 和 K 的位置编码。
+
+图 1 · Conformer + CTC 路线：
+
+![Conformer + CTC 自动语音识别架构图](/assets/posts/ai-whys-rope-asr/50097d0c15ef321de0850a6fad225037.jpg)
+
+图 2 · AuT 预训练后接入 projector 和文本大模型 decoder 的路线：
+
+![AuT 预训练与文本大模型微调架构图](/assets/posts/ai-whys-rope-asr/abcb132f36652d415fe0ab1645bb7293.jpg)
+
+关于上述架构的算法底层代码复现，欢迎关注：[AI-Whys ASR 代码](https://github.com/ZHYsfl/ai-whys/tree/main/code/asr)。
+
+另外，代码里也涉及了 GQA 的实现，从而引出了 MHA、MQA、GQA 的概念。
+
+![AI-Whys 仓库：19 个章节与 41 个实验](/assets/posts/ai-whys-rope-asr/a171da966e4d6519e17d9544130383cd.jpg)
