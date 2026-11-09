@@ -1,0 +1,99 @@
+{
+  "plates": [
+    {
+      "elements": [
+        {
+          "type": "text",
+          "x": 500,
+          "y": 34,
+          "content": { "zh": "AI-Whys · AI Agents 篇", "en": "AI-Whys · AI Agents volume" },
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 76,
+          "content": {
+            "zh": "继 DL / RL 后的第三大宏观模块",
+            "en": "the third major module after DL / RL"
+          },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "circle", "x": 220, "y": 180, "r": 68 },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 184,
+          "content": "DL",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 500, "y": 180, "r": 68 },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 184,
+          "content": "RL",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        { "type": "circle", "x": 780, "y": 180, "r": 68, "accent": true },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 184,
+          "content": "Agents",
+          "size": "m",
+          "tone": "ink",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 220,
+          "y": 286,
+          "content": { "zh": "深度学习 · 含 audio-dl", "en": "deep learning · incl. audio-dl" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 500,
+          "y": 286,
+          "content": { "zh": "强化学习", "en": "reinforcement learning" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        {
+          "type": "text",
+          "x": 780,
+          "y": 286,
+          "content": { "zh": "实验 42 · Go / Python", "en": "experiment 42 · Go / Python" },
+          "size": "s",
+          "tone": "muted",
+          "align": "center"
+        },
+        { "type": "dot", "x": 300, "y": 344, "accent": true },
+        {
+          "type": "text",
+          "x": 320,
+          "y": 344,
+          "content": {
+            "zh": "从 Online RL 与 Transformer 长出的工程系统",
+            "en": "an engineering system grown from online RL and Transformers"
+          },
+          "size": "s",
+          "tone": "accent",
+          "align": "left"
+        }
+      ]
+    }
+  ]
+}

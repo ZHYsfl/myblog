@@ -1,0 +1,38 @@
+---
+title: 'AI-Whys Adds an AI Agents Volume: Theory, Experiment 42, and Go/Python Frameworks'
+date: 2026-11-10
+category: 'ai-theory'
+tags: ['AI Agents', 'Agentic RL', 'Go', 'Python', 'Open Source']
+lang: 'en'
+slug: 'ai-whys-ai-agents'
+translationOf: 'ai-whys-ai-agents'
+readingTime: 2
+description: ''
+---
+
+AI-Whys now has an AI Agents volume! It has become the third major macro module, after DL (including the audio-dl extension) and RL.
+
+AI Agents are the current darling of the AI world. Many people assume they are just about gluing APIs together and writing prompts, but this is actually a field with extremely high engineering barriers. When building RL Infra, for example, different models often require their own parsers, and training and inference must remain strictly consistent. Without a thorough understanding of agentic RL and the underlying logic of AI Agents, it is impossible to know where to begin.
+
+Based on this insight, AI-Whys has organized the underlying theory of agents (Figure 1). The latest macro panorama (Figure 2; see the URLs at the end for the high-resolution image and its source) shows that AI Agents essentially grow out of online RL and Transformers.
+
+Figure 1 · The underlying theory of AI Agents:
+
+![AI Agents theory: the agent, the environment, and the online RL data flow](/assets/posts/ai-whys-ai-agents/ai-agents-overview.png)
+
+Figure 2 · The latest AI-Whys macro panorama:
+
+![The latest AI-Whys macro panorama](/assets/posts/ai-whys-ai-agents/dl-and-rl-overview.svg)
+
+Knowledge from books always feels shallow. AI-Whys understands that theory alone is not enough, so it has also open-sourced Experiment 42: lightweight AI Agent frameworks in both Go and Python (with a TypeScript version to come). They support streaming inference, parallel tool calls, watchdog-based time-limited inference, and three memory mechanisms.
+
+By the way, VoxFlow—my cascaded, full-duplex, multimodal, real-time interactive agent system (technical report linked at the end)—is built on a plus version of this Go framework that I built myself.
+
+The AI Agents volume will continue to grow, with topics such as status bars. Follow along, exchange ideas, and star the project:
+
+- [AI Agents theory](https://github.com/ZHYsfl/ai-whys/blob/main/ai_agents.md)
+- [Go framework](https://github.com/ZHYsfl/ai-whys/tree/main/code/ai-agents/go-framework)
+- [Python framework](https://github.com/ZHYsfl/ai-whys/tree/main/code/ai-agents/python-framework)
+- [High-resolution macro panorama](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.svg)
+- [Macro panorama source file](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.excalidraw)
+- [VoxFlow technical report](https://zhouhaoyang.me/posts/zh/go-concurrency-timing-templates)

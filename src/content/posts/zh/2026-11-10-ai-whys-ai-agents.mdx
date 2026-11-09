@@ -1,0 +1,38 @@
+---
+title: 'AI-Whys 新增 AI Agents 篇：理论、实验 42 与 Go/Python 框架'
+date: 2026-11-10
+category: 'ai-theory'
+tags: ['AI Agents', 'Agentic RL', 'Go', 'Python', '开源']
+lang: 'zh'
+slug: 'ai-whys-ai-agents'
+translationOf: 'ai-whys-ai-agents'
+readingTime: 2
+description: ''
+---
+
+AI-Whys 新增了 AI Agents 篇！成为继 DL（含延伸 audio-dl）、RL 后的宏观第三大模块！
+
+作为当红炸子鸡的 AI Agents，很多人认为只是调包写 prompt，但这其实是一个工程壁垒极高的领域。比如在做 RL Infra 时，不同模型往往需要写特定的 parser，模型的训练和推理需要保持严格一致；如果不透彻理解 agentic RL 和 AI Agent 的底层逻辑，根本无从下手。
+
+基于这个认知，AI-Whys 整理了 Agent 的底层理论（如图 1）。从最新的宏观全景图（图 2，高清大图见文末 URL，源码见文末 URL）可以看到，AI Agents 本质上就是从 online RL 和 Transformer 中长出来的。
+
+图 1 · AI Agents 底层理论：
+
+![AI Agents 底层理论：Agent、Environment 与 online RL 数据流](/assets/posts/ai-whys-ai-agents/ai-agents-overview.png)
+
+图 2 · AI-Whys 最新宏观全景图：
+
+![AI-Whys 最新宏观全景图](/assets/posts/ai-whys-ai-agents/dl-and-rl-overview.svg)
+
+纸上得来终觉浅。AI-Whys 深知仅了解理论的不足，所以也开源了实验 42：Go 和 Python 两个语言版本的 AI Agent lightweight framework（后续还会加上 TS 语言版本），支持流式推理、并行工具调用、watchdog 限时推理、三种记忆机制。
+
+By the way，我的 VoxFlow 全双工多模态实时交互级联 Agent 系统（技术报告详见文末 URL），就长在自己搭建的 Go 语言这个 framework 的 plus 版本下。
+
+AI Agents 篇未来还会持续更新，比如 status bar 等技术。欢迎各位大佬关注、交流、点 star：
+
+- [AI Agents 理论篇](https://github.com/ZHYsfl/ai-whys/blob/main/ai_agents.md)
+- [Go 框架](https://github.com/ZHYsfl/ai-whys/tree/main/code/ai-agents/go-framework)
+- [Python 框架](https://github.com/ZHYsfl/ai-whys/tree/main/code/ai-agents/python-framework)
+- [最新宏观全景图高清大图](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.svg)
+- [最新宏观全景图源码](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.excalidraw)
+- [VoxFlow 系统技术报告](https://zhouhaoyang.me/posts/zh/go-concurrency-timing-templates)
