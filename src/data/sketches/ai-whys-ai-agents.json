@@ -80,10 +80,9 @@
           "tone": "muted",
           "align": "center"
         },
-        { "type": "dot", "x": 300, "y": 344, "accent": true },
         {
           "type": "text",
-          "x": 320,
+          "x": 500,
           "y": 344,
           "content": {
             "zh": "从 Online RL 与 Transformer 长出的工程系统",
@@ -91,7 +90,7 @@
           },
           "size": "s",
           "tone": "accent",
-          "align": "left"
+          "align": "center"
         }
       ]
     }
