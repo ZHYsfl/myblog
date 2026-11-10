@@ -10,19 +10,21 @@ readingTime: 2
 description: ''
 ---
 
-AI-Whys now has an AI Agents volume! It has become the third major macro module, after DL (including the audio-dl extension) and RL.
+AI-Whys now has an AI Agents volume! It has become the third major macro module, after DL (including the audio-dl extension) and RL. We have also fixed a few small errors in the RL illustrations.
 
-AI Agents are the current darling of the AI world. Many people assume they are just about gluing APIs together and writing prompts, but this is actually a field with extremely high engineering barriers. When building RL Infra, for example, different models often require their own parsers, and training and inference must remain strictly consistent. Without a thorough understanding of agentic RL and the underlying logic of AI Agents, it is impossible to know where to begin.
+AI Agents, the current darling of the AI world, are a field with extremely high engineering barriers. When building RL Infra, for example, different models often require specific parsers, and training and inference must remain strictly consistent. Without a thorough understanding of agentic RL and the underlying logic of AI Agents, it is impossible to know where to begin. With this in mind, AI-Whys has organized the underlying theory of agents (Figure 1).
 
-Based on this insight, AI-Whys has organized the underlying theory of agents (Figure 1). The latest macro panorama (Figure 2; see the URLs at the end for the high-resolution image and its source) shows that AI Agents essentially grow out of online RL and Transformers.
+Figure 1 shows how the S/A/R of an RL trajectory map to the inputs and outputs of multi-turn LLM calls: one LLM call is the policy sampling an action from a state, the tool response is written back into the context to form the next state, and the final answer ends the episode, after which credit is assigned and the policy is updated. This turns an agent from “chat plus tools” into “a policy interaction process that can be sampled and trained.”
 
-Figure 1 · The underlying theory of AI Agents:
+The latest macro panorama (Figure 2; see the URLs at the end for the high-resolution image and its source) also shows that AI Agents essentially grow out of online RL and Transformers.
 
-![AI Agents theory: the agent, the environment, and the online RL data flow](/assets/posts/ai-whys-ai-agents/ai-agents-overview.png)
+Figure 1 · How an agent maps to online RL:
+
+![How an agent maps to online RL](/assets/posts/ai-whys-ai-agents/34.png)
 
 Figure 2 · The latest AI-Whys macro panorama:
 
-![The latest AI-Whys macro panorama](/assets/posts/ai-whys-ai-agents/dl-and-rl-overview.svg)
+![The latest AI-Whys macro panorama](/assets/posts/ai-whys-ai-agents/arch.png)
 
 Knowledge from books always feels shallow. AI-Whys understands that theory alone is not enough, so it has also open-sourced Experiment 42: lightweight AI Agent frameworks in both Go and Python (with a TypeScript version to come). They support streaming inference, parallel tool calls, watchdog-based time-limited inference, and three memory mechanisms.
 
@@ -36,3 +38,4 @@ The AI Agents volume will continue to grow, with topics such as status bars. Fol
 - [High-resolution macro panorama](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.svg)
 - [Macro panorama source file](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.excalidraw)
 - [VoxFlow technical report](https://zhouhaoyang.me/posts/zh/go-concurrency-timing-templates)
+- [This blog post](https://zhouhaoyang.me/posts/en/ai-whys-ai-agents)

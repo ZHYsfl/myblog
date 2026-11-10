@@ -10,19 +10,21 @@ readingTime: 2
 description: ''
 ---
 
-AI-Whys 新增了 AI Agents 篇！成为继 DL（含延伸 audio-dl）、RL 后的宏观第三大模块！
+AI-Whys 新增了 AI Agents 篇！成为继 DL（含延伸 audio-dl）、RL 后的宏观第三大模块！除此之外，还修复了 RL 插图的一些小错误。
 
-作为当红炸子鸡的 AI Agents，很多人认为只是调包写 prompt，但这其实是一个工程壁垒极高的领域。比如在做 RL Infra 时，不同模型往往需要写特定的 parser，模型的训练和推理需要保持严格一致；如果不透彻理解 agentic RL 和 AI Agent 的底层逻辑，根本无从下手。
+作为当红炸子鸡的 AI Agents，是一个工程壁垒极高的领域。比如在做 RL Infra 时，不同模型往往需要写特定的 parser，模型的训推需要保持严格一致；如果不透彻理解 agentic RL 和 AI Agent 的底层逻辑，根本无从下手。基于这个认知，AI-Whys 整理了 Agent 的底层理论（如图 1）。
 
-基于这个认知，AI-Whys 整理了 Agent 的底层理论（如图 1）。从最新的宏观全景图（图 2，高清大图见文末 URL，源码见文末 URL）可以看到，AI Agents 本质上就是从 online RL 和 Transformer 中长出来的。
+图 1 展示了 RL 轨迹的 S/A/R 如何和 LLM 多轮调用的 input/output 对应起来：一次 LLM call 是 policy 在 state 下采样 action，tool response 回填上下文形成下一个 state，最终回答让 episode done，然后 credit assignment 并 update。这把 Agent 从“聊天 + 工具”变成了“可采样、可训练的策略交互过程”。
 
-图 1 · AI Agents 底层理论：
+最新的宏观全景图（图 2，高清大图见文末 URL，源码见文末 URL）也可以看到，AI Agents 本质上就是从 online RL 和 Transformer 中长出来的。
 
-![AI Agents 底层理论：Agent、Environment 与 online RL 数据流](/assets/posts/ai-whys-ai-agents/ai-agents-overview.png)
+图 1 · Agent 与 online RL 的对应关系：
+
+![Agent 与 online RL 的对应关系](/assets/posts/ai-whys-ai-agents/34.png)
 
 图 2 · AI-Whys 最新宏观全景图：
 
-![AI-Whys 最新宏观全景图](/assets/posts/ai-whys-ai-agents/dl-and-rl-overview.svg)
+![AI-Whys 最新宏观全景图](/assets/posts/ai-whys-ai-agents/arch.png)
 
 纸上得来终觉浅。AI-Whys 深知仅了解理论的不足，所以也开源了实验 42：Go 和 Python 两个语言版本的 AI Agent lightweight framework（后续还会加上 TS 语言版本），支持流式推理、并行工具调用、watchdog 限时推理、三种记忆机制。
 
@@ -36,3 +38,4 @@ AI Agents 篇未来还会持续更新，比如 status bar 等技术。欢迎各�
 - [最新宏观全景图高清大图](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.svg)
 - [最新宏观全景图源码](https://github.com/ZHYsfl/ai-whys/blob/main/dl_and_rl.excalidraw)
 - [VoxFlow 系统技术报告](https://zhouhaoyang.me/posts/zh/go-concurrency-timing-templates)
+- [本篇博客](https://zhouhaoyang.me/posts/zh/ai-whys-ai-agents)
